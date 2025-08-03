@@ -13,7 +13,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0.1rem 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,10 +23,11 @@
 .logo {
   flex-shrink: 0;
   margin-left: 0;
+  padding: 10px 0;
 }
 
 .logoImage {
-  height: 250px;
+  height: 120px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -155,7 +156,7 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
+    padding: 0.25rem 1rem;
   }
 
   .logoImage {
@@ -208,7 +209,7 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 0.75rem;
+    padding: 0.25rem 0.75rem;
   }
 
   .logoImage {

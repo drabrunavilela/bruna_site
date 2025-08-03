@@ -2,11 +2,81 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 import styles from './HomePage.module.css';
 
 const HomePage: React.FC = () => {
+  // Structured Data for Medical Professional
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": ["MedicalBusiness", "LocalBusiness"],
+    "name": "Dra. Bruna Vilela",
+    "description": "Neuropediatra e pediatra especialista em desenvolvimento infantil, TDAH, autismo e epilepsia em Belo Horizonte",
+    "url": "https://drabrunavilela.com.br",
+    "telephone": "+5531983501417",
+    "email": "brunavilela.neuroped@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
+      "addressLocality": "Belo Horizonte",
+      "addressRegion": "MG",
+      "postalCode": "30000-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -19.9167,
+      "longitude": -43.9345
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5531983501417",
+      "contactType": "customer service",
+      "availableLanguage": "Portuguese"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "medicalSpecialty": ["Neuropediatria", "Pediatria", "Desenvolvimento Infantil"],
+    "availableService": [
+      {
+        "@type": "MedicalService",
+        "name": "Avaliação de TDAH",
+        "description": "Diagnóstico e tratamento do Transtorno do Déficit de Atenção com Hiperatividade"
+      },
+      {
+        "@type": "MedicalService", 
+        "name": "Avaliação de Autismo",
+        "description": "Diagnóstico e acompanhamento do Transtorno do Espectro Autista"
+      },
+      {
+        "@type": "MedicalService",
+        "name": "Tratamento de Epilepsia",
+        "description": "Diagnóstico e tratamento de epilepsia infantil"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Neuropediatria",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalService",
+            "name": "Consulta Neuropediátrica"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
+      <SEO 
+        title="Dra. Bruna Vilela - Neuropediatra e Pediatra em Belo Horizonte | Especialista em TDAH, Autismo e Epilepsia"
+        description="Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte. Especialista em TDAH, autismo, epilepsia e desenvolvimento infantil. Agende sua consulta."
+        keywords="neuropediatra, pediatra, belo horizonte, TDAH, autismo, epilepsia, desenvolvimento infantil, neuropediatria, consulta neuropediátrica"
+        canonical="/"
+        structuredData={structuredData}
+      />
       <Header />
       
       <main className={styles.main}>
@@ -32,10 +102,15 @@ const HomePage: React.FC = () => {
                   Respostas claras e caminhos seguros para o potencial máximo de cada criança.
                 </p>
                 <div className={styles.heroActions}>
-                  <Link to="/agendar" className={styles.ctaPrimary}>
+                  <a 
+                    href="https://wa.me/5531983501417" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.ctaPrimary}
+                  >
                     Agendar Consulta
-                  </Link>
-                  <Link to="/sobre" className={styles.ctaSecondary}>
+                  </a>
+                  <Link to="/sobre" className={styles.ctaSecondary} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     Conheça Minha Trajetória
                   </Link>
                 </div>
@@ -44,8 +119,8 @@ const HomePage: React.FC = () => {
               {/* Foto da Dra. Bruna no Hero */}
               <div className={styles.heroImageContainer}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp"
-                  alt="Dra. Bruna Vilela, neuropediatra, em momento de estudo e dedicação em seu ambiente de trabalho"
+                  src="/src/assets/images/bruna/dra-bruna-vilela-sorrindo-01.webp"
+                  alt="Dra. Bruna Vilela sorrindo, neuropediatra e pediatra em Belo Horizonte"
                   className={styles.heroImage}
                 />
               </div>
@@ -72,7 +147,7 @@ const HomePage: React.FC = () => {
                     Minha missão é traduzir a complexidade da ciência em estratégias práticas e eficazes para o desenvolvimento 
                     do seu filho, sempre com um olhar atento e humano para as necessidades únicas da sua família.
                   </p>
-                  <Link to="/sobre" className={styles.aboutLink}>
+                  <Link to="/sobre" className={styles.aboutLink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     Conheça Minha História Completa →
                   </Link>
                 </div>
@@ -178,7 +253,7 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className={styles.blogCTA}>
-              <Link to="/blog" className={styles.blogCTALink}>
+              <Link to="/blog" className={styles.blogCTALink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 Ver Todos os Artigos →
               </Link>
             </div>
@@ -196,9 +271,14 @@ const HomePage: React.FC = () => {
                 Agende uma consulta e descubra como a neuropediatria científica pode fazer a diferença 
                 no desenvolvimento do seu filho.
               </p>
-              <Link to="/agendar" className={styles.finalCTAButton}>
+              <a 
+                href="https://wa.me/5531983501417" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.finalCTAButton}
+              >
                 Agendar Consulta Agora
-              </Link>
+              </a>
             </div>
           </div>
         </section>

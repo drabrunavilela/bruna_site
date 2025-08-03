@@ -9,13 +9,22 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigation = () => {
+    setIsMenuOpen(false);
+    scrollToTop();
+  };
+
   return (
     <header className={styles.header} role="banner">
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link to="/" aria-label="Página inicial - Dra. Bruna Vilela">
+          <Link to="/" aria-label="Página inicial - Dra. Bruna Vilela" onClick={scrollToTop}>
             <img 
-              src="/src/assets/images/identidade-visual/logo-dra-bruna-vilela-principal.webp"
+              src="/src/assets/images/identidade-visual/logo-dra-bruna-vilela-header.webp"
               alt="Logotipo oficial Dra. Bruna Vilela - Neuropediatra e Pediatra"
               className={styles.logoImage}
             />
@@ -34,18 +43,23 @@ const Header: React.FC = () => {
           </button>
 
           <ul id="main-menu" className={`${styles.navList} ${isMenuOpen ? styles.navListOpen : ''}`}>
-            <li><Link to="/" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Início</Link></li>
-            <li><Link to="/sobre" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Sobre Mim</Link></li>
-            <li><Link to="/servicos" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Áreas de Atuação</Link></li>
-            <li><Link to="/blog" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
-            <li><Link to="/contato" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Contato</Link></li>
+            <li><Link to="/" className={styles.navLink} onClick={handleNavigation}>Início</Link></li>
+            <li><Link to="/sobre" className={styles.navLink} onClick={handleNavigation}>Sobre Mim</Link></li>
+            <li><Link to="/servicos" className={styles.navLink} onClick={handleNavigation}>Áreas de Atuação</Link></li>
+            <li><Link to="/blog" className={styles.navLink} onClick={handleNavigation}>Blog</Link></li>
+            <li><Link to="/contato" className={styles.navLink} onClick={handleNavigation}>Contato</Link></li>
           </ul>
         </nav>
 
         <div className={styles.ctaContainer}>
-          <Link to="/agendar" className={styles.ctaButton}>
+          <a 
+            href="https://wa.me/5531983501417" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={styles.ctaButton}
+          >
             Agendar Consulta
-          </Link>
+          </a>
         </div>
       </div>
     </header>

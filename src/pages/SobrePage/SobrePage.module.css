@@ -1,0 +1,435 @@
+/* Layout Principal */
+.main {
+  margin-top: 56px; /* Espaço para o header fixo */
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. Hero Section: "Sobre a Dra. Bruna Vilela" */
+.hero {
+  background: linear-gradient(135deg, rgba(201, 193, 224, 0.05) 0%, var(--color-background) 100%);
+  color: var(--color-text);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8rem;
+}
+
+.heroContainer {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.heroContent {
+  max-width: 600px;
+  text-align: left;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroTitle {
+  font-family: var(--font-decorative); /* Cataline Script para título principal */
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  color: var(--color-headings);
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+.heroSubtitle {
+  font-family: var(--font-body); /* Times New Roman para corpo de texto */
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0 0 2.5rem 0;
+  color: var(--color-text);
+  font-weight: normal;
+}
+
+.heroImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  padding-left: 2rem;
+  padding: 1rem;
+}
+
+.heroImage {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.heroImage:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 2. Seções de Conteúdo */
+.sectionPadded {
+  padding: 4rem 0;
+}
+
+.sectionPadded .container {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  max-width: 1200px;
+}
+
+.narrowContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: var(--font-body); /* Times New Roman para títulos de seção */
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1.5rem 0;
+  color: var(--color-headings);
+  text-align: center;
+}
+
+.paragraph {
+  font-family: var(--font-body); /* Times New Roman para corpo de texto */
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0 0 2rem 0;
+  color: var(--color-text);
+  font-weight: normal;
+}
+
+.contentColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.h3ListTitle {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--color-headings);
+}
+
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bulletList li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.bulletList li::before {
+  content: "•";
+  color: var(--color-primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 3. Seção de Destaque */
+.sectionSoftHighlight {
+  background-color: rgba(167, 208, 241, 0.5);
+}
+
+/* 4. Seção de Depoimentos */
+.testimonialsSection {
+  padding: 4rem 0;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonialCard {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.testimonialText {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.author {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-headings);
+  margin: 0;
+}
+
+.relation {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* 5. Call to Action Final */
+.callToActionBanner {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 4rem 0;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.sectionTitleCta {
+  font-family: var(--font-body);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1.5rem 0;
+  color: var(--color-white);
+}
+
+.callToActionBanner .paragraph {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0 0 2rem 0;
+  color: var(--color-white);
+  opacity: 0.9;
+}
+
+.buttonPrimary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-white);
+}
+
+.buttonPrimary:hover,
+.buttonPrimary:focus {
+  background-color: transparent;
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .heroContent {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.125rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.875rem;
+  }
+
+  .contentColumns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitleCta {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 0;
+    margin-top: 6rem;
+  }
+
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .sectionPadded {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+
+  .testimonialCard {
+    padding: 1.5rem;
+  }
+
+  .sectionTitleCta {
+    font-size: 1.5rem;
+  }
+
+  .heroImageContainer,
+  .heroImage {
+    display: none;
+  }
+}
+
+/* Carrossel de Fotos */
+.photoCarouselSection {
+  background-color: var(--color-background); /* Fundo branco */
+  padding: calc(var(--spacing-unit) * 8) 0; /* 60px */
+  text-align: center;
+}
+
+.carouselWrapper {
+  max-width: 800px; /* Defina a largura máxima do carrossel */
+  margin: 0 auto;
+  padding: calc(var(--spacing-unit) * 4) 0; /* 20px */
+}
+
+.carouselImageContainer {
+  display: flex !important; /* Importante para que o react-slick funcione corretamente */
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--spacing-unit) * 2); /* 10px */
+  box-sizing: border-box;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 450px; /* Altura fixa para as imagens */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 16px; /* Bordas arredondadas para as fotos */
+  box-shadow: var(--box-shadow-medium);
+}
+
+/* Hover effect para as imagens do carrossel */
+.carouselImage:hover {
+  transform: scale(1.02); /* Scale sutil */
+  transition: transform 0.3s ease;
+}
+
+/* Estilos de sobreposição para react-slick (para personalizar) */
+/* Pontos de navegação (dots) */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: var(--color-primary); /* Cor dos pontos inativos (lilás) */
+  opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--color-primary); /* Cor dos pontos ativos (lilás) */
+  opacity: 1;
+}
+
+/* Setas de navegação (prev/next) */
+.slick-prev:before, .slick-next:before {
+  font-size: 30px;
+  line-height: 1;
+  color: var(--color-primary); /* Cor das setas (lilás) */
+  opacity: 0.85;
+}
+
+.slick-prev {
+  left: -40px; /* Ajuste a posição da seta esquerda */
+}
+
+.slick-next {
+  right: -40px; /* Ajuste a posição da seta direita */
+}
+
+@media (max-width: 768px) {
+  .carouselImage {
+    height: 300px; /* Altura menor para imagens em telas menores */
+  }
+  .slick-prev {
+    left: calc(var(--spacing-unit) * 2); /* Move as setas para dentro em telas menores (10px) */
+    z-index: 1;
+  }
+  .slick-next {
+    right: calc(var(--spacing-unit) * 2); /* Move as setas para dentro em telas menores (10px) */
+    z-index: 1;
+  }
+  .slick-prev:before, .slick-next:before {
+    font-size: 25px; /* Tamanho menor para as setas */
+  }
+} 
