@@ -1,0 +1,27 @@
+:root {
+  /* Cores Principais - Nova Paleta */
+  --color-primary: #C9C1E0;        /* Lilás principal para botões */
+  --color-secondary: #A7D0F1;      /* Azul claro (substituindo o verde) */
+  --color-accent: #1ABC9C;         /* Verde apenas para hover */
+  --color-background: #FFFFFF;     /* Fundo principal (Branco) */
+  --color-text: #333333;           /* Cor de texto principal */
+  --color-headings: #000000;       /* Cor dos títulos (Preto) */
+  --color-white: #FFFFFF;          /* Branco */
+
+  /* Cores de Detalhes (para acentos secundários) */
+  --color-detail-pink: #F8B2BB;    /* Rosa bebê */
+  --color-detail-green: #C3E1C0;   /* Verde menta */
+  --color-detail-yellow: #F5F19B;  /* Amarelo claro */
+  --color-soft-highlight: #F5F5DC; /* Bege suave - Fundos de destaque leve */
+
+  /* Tipografia - Estratégia Definida */
+  --font-decorative: 'Cataline Script', cursive;    /* Títulos principais (H1) */
+  --font-heading: 'Times New Roman', serif;         /* Títulos e subtítulos */
+  --font-body: 'Times New Roman', serif;            /* Corpo de texto, menus, botões */
+
+  /* Espaçamentos e tamanhos base */
+  --spacing-unit: 0.5rem; /* Unidade base para espaçamentos (8px) */
+  --border-radius: 8px; /* Bordas arredondadas para suavidade */
+  --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06); /* Sombra muito suave */
+  --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra média suave */
+}

@@ -1,0 +1,269 @@
+.footer {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: 3rem 0 1rem;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerTitle {
+  font-family: var(--font-decorative);
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: var(--color-headings);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.footerSubtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  margin: 0 0 1rem 0;
+  font-weight: normal;
+}
+
+.footerDescription {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+  font-weight: normal;
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--color-headings);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.footerNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footerLink {
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0.25rem 0;
+  font-weight: normal;
+}
+
+.footerLink:hover,
+.footerLink:focus {
+  color: var(--color-primary);
+  outline: none;
+}
+
+.specialtiesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.specialtiesList li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  position: relative;
+  padding-left: 1rem;
+  font-weight: normal;
+}
+
+.specialtiesList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactItem {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+  font-weight: normal;
+}
+
+.contactItem strong {
+  color: var(--color-headings);
+  font-weight: normal;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-secondary);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.ctaButton:hover,
+.ctaButton:focus {
+  background-color: var(--color-accent);
+  color: var(--color-headings);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: var(--box-shadow-medium);
+  outline: none;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 0 2rem 0;
+}
+
+.dividerBottom {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 2rem 0 1rem;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright p {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text);
+  margin: 0;
+  font-weight: normal;
+}
+
+.legalLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legalLink {
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+  font-weight: normal;
+}
+
+.legalLink:hover,
+.legalLink:focus {
+  color: var(--color-primary);
+  outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footerTitle {
+    font-size: 1.3rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .legalLinks {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .footerTitle {
+    font-size: 1.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .footerDescription,
+  .footerLink,
+  .specialtiesList li,
+  .contactItem {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+  }
+} 

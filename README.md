@@ -1,69 +1,73 @@
-# React + TypeScript + Vite
+# Site Dra. Bruna Vilela
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site profissional da Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte.
 
-Currently, two official plugins are available:
+## Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este é o site oficial da Dra. Bruna Vilela, especialista em neuropediatria e pediatria com abordagem científica e humanizada. O projeto foi desenvolvido com foco em experiência do usuário e acessibilidade.
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - Biblioteca JavaScript para interfaces
+- **TypeScript** - Tipagem estática para JavaScript
+- **Vite** - Build tool e servidor de desenvolvimento
+- **React Router** - Navegação entre páginas
+- **CSS Modules** - Estilização modular
+- **Framer Motion** - Animações
+- **React Icons** - Biblioteca de ícones
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Estrutura do Projeto
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/     # Componentes reutilizáveis
+│   ├── Header/    # Cabeçalho do site
+│   └── Footer/    # Rodapé do site
+├── pages/         # Páginas da aplicação
+├── assets/        # Recursos estáticos
+│   └── styles/    # Estilos globais
+└── hooks/         # Custom hooks
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Como Executar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Pré-requisitos
+- Node.js (versão 18 ou superior)
+- npm ou yarn
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Instalação
+```bash
+npm install
 ```
+
+### Desenvolvimento
+```bash
+npm run dev
+```
+
+### Build para Produção
+```bash
+npm run build
+```
+
+### Preview da Build
+```bash
+npm run preview
+```
+
+## Desenvolvimento
+
+### Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Gera build de produção
+- `npm run preview` - Preview da build de produção
+- `npm run lint` - Executa o linter
+
+## Contribuição
+
+Este é um projeto privado desenvolvido para a Dra. Bruna Vilela.
+
+## Licença
+
+Todos os direitos reservados.
