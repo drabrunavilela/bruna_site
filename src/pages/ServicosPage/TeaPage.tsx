@@ -3,6 +3,8 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './TeaPage.module.css';
+import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
+
 
 const TeaPage: React.FC = () => {
   // Structured Data for TEA Service
@@ -63,7 +65,7 @@ const TeaPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-04.webp"
+                src={fotoConsultorio04}
                 alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para TEA"
                 className={styles.heroImage}
               />

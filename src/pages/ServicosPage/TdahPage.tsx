@@ -4,6 +4,8 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './TdahPage.module.css';
+import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
+
 
 const TdahPage: React.FC = () => {
   // Structured Data for TDAH Service
@@ -56,7 +58,7 @@ const TdahPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-04.webp"
+                src={fotoConsultorio04}
                 alt="Dra. Bruna Vilela em consultório, especialista em TDAH e neuropediatria"
                 className={styles.heroImage}
               />

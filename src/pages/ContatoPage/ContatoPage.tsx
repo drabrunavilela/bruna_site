@@ -3,6 +3,11 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './ContatoPage.module.css';
+import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp";
+import logoInstagram from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png";
+import logoFacebook from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Facebook.png";
+import logoDoctoralia from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png";
+
 
 const ContatoPage: React.FC = () => {
   // Structured Data for Contact
@@ -74,7 +79,7 @@ const ContatoPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp"
+                src={fotoNeuropediatra12}
                 alt="Dra. Bruna Vilela em consultório, demonstrando cuidado e atenção"
                 className={styles.heroImage}
               />
@@ -224,7 +229,7 @@ const ContatoPage: React.FC = () => {
                   className={styles.socialIconLink}
                 >
                   <img 
-                    src="/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png" 
+                    src={logoInstagram} 
                     alt="Instagram" 
                     className={styles.socialIcon}
                   />
@@ -237,7 +242,7 @@ const ContatoPage: React.FC = () => {
                   title="Página em breve - esta semana"
                 >
                   <img 
-                    src="/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Facebook.png" 
+                    src={logoFacebook} 
                     alt="Facebook" 
                     className={styles.socialIcon}
                   />
@@ -253,7 +258,7 @@ const ContatoPage: React.FC = () => {
                   className={styles.socialIconLink}
                 >
                   <img 
-                    src="/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png" 
+                    src={logoDoctoralia} 
                     alt="Doctoralia" 
                     className={styles.socialIcon}
                   />

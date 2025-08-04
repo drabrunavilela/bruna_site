@@ -4,6 +4,8 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './GlossarioPage.module.css';
+import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
+
 
 const GlossarioPage: React.FC = () => {
   // Structured Data for Glossary
@@ -78,7 +80,7 @@ const GlossarioPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp"
+                src={fotoConsultorio03}
                 alt="Dra. Bruna Vilela em consultório, demonstrando conhecimento científico"
                 className={styles.heroImage}
               />

@@ -3,6 +3,8 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './CefaleiasPage.module.css';
+import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
+
 
 const CefaleiasPage: React.FC = () => {
   // Structured Data for Headaches Service
@@ -63,7 +65,7 @@ const CefaleiasPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp"
+                src={fotoConsultorio03}
                 alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para cefaleias"
                 className={styles.heroImage}
               />

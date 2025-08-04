@@ -4,6 +4,8 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './SegundaOpiniaoPage.module.css';
+import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
+
 
 const SegundaOpiniaoPage: React.FC = () => {
   // Structured Data for Second Opinion Service
@@ -59,7 +61,7 @@ const SegundaOpiniaoPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-04.webp"
+                src={fotoConsultorio04}
                 alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para segunda opinião"
                 className={styles.heroImage}
               />

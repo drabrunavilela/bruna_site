@@ -4,6 +4,12 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './SobrePage.module.css';
 
+// Importar imagens
+import fotoAtenciosa06 from '../../assets/images/bruna/dra-bruna-vilela-atenciosa-06.webp';
+import fotoConsultorio03 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp';
+import fotoNeuropediatra17 from '../../assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp';
+import fotoProfissional07 from '../../assets/images/bruna/dra-bruna-vilela-profissional-07.webp';
+
 // Importar os componentes e estilos do react-slick
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -12,9 +18,9 @@ import "slick-carousel/slick/slick-theme.css";
 const SobrePage: React.FC = () => {
   // Dados das Imagens para o Carrossel
   const carouselImages = [
-    { src: '/src/assets/images/bruna/dra-bruna-vilela-atenciosa-06.webp', alt: 'Dra. Bruna Vilela atenciosa no consultório' },
-    { src: '/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp', alt: 'Dra. Bruna Vilela em ambiente profissional' },
-    { src: '/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp', alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
+    { src: fotoAtenciosa06, alt: 'Dra. Bruna Vilela atenciosa no consultório' },
+    { src: fotoConsultorio03, alt: 'Dra. Bruna Vilela em ambiente profissional' },
+    { src: fotoNeuropediatra17, alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
   ];
 
   // Configurações do Carrossel
@@ -117,7 +123,7 @@ const SobrePage: React.FC = () => {
             </div>
             <div className={styles.heroImageContainer}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-profissional-07.webp"
+                src={fotoProfissional07}
                 alt="Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte"
                 className={styles.heroImage}
                 loading="eager"

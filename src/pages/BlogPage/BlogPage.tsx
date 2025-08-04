@@ -5,6 +5,14 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './BlogPage.module.css';
 
+// Importar imagens do blog
+import fotoNeuropediatra18 from '../../assets/images/bruna/dra-bruna-vilela-neuropediatra-18.webp';
+import fotoConsultorio04 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp';
+import fotoConsultorio03 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp';
+import fotoNeuropediatra17 from '../../assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp';
+import fotoAcolhedora10 from '../../assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp';
+import fotoSorrindo02 from '../../assets/images/bruna/dra-bruna-vilela-sorrindo-02.webp';
+
 const BlogPage: React.FC = () => {
   // Structured Data for Blog
   const structuredData = {
@@ -102,7 +110,7 @@ const BlogPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-18.webp"
+                src={fotoNeuropediatra18}
                 alt="Dra. Bruna Vilela em consultório, demonstrando conhecimento científico"
                 className={styles.heroImage}
               />
@@ -131,7 +139,7 @@ const BlogPage: React.FC = () => {
               {/* Artigo 1 - TDAH */}
               <Link to="/blog/tdah-alem-dos-rotulos" className={styles.articleCard}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-04.webp" 
+                  src={fotoConsultorio04} 
                   alt="Criança brincando com blocos, simbolizando desenvolvimento e aprendizado." 
                   className={styles.cardImage}
                   loading="lazy"
@@ -159,7 +167,7 @@ const BlogPage: React.FC = () => {
               {/* Artigo 2 - Autismo */}
               <Link to="/blog/autismo-diagnostico-precoce" className={styles.articleCard}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp" 
+                  src={fotoConsultorio03} 
                   alt="Criança com autismo em ambiente de aprendizado" 
                   className={styles.cardImage}
                   loading="lazy"
@@ -187,7 +195,7 @@ const BlogPage: React.FC = () => {
               {/* Artigo 3 - Epilepsia */}
               <Link to="/blog/epilepsia-infantil" className={styles.articleCard}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp" 
+                  src={fotoNeuropediatra17} 
                   alt="Criança em ambiente médico, simbolizando cuidado especializado" 
                   className={styles.cardImage}
                   loading="lazy"
@@ -215,7 +223,7 @@ const BlogPage: React.FC = () => {
               {/* Artigo 4 - Desenvolvimento Infantil */}
               <Link to="/blog/desenvolvimento-infantil-marcos" className={styles.articleCard}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp" 
+                  src={fotoAcolhedora10} 
                   alt="Criança brincando, simbolizando desenvolvimento saudável" 
                   className={styles.cardImage}
                   loading="lazy"
@@ -243,7 +251,7 @@ const BlogPage: React.FC = () => {
               {/* Artigo 5 - Atrasos no Desenvolvimento */}
               <Link to="/blog/atrasos-desenvolvimento-quando-procurar-ajuda" className={styles.articleCard}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-sorrindo-02.webp" 
+                  src={fotoSorrindo02} 
                   alt="Criança em avaliação, simbolizando diagnóstico precoce" 
                   className={styles.cardImage}
                   loading="lazy"
@@ -298,7 +306,7 @@ const BlogPage: React.FC = () => {
               {/* Artigo List Item 1 */}
               <div className={styles.articleListItem}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp" 
+                  src={fotoConsultorio03} 
                   alt="Ícone de molécula, representando pesquisa científica." 
                   className={styles.listItemImage}
                 />
@@ -321,7 +329,7 @@ const BlogPage: React.FC = () => {
               {/* Artigo List Item 2 */}
               <div className={styles.articleListItem}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-04.webp" 
+                  src={fotoConsultorio04} 
                   alt="Criança em desenvolvimento" 
                   className={styles.listItemImage}
                 />

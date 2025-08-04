@@ -5,6 +5,11 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './HomePage.module.css';
 
+// Importar imagens
+import logoProfissional from '../../assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp';
+import fotoAtenciosa from '../../assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp';
+import fotoAcolhedora from '../../assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp';
+
 const HomePage: React.FC = () => {
   // Structured Data for Home Page
   const structuredData = {
@@ -98,7 +103,7 @@ const HomePage: React.FC = () => {
                 {/* Logo Profissional */}
                 <div className={styles.heroLogo}>
                   <img 
-                    src="/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp"
+                    src={logoProfissional}
                     alt="Logotipo profissional Dra. Bruna Vilela - Neuropediatra e Pediatra"
                     className={styles.heroLogoImage}
                   />
@@ -128,7 +133,7 @@ const HomePage: React.FC = () => {
               {/* Foto da Dra. Bruna no Hero */}
               <div className={styles.heroImageContainer}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp"
+                  src={fotoAtenciosa}
                   alt="Dra. Bruna Vilela atenciosa, neuropediatra e pediatra em Belo Horizonte"
                   className={styles.heroImage}
                   loading="eager"
@@ -147,7 +152,7 @@ const HomePage: React.FC = () => {
                               {/* Foto da Dra. Bruna na seção Sobre */}
               <div className={styles.aboutImageContainer}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp"
+                  src={fotoAcolhedora}
                   alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
                   className={styles.aboutImage}
                   loading="lazy"
