@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import HomePage from './pages/HomePage/HomePage';
 import SobrePage from './pages/SobrePage/SobrePage';
 import ServicosPage from './pages/ServicosPage/ServicosPage';
@@ -43,12 +42,12 @@ const AppContent = () => {
 
 function App() {
   return (
-    <HelmetProvider>
+    <>
       <Performance />
       <Router>
         <AppContent />
       </Router>
-    </HelmetProvider>
+    </>
   );
 }
 
