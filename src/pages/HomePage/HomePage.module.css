@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden; /* Evita o "preto na lateral" */
+  z-index: 1;
 }
 
 .container {
@@ -21,6 +22,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 2rem;
+  z-index: 1;
 }
 
 .heroContainer {
@@ -471,33 +473,76 @@
   .container {
     padding: 0 1rem;
   }
+  
+  /* Centralização específica para o primeiro container (hero) */
+  .hero .container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   .heroContainer {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+    gap: 1rem;
+    text-align: center !important;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
   }
 
   .heroContent {
-    text-align: center;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   .heroLogoImage {
     max-width: 300px;
+    order: 1;
+    margin-top: -30px !important;
+    margin-bottom: -20px !important;
   }
 
   .heroTitle {
     font-size: 2rem;
+    order: 2;
+    position: relative;
+  }
+
+  .heroTitle::after {
+    content: '';
+    display: block;
+    width: 95%;
+    height: 350px;
+    max-width: 450px;
+    margin: 0.75rem auto;
+    background-image: url('/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    order: 3;
   }
 
   .heroSubtitle {
     font-size: 1.1rem;
+    order: 4;
   }
 
   .heroActions {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    order: 5;
   }
 
   .ctaPrimary,
@@ -507,32 +552,45 @@
     text-align: center;
   }
 
+  .heroImageContainer {
+    display: none;
+  }
+
+  .heroImage {
+    width: 80%;
+    height: auto;
+    max-width: 300px;
+  }
+
   .aboutContent {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+    gap: 1rem;
+    text-align: center !important;
   }
 
   .aboutTextSection {
-    text-align: center;
+    text-align: center !important;
+    padding-left: 0 !important;
   }
 
   .sectionTitle {
     font-size: 1.5rem;
+    text-align: center !important;
   }
 
   .aboutText {
     font-size: 1rem;
+    text-align: center !important;
   }
 
   .testimonialsGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .blogGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .finalCTATitle {
@@ -542,15 +600,29 @@
   .finalCTAText {
     font-size: 1rem;
   }
+  
+  /* Diminui espaçamento das seções no responsivo */
+  .hero {
+    padding: 1.5rem 0;
+  }
+  
+  .about,
+  .testimonials,
+  .blog,
+  .finalCTA {
+    padding: 2.5rem 0;
+  }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
 
   .heroLogoImage {
     max-width: 250px;
+    margin-top: -25px !important;
+    margin-bottom: -15px !important;
   }
 
   .heroTitle {
@@ -565,11 +637,12 @@
   .testimonials,
   .blog,
   .finalCTA {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 
   .sectionTitle {
     font-size: 1.3rem;
+    text-align: center !important;
   }
 
   .testimonial,

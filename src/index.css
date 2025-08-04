@@ -72,3 +72,41 @@ button:focus-visible {
 * {
   box-sizing: border-box;
 }
+
+/* Centralização responsiva para todas as páginas */
+@media (max-width: 768px) {
+  /* Centralização com maior especificidade para sobrescrever regras existentes */
+  .container,
+  .heroContent,
+  .aboutTextSection,
+  .testimonialsGrid,
+  .blogGrid,
+  .sectionPadded .container,
+  .narrowContent {
+    text-align: center !important;
+  }
+  
+  /* Centraliza todos os elementos de texto com maior especificidade */
+  h1, h2, h3, h4, h5, h6, p,
+  .heroTitle, .heroSubtitle, .sectionTitle, .paragraph,
+  .cardTitle, .cardDescription, .listItemTitle, .listItemDescription,
+  .testimonialText, .aboutText, .footerDescription {
+    text-align: center !important;
+  }
+  
+  /* Centraliza botões e links */
+  button, a, .ctaPrimary, .ctaSecondary, .buttonPrimary, .buttonSecondary {
+    text-align: center !important;
+  }
+  
+  /* Centraliza grids e flex containers */
+  .grid, .flex, .heroContainer, .aboutContent, .testimonialsGrid, .blogGrid {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Centraliza elementos específicos que podem ter alinhamento à esquerda */
+  .navLink {
+    text-align: center !important;
+  }
+}
