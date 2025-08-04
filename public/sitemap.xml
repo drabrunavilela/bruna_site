@@ -10,7 +10,7 @@
     <loc>https://drabrunavilela.com.br/sobre</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://drabrunavilela.com.br/servicos</loc>
@@ -59,6 +59,36 @@
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drabrunavilela.com.br/blog/tdah-alem-dos-rotulos</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drabrunavilela.com.br/blog/autismo-diagnostico-precoce</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drabrunavilela.com.br/blog/epilepsia-infantil</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drabrunavilela.com.br/blog/desenvolvimento-infantil-marcos</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drabrunavilela.com.br/blog/atrasos-desenvolvimento-quando-procurar-ajuda</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://drabrunavilela.com.br/glossario</loc>

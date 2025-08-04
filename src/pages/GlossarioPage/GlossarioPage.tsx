@@ -143,32 +143,18 @@ const GlossarioPage: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Termo Neuroplasticidade */}
-                <div className={styles.glossaryTerm} id="Neuroplasticidade">
-                  <h3 className={styles.termTitle}>Neuroplasticidade</h3>
+                {/* Termo TEA */}
+                <div className={styles.glossaryTerm} id="TEA">
+                  <h3 className={styles.termTitle}>TEA</h3>
+                  <p className={styles.termSubtitle}><em>Transtorno do Espectro Autista</em></p>
                   <p className={styles.termDefinition}>
-                    <strong>Definição:</strong> Capacidade do cérebro de mudar, adaptar-se e se reorganizar ao longo da vida em resposta a novas experiências, aprendizado, lesões ou doenças. É a base para a reabilitação neurológica e o desenvolvimento de novas habilidades.
+                    <strong>Definição:</strong> Condição do neurodesenvolvimento caracterizada por diferenças na comunicação social e padrões restritos e repetitivos de comportamento, interesses ou atividades. O termo "espectro" indica a grande variabilidade na apresentação dos sintomas.
                   </p>
                   <p className={styles.termContext}>
-                    <strong>Contexto:</strong> A plasticidade cerebral é mais intensa na infância, o que ressalta a importância de intervenções precoces e estimulação adequada para o desenvolvimento neurológico.
+                    <strong>Contexto:</strong> O diagnóstico precoce é fundamental para intervenções eficazes. Cada pessoa com TEA é única, com necessidades e potencialidades específicas.
                   </p>
                   <p className={styles.termSeeAlso}>
-                    <strong>Ver Também:</strong> <Link to="#DesenvolvimentoInfantil">Desenvolvimento Infantil</Link>, <Link to="#IntervencaoPrecoce">Intervenção Precoce</Link>
-                  </p>
-                </div>
-
-                {/* Termo Autismo */}
-                <div className={styles.glossaryTerm} id="Autismo">
-                  <h3 className={styles.termTitle}>Autismo</h3>
-                  <p className={styles.termSubtitle}><em>Transtorno do Espectro Autista (TEA)</em></p>
-                  <p className={styles.termDefinition}>
-                    <strong>Definição:</strong> Condição do neurodesenvolvimento caracterizada por desafios na comunicação social e interação, além de padrões restritos e repetitivos de comportamento, interesses ou atividades.
-                  </p>
-                  <p className={styles.termContext}>
-                    <strong>Contexto:</strong> O autismo é um espectro, o que significa que cada pessoa apresenta características únicas. O diagnóstico precoce e intervenções adequadas são fundamentais para o desenvolvimento.
-                  </p>
-                  <p className={styles.termSeeAlso}>
-                    <strong>Ver Também:</strong> <Link to="#Neurodesenvolvimento">Neurodesenvolvimento</Link>, <Link to="#ComunicacaoSocial">Comunicação Social</Link>
+                    <strong>Ver Também:</strong> <Link to="#Neurodesenvolvimento">Neurodesenvolvimento</Link>, <Link to="#IntervencaoPrecoce">Intervenção Precoce</Link>
                   </p>
                 </div>
 
@@ -176,27 +162,140 @@ const GlossarioPage: React.FC = () => {
                 <div className={styles.glossaryTerm} id="Epilepsia">
                   <h3 className={styles.termTitle}>Epilepsia</h3>
                   <p className={styles.termDefinition}>
-                    <strong>Definição:</strong> Condição neurológica crônica caracterizada por crises epilépticas recorrentes e não provocadas, resultantes de atividade elétrica anormal no cérebro.
+                    <strong>Definição:</strong> Condição neurológica caracterizada por crises epilépticas recorrentes e não provocadas. Uma crise epiléptica é uma descarga elétrica anormal e excessiva no cérebro.
                   </p>
                   <p className={styles.termContext}>
-                    <strong>Contexto:</strong> A epilepsia pode ter diversas causas e manifestações. O tratamento visa controlar as crises e melhorar a qualidade de vida, podendo incluir medicação, dieta especial ou cirurgia.
+                    <strong>Contexto:</strong> A epilepsia é uma das condições neurológicas mais comuns na infância. O tratamento visa controlar as crises e garantir qualidade de vida.
                   </p>
                   <p className={styles.termSeeAlso}>
-                    <strong>Ver Também:</strong> <Link to="#CriseEpileptica">Crise Epiléptica</Link>, <Link to="#EEG">EEG</Link>
+                    <strong>Ver Também:</strong> <Link to="#CrisesEpilepticas">Crises Epilépticas</Link>, <Link to="#EEG">EEG</Link>
                   </p>
                 </div>
 
-                {/* Termo Atraso de Desenvolvimento */}
-                <div className={styles.glossaryTerm} id="AtrasoDesenvolvimento">
-                  <h3 className={styles.termTitle}>Atraso de Desenvolvimento</h3>
+                {/* Termo Neurodesenvolvimento */}
+                <div className={styles.glossaryTerm} id="Neurodesenvolvimento">
+                  <h3 className={styles.termTitle}>Neurodesenvolvimento</h3>
                   <p className={styles.termDefinition}>
-                    <strong>Definição:</strong> Condição em que uma criança não atinge os marcos de desenvolvimento esperados para sua idade em uma ou mais áreas (motor, linguagem, cognitivo, social).
+                    <strong>Definição:</strong> Processo de maturação e desenvolvimento do sistema nervoso, incluindo o crescimento do cérebro, formação de conexões neurais e aquisição de habilidades motoras, cognitivas, linguísticas e sociais.
                   </p>
                   <p className={styles.termContext}>
-                    <strong>Contexto:</strong> A identificação precoce é crucial, pois permite intervenções que podem melhorar significativamente o prognóstico. Cada criança tem seu ritmo, mas atrasos significativos merecem atenção.
+                    <strong>Contexto:</strong> O neurodesenvolvimento segue uma sequência previsível, mas cada criança tem seu ritmo individual. A identificação de atrasos permite intervenções precoces.
                   </p>
                   <p className={styles.termSeeAlso}>
-                    <strong>Ver Também:</strong> <Link to="#MarcosDesenvolvimento">Marcos de Desenvolvimento</Link>, <Link to="#IntervencaoPrecoce">Intervenção Precoce</Link>
+                    <strong>Ver Também:</strong> <Link to="#MarcosDesenvolvimento">Marcos do Desenvolvimento</Link>, <Link to="#AtrasosDesenvolvimento">Atrasos no Desenvolvimento</Link>
+                  </p>
+                </div>
+
+                {/* Termo Função Executiva */}
+                <div className={styles.glossaryTerm} id="FuncaoExecutiva">
+                  <h3 className={styles.termTitle}>Função Executiva</h3>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Conjunto de habilidades cognitivas que permitem planejar, organizar, iniciar e completar tarefas, controlar impulsos e adaptar-se a mudanças. Inclui atenção, memória de trabalho, flexibilidade cognitiva e controle inibitório.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> As funções executivas são fundamentais para o aprendizado e comportamento. Dificuldades nessas habilidades são comuns no TDAH.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#TDAH">TDAH</Link>, <Link to="#Atencao">Atenção</Link>
+                  </p>
+                </div>
+
+                {/* Termo Intervenção Precoce */}
+                <div className={styles.glossaryTerm} id="IntervencaoPrecoce">
+                  <h3 className={styles.termTitle}>Intervenção Precoce</h3>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Abordagem terapêutica iniciada nos primeiros anos de vida para crianças com atrasos no desenvolvimento ou condições neurodesenvolvimentais. Quanto mais cedo iniciada, melhores os resultados.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> A intervenção precoce aproveita a neuroplasticidade cerebral dos primeiros anos, maximizando o potencial de desenvolvimento da criança.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#Neuroplasticidade">Neuroplasticidade</Link>, <Link to="#TEA">TEA</Link>
+                  </p>
+                </div>
+
+                {/* Termo Neuroplasticidade */}
+                <div className={styles.glossaryTerm} id="Neuroplasticidade">
+                  <h3 className={styles.termTitle}>Neuroplasticidade</h3>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Capacidade do cérebro de se adaptar e reorganizar, formando novas conexões neurais em resposta a experiências, aprendizado ou lesões. É mais intensa nos primeiros anos de vida.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> A neuroplasticidade é a base científica das intervenções precoces. Permite que o cérebro se adapte e aprenda novas habilidades.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#IntervencaoPrecoce">Intervenção Precoce</Link>, <Link to="#Neurodesenvolvimento">Neurodesenvolvimento</Link>
+                  </p>
+                </div>
+
+                {/* Termo Marcos do Desenvolvimento */}
+                <div className={styles.glossaryTerm} id="MarcosDesenvolvimento">
+                  <h3 className={styles.termTitle}>Marcos do Desenvolvimento</h3>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Habilidades específicas que a maioria das crianças adquire em determinadas idades. Incluem marcos motores, linguísticos, cognitivos e sociais.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> Os marcos servem como guias para monitorar o desenvolvimento. Variações individuais são normais, mas atrasos significativos merecem avaliação.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#Neurodesenvolvimento">Neurodesenvolvimento</Link>, <Link to="#AtrasosDesenvolvimento">Atrasos no Desenvolvimento</Link>
+                  </p>
+                </div>
+
+                {/* Termo Atrasos no Desenvolvimento */}
+                <div className={styles.glossaryTerm} id="AtrasosDesenvolvimento">
+                  <h3 className={styles.termTitle}>Atrasos no Desenvolvimento</h3>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Quando uma criança não atinge os marcos do desenvolvimento esperados para sua idade. Pode afetar uma ou múltiplas áreas: motor, linguagem, cognitivo, social.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> Atrasos podem ser temporários ou indicar condições específicas. A avaliação especializada é essencial para identificar causas e planejar intervenções.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#MarcosDesenvolvimento">Marcos do Desenvolvimento</Link>, <Link to="#IntervencaoPrecoce">Intervenção Precoce</Link>
+                  </p>
+                </div>
+
+                {/* Termo EEG */}
+                <div className={styles.glossaryTerm} id="EEG">
+                  <h3 className={styles.termTitle}>EEG</h3>
+                  <p className={styles.termSubtitle}><em>Eletroencefalograma</em></p>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Exame que registra a atividade elétrica do cérebro através de eletrodos colocados no couro cabeludo. Fundamental para diagnosticar epilepsia e outras condições neurológicas.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> O EEG pode identificar padrões anormais de atividade cerebral, auxiliando no diagnóstico de epilepsia e outras condições neurológicas.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#Epilepsia">Epilepsia</Link>, <Link to="#CrisesEpilepticas">Crises Epilépticas</Link>
+                  </p>
+                </div>
+
+                {/* Termo Crises Epilépticas */}
+                <div className={styles.glossaryTerm} id="CrisesEpilepticas">
+                  <h3 className={styles.termTitle}>Crises Epilépticas</h3>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Episódios transitórios de sinais e/ou sintomas devido a atividade elétrica anormal e excessiva no cérebro. Podem manifestar-se de diversas formas.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> Nem todas as crises envolvem convulsões visíveis. Podem incluir ausências, movimentos involuntários ou sensações estranhas.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#Epilepsia">Epilepsia</Link>, <Link to="#EEG">EEG</Link>
+                  </p>
+                </div>
+
+                {/* Termo Atenção */}
+                <div className={styles.glossaryTerm} id="Atencao">
+                  <h3 className={styles.termTitle}>Atenção</h3>
+                  <p className={styles.termDefinition}>
+                    <strong>Definição:</strong> Capacidade de focar e manter o foco em uma tarefa ou estímulo específico, ignorando distrações. É fundamental para o aprendizado e funcionamento diário.
+                  </p>
+                  <p className={styles.termContext}>
+                    <strong>Contexto:</strong> Dificuldades de atenção são centrais no TDAH, mas também podem ocorrer em outras condições ou como parte do desenvolvimento normal.
+                  </p>
+                  <p className={styles.termSeeAlso}>
+                    <strong>Ver Também:</strong> <Link to="#TDAH">TDAH</Link>, <Link to="#FuncaoExecutiva">Função Executiva</Link>
                   </p>
                 </div>
               </div>

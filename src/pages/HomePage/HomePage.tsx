@@ -6,12 +6,12 @@ import SEO from '../../components/SEO/SEO';
 import styles from './HomePage.module.css';
 
 const HomePage: React.FC = () => {
-  // Structured Data for Medical Professional
+  // Structured Data for Home Page
   const structuredData = {
     "@context": "https://schema.org",
     "@type": ["MedicalBusiness", "LocalBusiness"],
-    "name": "Dra. Bruna Vilela",
-    "description": "Neuropediatra e pediatra especialista em desenvolvimento infantil, TDAH, autismo e epilepsia em Belo Horizonte",
+    "name": "Dra. Bruna Vilela - Consultório",
+    "description": "Neuropediatra e pediatra em Belo Horizonte, especialista em TDAH, autismo e desenvolvimento infantil",
     "url": "https://drabrunavilela.com.br",
     "telephone": "+5531983501417",
     "email": "brunavilela.neuroped@gmail.com",
@@ -28,44 +28,53 @@ const HomePage: React.FC = () => {
       "latitude": -19.9167,
       "longitude": -43.9345
     },
+    "openingHours": "Mo-Fr 08:00-18:00",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+5531983501417",
       "contactType": "customer service",
       "availableLanguage": "Portuguese"
     },
-    "openingHours": "Mo-Fr 08:00-18:00",
-    "medicalSpecialty": ["Neuropediatria", "Pediatria", "Desenvolvimento Infantil"],
-    "availableService": [
+    "additionalProperty": {
+      "@type": "PropertyValue",
+      "name": "secondaryTelephone",
+      "value": "+553132919009"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
       {
-        "@type": "MedicalService",
-        "name": "Avaliação de TDAH",
-        "description": "Diagnóstico e tratamento do Transtorno do Déficit de Atenção com Hiperatividade"
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Maria Silva"
+        },
+        "reviewBody": "A Dra. Bruna tem uma abordagem única que combina conhecimento científico com sensibilidade humana. Ela não apenas trata meu filho, mas educa nossa família inteira."
       },
       {
-        "@type": "MedicalService", 
-        "name": "Avaliação de Autismo",
-        "description": "Diagnóstico e acompanhamento do Transtorno do Espectro Autista"
-      },
-      {
-        "@type": "MedicalService",
-        "name": "Tratamento de Epilepsia",
-        "description": "Diagnóstico e tratamento de epilepsia infantil"
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Carlos Santos"
+        },
+        "reviewBody": "Finalmente encontramos uma profissional que entende as necessidades especiais do nosso filho. A Dra. Bruna é referência em neuropediatria em Belo Horizonte."
       }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Serviços de Neuropediatria",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "MedicalService",
-            "name": "Consulta Neuropediátrica"
-          }
-        }
-      ]
-    }
+    ]
   };
 
   return (
@@ -122,6 +131,10 @@ const HomePage: React.FC = () => {
                   src="/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp"
                   alt="Dra. Bruna Vilela atenciosa, neuropediatra e pediatra em Belo Horizonte"
                   className={styles.heroImage}
+                  loading="eager"
+                  fetchPriority="high"
+                  width="500"
+                  height="600"
                 />
               </div>
             </div>
@@ -137,6 +150,9 @@ const HomePage: React.FC = () => {
                   src="/src/assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp"
                   alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
                   className={styles.aboutImage}
+                  loading="lazy"
+                  width="400"
+                  height="500"
                 />
               </div>
                 

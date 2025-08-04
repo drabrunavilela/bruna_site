@@ -120,6 +120,10 @@ const SobrePage: React.FC = () => {
                 src="/src/assets/images/bruna/dra-bruna-vilela-profissional-07.webp"
                 alt="Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte"
                 className={styles.heroImage}
+                loading="eager"
+                fetchPriority="high"
+                width="500"
+                height="600"
               />
             </div>
           </div>

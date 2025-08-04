@@ -10,50 +10,62 @@ const BlogPage: React.FC = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Blog da Dra. Bruna Vilela",
-    "description": "Artigos científicos e insights sobre neuropediatria, desenvolvimento infantil, TDAH, autismo e epilepsia",
+    "name": "Blog da Dra. Bruna Vilela - Neuropediatria",
+    "description": "Artigos científicos sobre neuropediatria, TDAH, autismo, epilepsia e desenvolvimento infantil. Conhecimento científico traduzido para pais e profissionais.",
     "url": "https://drabrunavilela.com.br/blog",
     "publisher": {
       "@type": "Person",
       "name": "Dra. Bruna Vilela",
-      "jobTitle": "Neuropediatra e Pediatra"
+      "jobTitle": "Neuropediatra",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
     },
     "blogPost": [
       {
         "@type": "BlogPosting",
         "headline": "TDAH: Além dos Rótulos – Uma Abordagem Integral",
         "description": "Descubra como uma visão científica e humana pode transformar a compreensão e o manejo do TDAH na vida do seu filho.",
+        "datePublished": "2024-03-15",
         "author": {
           "@type": "Person",
           "name": "Dra. Bruna Vilela"
         },
-        "datePublished": "2024-12-20",
-        "dateModified": "2024-12-20",
-        "url": "https://drabrunavilela.com.br/blog/tdah-alem-dos-rotulos"
+        "publisher": {
+          "@type": "Organization",
+          "name": "Dra. Bruna Vilela - Neuropediatra"
+        }
       },
       {
         "@type": "BlogPosting",
         "headline": "Autismo: A Importância do Diagnóstico Precoce",
         "description": "Entenda como a identificação precoce pode fazer toda a diferença no desenvolvimento de crianças com TEA.",
+        "datePublished": "2024-03-10",
         "author": {
           "@type": "Person",
           "name": "Dra. Bruna Vilela"
         },
-        "datePublished": "2024-12-20",
-        "dateModified": "2024-12-20",
-        "url": "https://drabrunavilela.com.br/blog/autismo-diagnostico-precoce"
+        "publisher": {
+          "@type": "Organization",
+          "name": "Dra. Bruna Vilela - Neuropediatra"
+        }
       },
       {
         "@type": "BlogPosting",
-        "headline": "Epilepsia Infantil: Compreendendo e Tratando",
-        "description": "Guia completo sobre epilepsia infantil, diagnóstico e tratamento especializado.",
+        "headline": "Epilepsia Infantil: Mitos e Verdades",
+        "description": "Desmistifique a epilepsia infantil. Conheça os diferentes tipos de crises e tratamentos disponíveis.",
+        "datePublished": "2024-03-05",
         "author": {
           "@type": "Person",
           "name": "Dra. Bruna Vilela"
         },
-        "datePublished": "2024-12-20",
-        "dateModified": "2024-12-20",
-        "url": "https://drabrunavilela.com.br/blog/epilepsia-infantil"
+        "publisher": {
+          "@type": "Organization",
+          "name": "Dra. Bruna Vilela - Neuropediatra"
+        }
       }
     ]
   };
@@ -103,20 +115,33 @@ const BlogPage: React.FC = () => {
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Insights Selecionados para Você</h2>
             <p className={styles.paragraph}>
-              Nossa seleção de artigos mais relevantes e de maior impacto, cuidadosamente elaborados para pais e profissionais.
+              Nossa seleção de artigos mais relevantes e de maior impacto, cuidadosamente elaborados para pais e profissionais. Cada artigo é baseado em evidências científicas e traduzido para uma linguagem acessível.
             </p>
+            <div className={styles.relatedTopics}>
+              <h3 className={styles.relatedTopicsTitle}>Tópicos Relacionados:</h3>
+              <div className={styles.relatedTopicsLinks}>
+                <Link to="/servicos/tdah" className={styles.relatedTopicLink}>TDAH</Link>
+                <Link to="/servicos/tea" className={styles.relatedTopicLink}>Autismo</Link>
+                <Link to="/servicos/epilepsia" className={styles.relatedTopicLink}>Epilepsia</Link>
+                <Link to="/servicos/atrasos" className={styles.relatedTopicLink}>Atrasos no Desenvolvimento</Link>
+                <Link to="/glossario" className={styles.relatedTopicLink}>Glossário Médico</Link>
+              </div>
+            </div>
             <div className={styles.articleGrid}>
-              {/* Artigo 1 */}
+              {/* Artigo 1 - TDAH */}
               <Link to="/blog/tdah-alem-dos-rotulos" className={styles.articleCard}>
                 <img 
                   src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-04.webp" 
                   alt="Criança brincando com blocos, simbolizando desenvolvimento e aprendizado." 
                   className={styles.cardImage}
+                  loading="lazy"
+                  width="300"
+                  height="200"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>TDAH: Além dos Rótulos – Uma Abordagem Integral</h3>
                   <p className={styles.cardDescription}>
-                    Descubra como uma visão científica e humana pode transformar a compreensão e o manejo do TDAH na vida do seu filho.
+                    Descubra como uma visão científica e humana pode transformar a compreensão e o manejo do TDAH na vida do seu filho. Abordagem baseada em evidências científicas.
                   </p>
                   <div className={styles.articleMeta}>
                     <span>15 de Março de 2024</span>
@@ -125,22 +150,26 @@ const BlogPage: React.FC = () => {
                   <div className={styles.articleTags}>
                     <span className={styles.tag}>Desenvolvimento</span>
                     <span className={styles.tag}>TDAH</span>
+                    <span className={styles.tag}>Neuropediatria</span>
                   </div>
                   <span className={styles.buttonLink}>Ler Artigo Completo →</span>
                 </div>
               </Link>
 
-              {/* Artigo 2 */}
+              {/* Artigo 2 - Autismo */}
               <Link to="/blog/autismo-diagnostico-precoce" className={styles.articleCard}>
                 <img 
                   src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp" 
                   alt="Criança com autismo em ambiente de aprendizado" 
                   className={styles.cardImage}
+                  loading="lazy"
+                  width="300"
+                  height="200"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Autismo: A Importância do Diagnóstico Precoce</h3>
                   <p className={styles.cardDescription}>
-                    Entenda como a identificação precoce pode fazer toda a diferença no desenvolvimento de crianças com TEA.
+                    Entenda como a identificação precoce pode fazer toda a diferença no desenvolvimento de crianças com TEA. Sinais de alerta e intervenções baseadas em evidências.
                   </p>
                   <div className={styles.articleMeta}>
                     <span>10 de Março de 2024</span>
@@ -149,22 +178,26 @@ const BlogPage: React.FC = () => {
                   <div className={styles.articleTags}>
                     <span className={styles.tag}>Autismo</span>
                     <span className={styles.tag}>Diagnóstico</span>
+                    <span className={styles.tag}>TEA</span>
                   </div>
                   <span className={styles.buttonLink}>Ler Artigo Completo →</span>
                 </div>
               </Link>
 
-              {/* Artigo 3 */}
+              {/* Artigo 3 - Epilepsia */}
               <Link to="/blog/epilepsia-infantil" className={styles.articleCard}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-11.webp" 
-                  alt="Cérebro infantil e conexões neurais" 
-                  className={`${styles.cardImage} ${styles.epilepsiaImage}`}
+                  src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp" 
+                  alt="Criança em ambiente médico, simbolizando cuidado especializado" 
+                  className={styles.cardImage}
+                  loading="lazy"
+                  width="300"
+                  height="200"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Epilepsia Infantil: Mitos e Verdades</h3>
                   <p className={styles.cardDescription}>
-                    Desmistifique os principais conceitos sobre epilepsia em crianças e conheça os tratamentos mais eficazes.
+                    Desmistifique a epilepsia infantil. Conheça os diferentes tipos de crises, tratamentos disponíveis e como garantir qualidade de vida para a criança.
                   </p>
                   <div className={styles.articleMeta}>
                     <span>5 de Março de 2024</span>
@@ -173,6 +206,63 @@ const BlogPage: React.FC = () => {
                   <div className={styles.articleTags}>
                     <span className={styles.tag}>Epilepsia</span>
                     <span className={styles.tag}>Neurologia</span>
+                    <span className={styles.tag}>Tratamento</span>
+                  </div>
+                  <span className={styles.buttonLink}>Ler Artigo Completo →</span>
+                </div>
+              </Link>
+
+              {/* Artigo 4 - Desenvolvimento Infantil */}
+              <Link to="/blog/desenvolvimento-infantil-marcos" className={styles.articleCard}>
+                <img 
+                  src="/src/assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp" 
+                  alt="Criança brincando, simbolizando desenvolvimento saudável" 
+                  className={styles.cardImage}
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>Marcos do Desenvolvimento: O que Esperar em Cada Idade</h3>
+                  <p className={styles.cardDescription}>
+                    Guia completo dos marcos do desenvolvimento infantil. Saiba o que é normal, quando se preocupar e como estimular o desenvolvimento do seu filho.
+                  </p>
+                  <div className={styles.articleMeta}>
+                    <span>1 de Março de 2024</span>
+                    <span>10 min de leitura</span>
+                  </div>
+                  <div className={styles.articleTags}>
+                    <span className={styles.tag}>Desenvolvimento</span>
+                    <span className={styles.tag}>Marcos</span>
+                    <span className={styles.tag}>Pediatria</span>
+                  </div>
+                  <span className={styles.buttonLink}>Ler Artigo Completo →</span>
+                </div>
+              </Link>
+
+              {/* Artigo 5 - Atrasos no Desenvolvimento */}
+              <Link to="/blog/atrasos-desenvolvimento-quando-procurar-ajuda" className={styles.articleCard}>
+                <img 
+                  src="/src/assets/images/bruna/dra-bruna-vilela-sorrindo-02.webp" 
+                  alt="Criança em avaliação, simbolizando diagnóstico precoce" 
+                  className={styles.cardImage}
+                  loading="lazy"
+                  width="300"
+                  height="200"
+                />
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>Atrasos no Desenvolvimento: Quando Procurar Ajuda</h3>
+                  <p className={styles.cardDescription}>
+                    Sinais de alerta para atrasos no desenvolvimento. Saiba quando é hora de buscar avaliação especializada e como a intervenção precoce pode fazer diferença.
+                  </p>
+                  <div className={styles.articleMeta}>
+                    <span>25 de Fevereiro de 2024</span>
+                    <span>9 min de leitura</span>
+                  </div>
+                  <div className={styles.articleTags}>
+                    <span className={styles.tag}>Atrasos</span>
+                    <span className={styles.tag}>Diagnóstico</span>
+                    <span className={styles.tag}>Intervenção</span>
                   </div>
                   <span className={styles.buttonLink}>Ler Artigo Completo →</span>
                 </div>

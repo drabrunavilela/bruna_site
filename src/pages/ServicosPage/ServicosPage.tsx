@@ -10,41 +10,84 @@ const ServicosPage: React.FC = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    "name": "Dra. Bruna Vilela - Serviços de Neuropediatria",
-    "description": "Especialista em neuropediatria oferecendo serviços de diagnóstico e tratamento para TDAH, autismo, epilepsia e desenvolvimento infantil",
+    "name": "Dra. Bruna Vilela - Consultório de Neuropediatria",
+    "description": "Especialista em neuropediatria em Belo Horizonte. Serviços especializados em TDAH, autismo, epilepsia e desenvolvimento infantil.",
     "url": "https://drabrunavilela.com.br/servicos",
-    "availableService": [
-      {
-        "@type": "MedicalService",
-        "name": "Avaliação e Tratamento de TDAH",
-        "description": "Diagnóstico e tratamento do Transtorno do Déficit de Atenção com Hiperatividade"
-      },
-      {
-        "@type": "MedicalService",
-        "name": "Avaliação e Acompanhamento de Autismo",
-        "description": "Diagnóstico e acompanhamento do Transtorno do Espectro Autista"
-      },
-      {
-        "@type": "MedicalService",
-        "name": "Tratamento de Epilepsia Infantil",
-        "description": "Diagnóstico e tratamento de epilepsia em crianças"
-      },
-      {
-        "@type": "MedicalService",
-        "name": "Avaliação de Atrasos no Neurodesenvolvimento",
-        "description": "Avaliação e intervenção em atrasos de desenvolvimento"
-      },
-      {
-        "@type": "MedicalService",
-        "name": "Tratamento de Cefaleias e Enxaquecas",
-        "description": "Diagnóstico e tratamento de dores de cabeça em crianças"
-      },
-      {
-        "@type": "MedicalService",
-        "name": "Segunda Opinião em Neuropediatria",
-        "description": "Análise aprofundada de casos complexos"
-      }
-    ]
+    "telephone": "+5531983501417",
+    "email": "brunavilela.neuroped@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
+      "addressLocality": "Belo Horizonte",
+      "addressRegion": "MG",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -19.9167,
+      "longitude": -43.9345
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5531983501417",
+      "contactType": "customer service",
+      "availableLanguage": "Portuguese"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Neuropediatria",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalService",
+            "name": "Diagnóstico e Tratamento de TDAH",
+            "description": "Avaliação completa e tratamento personalizado para Transtorno do Déficit de Atenção com Hiperatividade"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalService",
+            "name": "Diagnóstico e Intervenção em TEA",
+            "description": "Diagnóstico precoce e intervenções baseadas em evidências para Transtorno do Espectro Autista"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalService",
+            "name": "Tratamento de Epilepsia Infantil",
+            "description": "Diagnóstico preciso e tratamento personalizado para diferentes tipos de crises epilépticas"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalService",
+            "name": "Avaliação de Atrasos no Desenvolvimento",
+            "description": "Avaliação completa e intervenção precoce para atrasos no neurodesenvolvimento"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalService",
+            "name": "Tratamento de Cefaleias Infantis",
+            "description": "Diagnóstico e tratamento para dores de cabeça e enxaquecas na infância"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MedicalService",
+            "name": "Segunda Opinião em Neuropediatria",
+            "description": "Análise especializada de diagnósticos e planos de tratamento existentes"
+          }
+        }
+      ]
+    }
   };
 
   return (
