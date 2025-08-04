@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
+import whatsappIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png';
+import instagramIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png';
+import doctoraliaIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -28,6 +31,38 @@ const Footer: React.FC = () => {
               Especialista em neuropediatria e pediatria com abordagem científica e humanizada. 
               Referência em Belo Horizonte para o cuidado integral da criança.
             </p>
+            
+            <div className={styles.footerSocialIcons}>
+              <a 
+                href="https://wa.me/5531983501417" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.footerSocialIcon}
+                aria-label="WhatsApp"
+              >
+                <img src={whatsappIcon} alt="WhatsApp" />
+              </a>
+              
+              <a 
+                href="https://www.instagram.com/brunavilela.neuroped/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.footerSocialIcon}
+                aria-label="Instagram"
+              >
+                <img src={instagramIcon} alt="Instagram" />
+              </a>
+              
+              <a 
+                href="https://www.doctoralia.com.br/bruna-vilela-2/neurologista-pediatrico-pediatra/belo-horizonte" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.footerSocialIcon}
+                aria-label="Doctoralia"
+              >
+                <img src={doctoraliaIcon} alt="Doctoralia" />
+              </a>
+            </div>
           </div>
 
           {/* Links Rápidos */}

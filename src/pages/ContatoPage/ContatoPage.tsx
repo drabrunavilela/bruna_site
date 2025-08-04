@@ -75,7 +75,7 @@ const ContatoPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp"
+                src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp"
                 alt="Dra. Bruna Vilela em consultório, demonstrando cuidado e atenção"
                 className={styles.heroImage}
               />
@@ -224,26 +224,41 @@ const ContatoPage: React.FC = () => {
                   rel="noopener noreferrer"
                   className={styles.socialIconLink}
                 >
-                  <span className={styles.socialIcon}>📷</span>
+                  <img 
+                    src="/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png" 
+                    alt="Instagram" 
+                    className={styles.socialIcon}
+                  />
                   <span>Instagram</span>
                 </a>
                 <a 
-                  href="https://facebook.com/brunavilela.neuroped" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="#" 
                   className={styles.socialIconLink}
+                  style={{ opacity: 0.6, pointerEvents: 'none' }}
+                  title="Página em breve - esta semana"
                 >
-                  <span className={styles.socialIcon}>📘</span>
+                  <img 
+                    src="/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Facebook.png" 
+                    alt="Facebook" 
+                    className={styles.socialIcon}
+                  />
                   <span>Facebook</span>
+                  <small style={{ fontSize: '0.75rem', color: '#666', marginTop: '0.25rem' }}>
+                    Em breve
+                  </small>
                 </a>
                 <a 
-                  href="https://linkedin.com/in/bruna-vilela" 
+                  href="https://www.doctoralia.com.br/bruna-vilela-2/neurologista-pediatrico-pediatra/belo-horizonte" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={styles.socialIconLink}
                 >
-                  <span className={styles.socialIcon}>💼</span>
-                  <span>LinkedIn</span>
+                  <img 
+                    src="/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png" 
+                    alt="Doctoralia" 
+                    className={styles.socialIcon}
+                  />
+                  <span>Doctoralia</span>
                 </a>
               </div>
             </div>

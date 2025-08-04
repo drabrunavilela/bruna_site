@@ -2,11 +2,44 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 import styles from './EpilepsiaPage.module.css';
 
 const EpilepsiaPage: React.FC = () => {
+  // Structured Data for Epilepsy Service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalService",
+    "name": "Diagnóstico e Tratamento de Epilepsia Infantil - Dra. Bruna Vilela",
+    "description": "Especialista em epilepsia infantil em Belo Horizonte. Diagnóstico preciso e tratamento personalizado para diferentes tipos de crises epilépticas.",
+    "provider": {
+      "@type": "Physician",
+      "name": "Dra. Bruna Vilela",
+      "medicalSpecialty": "Neuropediatria",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Belo Horizonte"
+    },
+    "serviceType": "Diagnóstico e Tratamento de Epilepsia Infantil"
+  };
+
   return (
     <>
+      <SEO 
+        title="Epilepsia Infantil - Diagnóstico e Tratamento | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
+        description="Especialista em epilepsia infantil em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento personalizado para diferentes tipos de crises epilépticas."
+        keywords="epilepsia infantil, crises epilépticas, neuropediatra epilepsia belo horizonte, diagnóstico epilepsia, tratamento epilepsia, crises convulsivas, síndromes epilépticas"
+        canonical="/servicos/epilepsia"
+        structuredData={structuredData}
+      />
       <Header />
       
       <main className={styles.main}>

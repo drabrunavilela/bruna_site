@@ -12,9 +12,9 @@ import "slick-carousel/slick/slick-theme.css";
 const SobrePage: React.FC = () => {
   // Dados das Imagens para o Carrossel
   const carouselImages = [
-    { src: '/src/assets/images/bruna/dra-bruna-vilela-clinica-01.webp', alt: 'Dra. Bruna Vilela no consultório' },
-    { src: '/src/assets/images/bruna/dra-bruna-vilela-clinica-02.webp', alt: 'Dra. Bruna Vilela atendendo uma criança' },
-    { src: '/src/assets/images/bruna/dra-bruna-vilela-clinica-03.webp', alt: 'Dra. Bruna Vilela em ambiente profissional' },
+    { src: '/src/assets/images/bruna/dra-bruna-vilela-atenciosa-06.webp', alt: 'Dra. Bruna Vilela atenciosa no consultório' },
+    { src: '/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp', alt: 'Dra. Bruna Vilela em ambiente profissional' },
+    { src: '/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp', alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
   ];
 
   // Configurações do Carrossel

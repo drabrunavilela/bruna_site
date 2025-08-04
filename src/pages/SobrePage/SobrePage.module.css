@@ -167,6 +167,10 @@
 /* 3. Seção de Destaque */
 .sectionSoftHighlight {
   background-color: rgba(167, 208, 241, 0.5);
+  border-radius: 16px;
+  margin: 2rem 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* 4. Seção de Depoimentos */
@@ -225,6 +229,7 @@
   background: var(--color-primary);
   color: var(--color-white);
   padding: 3rem 0;
+  border-radius: var(--border-radius);
 }
 
 .textCenter {
@@ -308,6 +313,12 @@
     grid-template-columns: 1fr;
   }
 
+  .sectionSoftHighlight {
+    margin: 1rem 0.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
   .sectionTitleCta {
     font-size: 1.875rem;
   }
@@ -341,6 +352,12 @@
 
   .testimonialCard {
     padding: 1.5rem;
+  }
+
+  .sectionSoftHighlight {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
   }
 
   .sectionTitleCta {
@@ -387,6 +404,8 @@
   transform: scale(1.02); /* Scale sutil */
   transition: transform 0.3s ease;
 }
+
+
 
 /* Estilos de sobreposição para react-slick (para personalizar) */
 /* Pontos de navegação (dots) */

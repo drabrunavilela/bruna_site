@@ -222,6 +222,10 @@
 /* 3. Fale Conosco (Formulário de Contato) */
 .sectionSoftHighlight {
   background-color: rgba(167, 208, 241, 0.5);
+  border-radius: 16px;
+  margin: 2rem 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .contactForm {
@@ -404,6 +408,12 @@
     align-self: center;
   }
 
+  .sectionSoftHighlight {
+    margin: 1rem 0.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
   .sectionTitle {
     font-size: 1.875rem;
   }
@@ -449,6 +459,12 @@
 
   .sectionPadded {
     padding: 3rem 0;
+  }
+
+  .sectionSoftHighlight {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
   }
 
   .sectionTitle {

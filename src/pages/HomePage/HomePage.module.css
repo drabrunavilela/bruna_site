@@ -301,6 +301,7 @@
 .blog {
   padding: 3rem 0;
   background-color: var(--color-background);
+  border-radius: var(--border-radius);
 }
 
 .blogSubtitle {
@@ -413,6 +414,7 @@
   padding: 3rem 0;
   background-color: var(--color-primary);
   color: var(--color-white);
+  border-radius: var(--border-radius);
 }
 
 .finalCTAContent {

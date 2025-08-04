@@ -2,11 +2,44 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 import styles from './TeaPage.module.css';
 
 const TeaPage: React.FC = () => {
+  // Structured Data for TEA Service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalService",
+    "name": "Diagnóstico e Tratamento de TEA - Dra. Bruna Vilela",
+    "description": "Especialista em Transtorno do Espectro Autista (TEA) em Belo Horizonte. Diagnóstico precoce e intervenções baseadas em evidências científicas.",
+    "provider": {
+      "@type": "Physician",
+      "name": "Dra. Bruna Vilela",
+      "medicalSpecialty": "Neuropediatria",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Belo Horizonte"
+    },
+    "serviceType": "Diagnóstico e Tratamento de TEA"
+  };
+
   return (
     <>
+      <SEO 
+        title="TEA - Transtorno do Espectro Autista | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
+        description="Especialista em TEA em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico precoce e intervenções baseadas em evidências para Transtorno do Espectro Autista."
+        keywords="TEA, autismo, transtorno espectro autista, neuropediatra TEA belo horizonte, diagnóstico autismo, tratamento autismo, autismo infantil, intervenção precoce"
+        canonical="/servicos/tea"
+        structuredData={structuredData}
+      />
       <Header />
       
       <main className={styles.main}>

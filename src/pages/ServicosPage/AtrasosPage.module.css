@@ -211,8 +211,9 @@
 .sectionSoftHighlight {
   background-color: rgba(167, 208, 241, 0.5);
   border-radius: 16px;
-  margin: 2rem 0;
-  padding: 3rem 2rem;
+  margin: 2rem 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* 5. Botão Centralizado */
@@ -254,7 +255,9 @@
   }
 
   .sectionSoftHighlight {
-    padding: 2rem 1.5rem;
+    margin: 1rem 0.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
   }
 }
 
@@ -288,6 +291,12 @@
 
   .paragraph {
     font-size: 0.95rem;
+  }
+
+  .sectionSoftHighlight {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
   }
 
   .bulletListStyled li,

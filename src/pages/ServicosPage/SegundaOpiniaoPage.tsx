@@ -2,11 +2,44 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 import styles from './SegundaOpiniaoPage.module.css';
 
 const SegundaOpiniaoPage: React.FC = () => {
+  // Structured Data for Second Opinion Service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalService",
+    "name": "Segunda Opinião em Neuropediatria - Dra. Bruna Vilela",
+    "description": "Segunda opinião especializada em neuropediatria em Belo Horizonte. Dra. Bruna Vilela oferece análise aprofundada de diagnósticos e planos de tratamento.",
+    "provider": {
+      "@type": "Physician",
+      "name": "Dra. Bruna Vilela",
+      "medicalSpecialty": "Neuropediatria",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Belo Horizonte"
+    },
+    "serviceType": "Segunda Opinião em Neuropediatria"
+  };
+
   return (
     <>
+      <SEO 
+        title="Segunda Opinião em Neuropediatria | Dra. Bruna Vilela - Análise Especializada"
+        description="Segunda opinião especializada em neuropediatria em Belo Horizonte. Dra. Bruna Vilela oferece análise aprofundada de diagnósticos e planos de tratamento."
+        keywords="segunda opinião neuropediatria, neuropediatra segunda opinião belo horizonte, análise diagnóstica, revisão tratamento, especialista neuropediatria"
+        canonical="/servicos/segunda-opiniao"
+        structuredData={structuredData}
+      />
       <Header />
       
       <main className={styles.main}>

@@ -14,6 +14,7 @@ import BlogPage from './pages/BlogPage/BlogPage';
 import GlossarioPage from './pages/GlossarioPage/GlossarioPage';
 import ContatoPage from './pages/ContatoPage/ContatoPage';
 import Performance from './components/Performance/Performance';
+import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import './App.css';
 
@@ -36,6 +37,7 @@ const AppContent = () => {
         <Route path="/glossario" element={<GlossarioPage />} />
         <Route path="/contato" element={<ContatoPage />} />
       </Routes>
+      <WhatsAppFloat />
     </div>
   );
 };

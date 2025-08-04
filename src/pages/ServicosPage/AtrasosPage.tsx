@@ -2,11 +2,44 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 import styles from './AtrasosPage.module.css';
 
 const AtrasosPage: React.FC = () => {
+  // Structured Data for Developmental Delays Service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalService",
+    "name": "Avaliação de Atrasos no Neurodesenvolvimento - Dra. Bruna Vilela",
+    "description": "Especialista em atrasos no desenvolvimento infantil em Belo Horizonte. Avaliação completa e intervenção precoce para maximizar o potencial da criança.",
+    "provider": {
+      "@type": "Physician",
+      "name": "Dra. Bruna Vilela",
+      "medicalSpecialty": "Neuropediatria",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Belo Horizonte"
+    },
+    "serviceType": "Avaliação de Atrasos no Neurodesenvolvimento"
+  };
+
   return (
     <>
+      <SEO 
+        title="Atrasos no Desenvolvimento Infantil - Avaliação e Intervenção | Dra. Bruna Vilela Neuropediatra"
+        description="Especialista em atrasos no desenvolvimento infantil em Belo Horizonte. Dra. Bruna Vilela oferece avaliação completa e intervenção precoce para maximizar o potencial da criança."
+        keywords="atrasos desenvolvimento infantil, neurodesenvolvimento, atraso fala, atraso motor, atraso cognitivo, neuropediatra desenvolvimento belo horizonte, avaliação desenvolvimento"
+        canonical="/servicos/atrasos"
+        structuredData={structuredData}
+      />
       <Header />
       
       <main className={styles.main}>

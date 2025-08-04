@@ -119,8 +119,8 @@ const HomePage: React.FC = () => {
               {/* Foto da Dra. Bruna no Hero */}
               <div className={styles.heroImageContainer}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-sorrindo-01.webp"
-                  alt="Dra. Bruna Vilela sorrindo, neuropediatra e pediatra em Belo Horizonte"
+                  src="/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp"
+                  alt="Dra. Bruna Vilela atenciosa, neuropediatra e pediatra em Belo Horizonte"
                   className={styles.heroImage}
                 />
               </div>

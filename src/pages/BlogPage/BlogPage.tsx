@@ -90,7 +90,7 @@ const BlogPage: React.FC = () => {
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp"
+                src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-18.webp"
                 alt="Dra. Bruna Vilela em consultório, demonstrando conhecimento científico"
                 className={styles.heroImage}
               />
@@ -157,9 +157,9 @@ const BlogPage: React.FC = () => {
               {/* Artigo 3 */}
               <Link to="/blog/epilepsia-infantil" className={styles.articleCard}>
                 <img 
-                  src="/src/assets/images/bruna/dra-bruna-vilela-consultorio-04.webp" 
+                  src="/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-11.webp" 
                   alt="Cérebro infantil e conexões neurais" 
-                  className={styles.cardImage}
+                  className={`${styles.cardImage} ${styles.epilepsiaImage}`}
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Epilepsia Infantil: Mitos e Verdades</h3>

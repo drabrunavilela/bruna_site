@@ -2,11 +2,44 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import SEO from '../../components/SEO/SEO';
 import styles from './CefaleiasPage.module.css';
 
 const CefaleiasPage: React.FC = () => {
+  // Structured Data for Headaches Service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalService",
+    "name": "Diagnóstico e Tratamento de Cefaleias Infantis - Dra. Bruna Vilela",
+    "description": "Especialista em cefaleias e enxaquecas infantis em Belo Horizonte. Diagnóstico preciso e tratamento para minimizar o impacto na vida escolar e social.",
+    "provider": {
+      "@type": "Physician",
+      "name": "Dra. Bruna Vilela",
+      "medicalSpecialty": "Neuropediatria",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Belo Horizonte"
+    },
+    "serviceType": "Diagnóstico e Tratamento de Cefaleias Infantis"
+  };
+
   return (
     <>
+      <SEO 
+        title="Cefaleias e Enxaquecas Infantis - Diagnóstico e Tratamento | Dra. Bruna Vilela"
+        description="Especialista em cefaleias e enxaquecas infantis em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento para minimizar o impacto na vida escolar e social."
+        keywords="cefaleias infantis, enxaqueca criança, dor cabeça infantil, neuropediatra cefaleia belo horizonte, diagnóstico cefaleia, tratamento enxaqueca infantil"
+        canonical="/servicos/cefaleias"
+        structuredData={structuredData}
+      />
       <Header />
       
       <main className={styles.main}>
