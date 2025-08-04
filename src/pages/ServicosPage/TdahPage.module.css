@@ -17,10 +17,10 @@
 .heroServicePage {
   background: linear-gradient(135deg, rgba(201, 193, 224, 0.05) 0%, var(--color-background) 100%);
   color: var(--color-text);
-  padding: 5rem 0;
+  padding: 4rem 0;
   position: relative;
   overflow: hidden;
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .heroServicePage .container {
@@ -55,7 +55,7 @@
   font-family: var(--font-body); /* Times New Roman para corpo de texto */
   font-size: 1.25rem;
   line-height: 1.6;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 2rem 0;
   color: var(--color-text);
   font-weight: normal;
 }
@@ -103,7 +103,7 @@
 
 /* 2. Seções Padded */
 .sectionPadded {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .sectionPadded .container {
@@ -208,7 +208,7 @@
 /* 5. Botão Centralizado */
 .buttonCenter {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 /* Responsividade */
@@ -251,7 +251,7 @@
 @media (max-width: 480px) {
   .heroServicePage {
     padding: 3rem 0;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
   }
 
   .heroTitle {

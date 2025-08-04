@@ -1,4 +1,4 @@
-# Diretrizes para Imagens - SEO Otimizado
+# Diretrizes para Imagens
 
 ## Estrutura de Pastas
 ```
@@ -9,7 +9,7 @@ src/assets/images/
 └── blog/               # Imagens para artigos do blog
 ```
 
-## Nomenclatura de Arquivos (SEO)
+## Nomenclatura de Arquivos
 
 ### Fotos da Dra. Bruna Vilela
 - `dra-bruna-vilela-neuropediatra-consultorio-bh.jpg`
@@ -45,7 +45,7 @@ src/assets/images/
 
 ## Uso no Código
 ```jsx
-// Exemplo de uso com SEO otimizado
+// Exemplo de uso
 <img 
   src="/src/assets/images/dra-bruna/dra-bruna-vilela-neuropediatra-consultorio-bh.jpg"
   alt="Retrato profissional da Dra. Bruna Vilela, neuropediatra e pediatra, em seu consultório em Belo Horizonte, transmitindo acolhimento"

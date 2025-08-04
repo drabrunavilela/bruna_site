@@ -27,3 +27,8 @@ dist-ssr
 GUIA_MESTRE.md
 documentosImportantes/
 
+# Scripts de otimização (contêm estratégias)
+scripts/optimize-images.js
+scripts/rename-seo-images.js
+scripts/convert-images.js
+

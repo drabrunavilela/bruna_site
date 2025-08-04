@@ -17,10 +17,10 @@
 .hero {
   background: linear-gradient(135deg, rgba(201, 193, 224, 0.05) 0%, var(--color-background) 100%);
   color: var(--color-text);
-  padding: 5rem 0;
+  padding: 4rem 0;
   position: relative;
   overflow: hidden;
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .heroContainer {
@@ -55,7 +55,7 @@
   font-family: var(--font-body); /* Times New Roman para corpo de texto */
   font-size: 1.25rem;
   line-height: 1.6;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 2rem 0;
   color: var(--color-text);
   font-weight: normal;
 }
@@ -86,7 +86,7 @@
 
 /* 2. Seções de Conteúdo */
 .sectionPadded {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .sectionPadded .container {
@@ -123,7 +123,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .column {
@@ -171,14 +171,14 @@
 
 /* 4. Seção de Depoimentos */
 .testimonialsSection {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .testimonialsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .testimonialCard {
@@ -224,7 +224,7 @@
 .callToActionBanner {
   background: var(--color-primary);
   color: var(--color-white);
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .textCenter {
@@ -316,7 +316,7 @@
 @media (max-width: 480px) {
   .hero {
     padding: 3rem 0;
-    margin-top: 6rem;
+    margin-top: 2rem;
   }
 
   .heroTitle {

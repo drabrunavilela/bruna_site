@@ -17,10 +17,10 @@
 .heroContactPage {
   background: linear-gradient(135deg, rgba(201, 193, 224, 0.05) 0%, var(--color-background) 100%);
   color: var(--color-text);
-  padding: 5rem 0;
+  padding: 4rem 0;
   position: relative;
   overflow: hidden;
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .heroContactPage .container {
@@ -107,7 +107,7 @@
 
 /* 2. Agendamento de Consultas */
 .sectionPadded {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .sectionPadded .container {
@@ -145,7 +145,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .bookingOptionCard {
@@ -228,7 +228,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .formInput,
@@ -347,7 +347,7 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -431,7 +431,7 @@
 @media (max-width: 480px) {
   .heroContactPage {
     padding: 3rem 0;
-    margin-top: 6rem;
+    margin-top: 2rem;
   }
 
   .heroTitle {

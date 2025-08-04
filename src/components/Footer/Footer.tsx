@@ -63,7 +63,6 @@ const Footer: React.FC = () => {
               <p className={styles.contactItem}>
                 <strong>Endereço:</strong><br />
                 Avenida Raja Gabaglia 2000, Torre 1, Sala 313<br />
-                Clínica Pediátrica Laura Drummond<br />
                 Bairro Belvedere, Belo Horizonte - MG
               </p>
               <p className={styles.contactItem}>

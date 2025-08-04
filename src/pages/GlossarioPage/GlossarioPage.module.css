@@ -17,10 +17,10 @@
 .heroGlossaryPage {
   background: linear-gradient(135deg, rgba(201, 193, 224, 0.05) 0%, var(--color-background) 100%);
   color: var(--color-text);
-  padding: 5rem 0;
+  padding: 4rem 0;
   position: relative;
   overflow: hidden;
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .heroGlossaryPage .container {
@@ -113,7 +113,7 @@
 
 /* 2. Seções Padded */
 .sectionPadded {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .sectionPadded .container {
@@ -152,7 +152,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .alphabetLetter {
@@ -185,7 +185,7 @@
 }
 
 .glossaryList {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .glossaryTerm {
@@ -365,7 +365,7 @@
 @media (max-width: 480px) {
   .heroGlossaryPage {
     padding: 3rem 0;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
   }
 
   .heroTitle {
