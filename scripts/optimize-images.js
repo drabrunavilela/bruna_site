@@ -29,42 +29,34 @@ const elementMap = {
   'elementos-identidade-visual-16': 'logo-dra-bruna-vilela-elemento-16'
 };
 
-console.log('🖼️  Iniciando processamento de imagens...');
-
 // Verificar se o diretório existe
 if (!fs.existsSync(sourceDir)) {
-  console.error('❌ Diretório não encontrado:', sourceDir);
   process.exit(1);
 }
 
 // Processar imagens da pasta bruna
-console.log('👩‍⚕️  Processando fotos da Dra. Bruna...');
 const brunaDir = path.join(sourceDir, 'bruna');
 if (fs.existsSync(brunaDir)) {
   const brunaFiles = fs.readdirSync(brunaDir);
   brunaFiles.forEach(file => {
     if (file.endsWith('.webp')) {
-      console.log(`✅ ${file} - Processado`);
+      // Processado
     }
   });
 }
 
 // Processar logos da identidade visual
-console.log('🎨 Processando logos da identidade visual...');
 const identidadeVisualDir = path.join(sourceDir, 'identidade-visual');
 if (fs.existsSync(identidadeVisualDir)) {
   const identidadeFiles = fs.readdirSync(identidadeVisualDir);
   identidadeFiles.forEach(file => {
     if (file.endsWith('.webp')) {
-      console.log(`✅ ${file} - Processado`);
+      // Processado
     }
   });
 }
 
 // Mapear elementos específicos da identidade visual
-console.log('🔧 Mapeando elementos específicos...');
 for (const [oldName, newName] of Object.entries(elementMap)) {
-  console.log(`📝 ${oldName} → ${newName}`);
-}
-
-console.log('🎉 Processamento de imagens concluído!'); 
+  // Mapeado
+} 

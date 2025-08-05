@@ -56,7 +56,7 @@ const GlossarioPage: React.FC = () => {
       <SEO 
         title="Glossário Científico - Descomplicando a Neuropediatria | Dra. Bruna Vilela"
         description="Descomplique a neuropediatria. Consulte o Glossário Científico da Dra. Bruna Vilela para entender termos técnicos de desenvolvimento infantil, autismo, TDAH e epilepsia."
-        keywords="glossário neuropediatria, termos médicos, TDAH significado, autismo definição, epilepsia infantil, desenvolvimento infantil, neuropediatria termos"
+        keywords="neuropediatra, glossário, termos médicos"
         canonical="/glossario"
         structuredData={structuredData}
       />

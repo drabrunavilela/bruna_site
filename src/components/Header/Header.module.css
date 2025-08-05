@@ -163,6 +163,7 @@
   .container {
     padding: 0.25rem 1rem;
     position: relative;
+    justify-content: space-between;
   }
 
   .logoImage {
@@ -172,13 +173,15 @@
   .menuToggle {
     display: flex;
     position: relative;
+    margin-left: auto;
   }
 
   .navList {
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
+    left: auto;
+    width: 250px;
     background-color: var(--color-background);
     flex-direction: column;
     gap: 0;
@@ -187,7 +190,7 @@
     overflow: hidden;
     transition: max-height 0.3s ease;
     z-index: 1001;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px 0 8px 8px;
   }
 
   .navListOpen {

@@ -37,7 +37,7 @@ const CefaleiasPage: React.FC = () => {
       <SEO 
         title="Cefaleias e Enxaquecas Infantis - Diagnóstico e Tratamento | Dra. Bruna Vilela"
         description="Especialista em cefaleias e enxaquecas infantis em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento para minimizar o impacto na vida escolar e social."
-        keywords="cefaleias infantis, enxaqueca criança, dor cabeça infantil, neuropediatra cefaleia belo horizonte, diagnóstico cefaleia, tratamento enxaqueca infantil"
+        keywords="neuropediatra, cefaleia, desenvolvimento"
         canonical="/servicos/cefaleias"
         structuredData={structuredData}
       />

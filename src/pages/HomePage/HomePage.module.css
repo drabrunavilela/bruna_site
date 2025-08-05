@@ -44,27 +44,54 @@
 }
 
 .heroTitle {
-  font-family: var(--font-decorative); /* Cataline Script para título principal */
+  font-family: var(--font-decorative); /* Catalina Script */
   font-size: 2.5rem;
   font-weight: normal;
   line-height: 1.2;
   margin: 0 0 1.5rem 0;
   color: var(--color-headings);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
   margin-top: 0.5rem;
 }
 
 /* Logo no Hero */
 .heroLogo {
   display: flex;
-  justify-content: center;
-  margin-bottom: -0.5rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.heroLogoImage {
-  max-width: 350px;
-  height: auto;
-  object-fit: contain;
+.logoTitle {
+  font-family: var(--font-decorative); /* Catalina Script */
+  font-size: 3rem;
+  font-weight: normal;
+  color: var(--color-headings);
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+.logoSubtitle {
+  font-family: var(--font-body); /* Times New Roman */
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--color-text);
+  margin: 0.5rem 0 0.25rem 0;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.logoCredentials {
+  font-family: var(--font-body); /* Times New Roman */
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: var(--color-text);
+  margin: 0 0 2rem 0;
+  line-height: 1.2;
+  opacity: 0.8;
 }
 
 .heroSubtitle {
@@ -176,7 +203,7 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-decorative); /* Cataline Script para títulos principais */
+  font-family: var(--font-decorative); /* Catalina Script */
   font-size: 2.5rem;
   font-weight: normal;
   color: var(--color-headings);
@@ -187,7 +214,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
 }
 
 .aboutText {
@@ -427,12 +454,12 @@
 }
 
 .finalCTATitle {
-  font-family: var(--font-decorative);
+  font-family: var(--font-decorative); /* Catalina Script */
   font-size: 2.5rem;
   font-weight: normal;
   margin: 0 0 1.5rem 0;
   line-height: 1.2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
 }
 
 .finalCTAText {
@@ -505,11 +532,22 @@
     padding-left: 0 !important;
   }
 
-  .heroLogoImage {
-    max-width: 300px;
+  .logoTitle {
+    font-size: 2.5rem;
     order: 1;
-    margin-top: -30px !important;
-    margin-bottom: -20px !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .logoSubtitle {
+    font-size: 1rem;
+    order: 2;
+    margin: 0.25rem 0 0.125rem 0 !important;
+  }
+
+  .logoCredentials {
+    font-size: 0.8rem;
+    order: 3;
+    margin-bottom: 1.5rem !important;
   }
 
   .heroTitle {
@@ -619,10 +657,19 @@
     padding: 1rem 0;
   }
 
-  .heroLogoImage {
-    max-width: 250px;
-    margin-top: -25px !important;
-    margin-bottom: -15px !important;
+  .logoTitle {
+    font-size: 2rem;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .logoSubtitle {
+    font-size: 0.9rem;
+    margin: 0.125rem 0 0.0625rem 0 !important;
+  }
+
+  .logoCredentials {
+    font-size: 0.7rem;
+    margin-bottom: 1rem !important;
   }
 
   .heroTitle {

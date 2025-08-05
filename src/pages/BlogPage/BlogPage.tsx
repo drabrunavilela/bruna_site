@@ -83,7 +83,7 @@ const BlogPage: React.FC = () => {
       <SEO 
         title="Blog - Conhecimento Científico em Neuropediatria | Dra. Bruna Vilela"
         description="Aprofunde-se na neuropediatria. O blog da Dra. Bruna Vilela oferece artigos científicos traduzidos, pesquisas e insights sobre desenvolvimento infantil, TDAH, autismo e mais."
-        keywords="blog neuropediatria, artigos TDAH, autismo infantil, epilepsia criança, desenvolvimento infantil, neuropediatra blog, conhecimento científico"
+        keywords="neuropediatra, blog, conhecimento científico"
         canonical="/blog"
         structuredData={structuredData}
       />

@@ -6,7 +6,6 @@ import SEO from '../../components/SEO/SEO';
 import styles from './HomePage.module.css';
 
 // Importar imagens
-import logoProfissional from '../../assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp';
 import fotoAtenciosa from '../../assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp';
 import fotoAcolhedora from '../../assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp';
 
@@ -14,12 +13,31 @@ const HomePage: React.FC = () => {
   // Structured Data for Home Page
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": ["MedicalBusiness", "LocalBusiness"],
-    "name": "Dra. Bruna Vilela - Consultório",
-    "description": "Neuropediatra e pediatra em Belo Horizonte, especialista em TDAH, autismo e desenvolvimento infantil",
+    "@type": ["MedicalBusiness", "LocalBusiness", "Physician"],
+    "name": "Dra. Bruna Vilela - Neuropediatra",
+    "alternateName": "Dra. Bruna Vilela - Consultório",
+    "description": "Neuropediatra e pediatra em Belo Horizonte, especialista em TDAH, autismo, epilepsia e desenvolvimento infantil. CRMMG 80690 | RQE 66867",
     "url": "https://drabrunavilela.com.br",
     "telephone": "+5531983501417",
     "email": "brunavilela.neuroped@gmail.com",
+    "medicalSpecialty": ["Neuropediatria", "Pediatria", "Neurologia Infantil"],
+    "availableService": [
+      {
+        "@type": "MedicalService",
+        "name": "Avaliação de TDAH",
+        "description": "Diagnóstico e tratamento do Transtorno do Déficit de Atenção e Hiperatividade"
+      },
+      {
+        "@type": "MedicalService", 
+        "name": "Avaliação de Autismo",
+        "description": "Diagnóstico precoce e acompanhamento do Transtorno do Espectro Autista"
+      },
+      {
+        "@type": "MedicalService",
+        "name": "Tratamento de Epilepsia",
+        "description": "Diagnóstico e tratamento de epilepsia infantil"
+      }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
@@ -87,7 +105,7 @@ const HomePage: React.FC = () => {
       <SEO 
         title="Dra. Bruna Vilela - Neuropediatra e Pediatra em Belo Horizonte | Especialista em TDAH, Autismo e Epilepsia"
         description="Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte. Especialista em TDAH, autismo, epilepsia e desenvolvimento infantil. Agende sua consulta."
-        keywords="neuropediatra, pediatra, belo horizonte, TDAH, autismo, epilepsia, desenvolvimento infantil, neuropediatria, consulta neuropediátrica"
+        keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/"
         structuredData={structuredData}
       />
@@ -102,11 +120,9 @@ const HomePage: React.FC = () => {
               <div className={styles.heroContent}>
                 {/* Logo Profissional */}
                 <div className={styles.heroLogo}>
-                  <img 
-                    src={logoProfissional}
-                    alt="Logotipo profissional Dra. Bruna Vilela - Neuropediatra e Pediatra"
-                    className={styles.heroLogoImage}
-                  />
+                  <h1 className={styles.logoTitle} itemProp="name">Dra. Bruna Vilela</h1>
+                  <h2 className={styles.logoSubtitle} itemProp="jobTitle">NEUROLOGISTA INFANTIL</h2>
+                  <h3 className={styles.logoCredentials} itemProp="identifier">CRMMG 80690 | RQE 66867</h3>
                 </div>
                 
                 <h1 className={styles.heroTitle}>

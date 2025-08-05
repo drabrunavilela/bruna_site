@@ -10,6 +10,11 @@ interface SEOProps {
   twitterCard?: string;
   noIndex?: boolean;
   structuredData?: object;
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
+  articleAuthor?: string;
+  articleSection?: string;
+  articleTag?: string[];
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -21,7 +26,12 @@ const SEO: React.FC<SEOProps> = ({
   ogType = "website",
   twitterCard = "summary_large_image",
   noIndex = false,
-  structuredData
+  structuredData,
+  articlePublishedTime,
+  articleModifiedTime,
+  articleAuthor,
+  articleSection,
+  articleTag
 }) => {
   const baseUrl = "https://drabrunavilela.com.br";
   const fullCanonical = canonical ? `${baseUrl}${canonical}` : baseUrl;
@@ -77,6 +87,25 @@ const SEO: React.FC<SEOProps> = ({
     updateMetaTag('og:description', description);
     updateMetaTag('og:image', fullOgImage);
     
+    // Add article-specific meta tags if provided
+    if (articlePublishedTime) {
+      updateMetaTag('article:published_time', articlePublishedTime);
+    }
+    if (articleModifiedTime) {
+      updateMetaTag('article:modified_time', articleModifiedTime);
+    }
+    if (articleAuthor) {
+      updateMetaTag('article:author', articleAuthor);
+    }
+    if (articleSection) {
+      updateMetaTag('article:section', articleSection);
+    }
+    if (articleTag && articleTag.length > 0) {
+      articleTag.forEach(tag => {
+        updateMetaTag('article:tag', tag);
+      });
+    }
+    
     // Update Twitter tags
     const updateTwitterTag = (name: string, content: string) => {
       let metaTag = document.querySelector(`meta[name="${name}"]`);
@@ -114,7 +143,7 @@ const SEO: React.FC<SEOProps> = ({
     }
     robotsMeta.setAttribute('content', noIndex ? 'noindex, nofollow' : 'index, follow');
     
-  }, [title, description, keywords, fullCanonical, fullOgImage, ogType, twitterCard, noIndex, structuredData]);
+  }, [title, description, keywords, fullCanonical, fullOgImage, ogType, twitterCard, noIndex, structuredData, articlePublishedTime, articleModifiedTime, articleAuthor, articleSection, articleTag]);
 
   return null; // This component doesn't render anything
 };

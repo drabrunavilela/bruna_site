@@ -5,7 +5,7 @@ const Performance: React.FC = () => {
     // Monitor Core Web Vitals
     if ('web-vital' in window) {
       // This would be implemented with web-vitals library
-      console.log('Performance monitoring enabled');
+      // Performance monitoring enabled
     }
 
     // Preload critical resources

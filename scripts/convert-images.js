@@ -16,7 +16,7 @@ function convertToWebP(inputPath, outputPath) {
   }
 }
 
-// Função para renomear arquivos seguindo as diretrizes de SEO
+// Função para renomear arquivos
 function renameForSEO(filename, category) {
   const baseName = path.parse(filename).name;
   

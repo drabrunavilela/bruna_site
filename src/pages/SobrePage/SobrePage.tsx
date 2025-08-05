@@ -103,7 +103,7 @@ const SobrePage: React.FC = () => {
       <SEO 
         title="Sobre Dra. Bruna Vilela - Neuropediatra e Pediatra em Belo Horizonte | Trajetória e Especializações"
         description="Conheça a trajetória da Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte. Especialista em TDAH, autismo, epilepsia e desenvolvimento infantil com abordagem científica e humanizada."
-        keywords="sobre dra bruna vilela, neuropediatra belo horizonte, especialista TDAH, especialista autismo, epilepsia infantil, desenvolvimento infantil, neuropediatria"
+        keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/sobre"
         structuredData={structuredData}
       />
