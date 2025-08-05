@@ -11,13 +11,25 @@ import SegundaOpiniaoPage from './pages/ServicosPage/SegundaOpiniaoPage';
 import BlogPage from './pages/BlogPage/BlogPage';
 import GlossarioPage from './pages/GlossarioPage/GlossarioPage';
 import ContatoPage from './pages/ContatoPage/ContatoPage';
+import PoliticaPrivacidadePage from './pages/PoliticaPrivacidadePage/PoliticaPrivacidadePage';
 import Performance from './components/Performance/Performance';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
+import CookieBanner from './components/CookieBanner/CookieBanner';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import './App.css';
 
 const AppContent = () => {
   useScrollToTop();
+  
+  const handleCookieAccept = () => {
+    // Ativar analytics quando cookies forem aceitos
+    console.log('Cookies aceitos');
+  };
+  
+  const handleCookieDecline = () => {
+    // Aqui você pode adicionar lógica para desativar cookies não essenciais
+    console.log('Cookies recusados');
+  };
   
   return (
     <div className="App">
@@ -34,8 +46,10 @@ const AppContent = () => {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/glossario" element={<GlossarioPage />} />
         <Route path="/contato" element={<ContatoPage />} />
+        <Route path="/politica-privacidade" element={<PoliticaPrivacidadePage />} />
       </Routes>
       <WhatsAppFloat />
+      <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
     </div>
   );
 };

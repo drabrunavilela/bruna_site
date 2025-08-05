@@ -1,0 +1,253 @@
+/* Importar variáveis CSS */
+@import '../../assets/styles/variables.css';
+
+/* Main Container */
+.main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: 120px 0 60px;
+  text-align: center;
+  color: white;
+  margin-top: 80px;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-family: var(--font-decorative);
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Section */
+.content {
+  padding: 60px 0;
+  background: white;
+}
+
+.contentWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 40px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-family: var(--font-decorative);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-headings);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.15em;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+}
+
+.subsectionTitle {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-headings);
+  margin: 2rem 0 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* Paragraphs */
+.paragraph {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists */
+.list {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.list li::before {
+  content: "•";
+  color: var(--color-primary);
+  font-weight: bold;
+  position: absolute;
+  left: -1rem;
+}
+
+/* Links */
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+/* Contact Info */
+.contactInfo {
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+  margin-top: 1rem;
+}
+
+.contactInfo p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.contactInfo p:last-child {
+  margin-bottom: 0;
+}
+
+.contactInfo strong {
+  color: var(--color-headings);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 40px;
+    margin-top: 70px;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .content {
+    padding: 40px 0;
+  }
+  
+  .contentWrapper {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .subsectionTitle {
+    font-size: 1.2rem;
+  }
+  
+  .paragraph {
+    font-size: 0.95rem;
+  }
+  
+  .list {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 0 30px;
+    margin-top: 60px;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .content {
+    padding: 30px 0;
+  }
+  
+  .contentWrapper {
+    padding: 20px 15px;
+    margin: 0 5px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  
+  .subsectionTitle {
+    font-size: 1.1rem;
+  }
+  
+  .paragraph {
+    font-size: 0.9rem;
+  }
+  
+  .list {
+    font-size: 0.9rem;
+  }
+  
+  .contactInfo {
+    padding: 15px;
+  }
+} 
