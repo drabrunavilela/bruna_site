@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import HomePage from './pages/HomePage/HomePage';
 import SobrePage from './pages/SobrePage/SobrePage';
 import ServicosPage from './pages/ServicosPage/ServicosPage';
@@ -15,20 +16,25 @@ import PoliticaPrivacidadePage from './pages/PoliticaPrivacidadePage/PoliticaPri
 import Performance from './components/Performance/Performance';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 import CookieBanner from './components/CookieBanner/CookieBanner';
+import Analytics from './components/Analytics/Analytics';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import './App.css';
 
 const AppContent = () => {
   useScrollToTop();
   
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+
   const handleCookieAccept = () => {
     // Ativar analytics quando cookies forem aceitos
-    console.log('Cookies aceitos');
+    setAnalyticsEnabled(true);
+    console.log('Cookies aceitos - Analytics ativado');
   };
   
   const handleCookieDecline = () => {
-    // Aqui você pode adicionar lógica para desativar cookies não essenciais
-    console.log('Cookies recusados');
+    // Desativar analytics quando cookies forem recusados
+    setAnalyticsEnabled(false);
+    console.log('Cookies recusados - Analytics desativado');
   };
   
   return (
@@ -50,6 +56,7 @@ const AppContent = () => {
       </Routes>
       <WhatsAppFloat />
       <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
+      <Analytics enabled={analyticsEnabled} />
     </div>
   );
 };

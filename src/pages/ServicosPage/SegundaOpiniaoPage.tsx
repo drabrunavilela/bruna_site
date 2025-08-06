@@ -38,7 +38,7 @@ const SegundaOpiniaoPage: React.FC = () => {
       <SEO 
         title="Segunda Opinião em Neuropediatria | Dra. Bruna Vilela - Análise Especializada"
         description="Segunda opinião especializada em neuropediatria em Belo Horizonte. Dra. Bruna Vilela oferece análise aprofundada de diagnósticos e planos de tratamento."
-        keywords="neuropediatra, segunda opinião, avaliação"
+        keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/segunda-opiniao"
         structuredData={structuredData}
       />

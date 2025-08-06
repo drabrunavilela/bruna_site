@@ -4,6 +4,11 @@ import whatsappIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatr
 
 const WhatsAppFloat: React.FC = () => {
   const handleWhatsAppClick = () => {
+    // Rastrear clique no WhatsApp se analytics estiver ativo
+    if (window.trackWhatsAppClick) {
+      window.trackWhatsAppClick();
+    }
+    
     const phoneNumber = '5531983501417';
     const message = 'Olá! Gostaria de agendar uma consulta com a Dra. Bruna Vilela.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

@@ -137,6 +137,11 @@ const HomePage: React.FC = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.ctaPrimary}
+                    onClick={() => {
+                      if (window.trackAppointment) {
+                        window.trackAppointment('home_hero');
+                      }
+                    }}
                   >
                     Agendar Consulta
                   </a>
@@ -313,6 +318,11 @@ const HomePage: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.finalCTAButton}
+                onClick={() => {
+                  if (window.trackAppointment) {
+                    window.trackAppointment('home_final_cta');
+                  }
+                }}
               >
                 Agendar Consulta Agora
               </a>

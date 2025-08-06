@@ -37,7 +37,7 @@ const AtrasosPage: React.FC = () => {
       <SEO 
         title="Atrasos no Desenvolvimento Infantil - Avaliação e Intervenção | Dra. Bruna Vilela Neuropediatra"
         description="Especialista em atrasos no desenvolvimento infantil em Belo Horizonte. Dra. Bruna Vilela oferece avaliação completa e intervenção precoce para maximizar o potencial da criança."
-        keywords="neuropediatra, desenvolvimento, avaliação"
+        keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/atrasos"
         structuredData={structuredData}
       />

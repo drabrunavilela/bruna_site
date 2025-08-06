@@ -50,7 +50,7 @@ const SEO: React.FC<SEOProps> = ({
     }
     metaDescription.setAttribute('content', description);
     
-    // Update keywords if provided
+    // Update meta keywords
     if (keywords) {
       let metaKeywords = document.querySelector('meta[name="keywords"]');
       if (!metaKeywords) {

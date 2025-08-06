@@ -37,7 +37,7 @@ const TeaPage: React.FC = () => {
       <SEO 
         title="TEA - Transtorno do Espectro Autista | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
         description="Especialista em TEA em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico precoce e intervenções baseadas em evidências para Transtorno do Espectro Autista."
-        keywords="neuropediatra, autismo, desenvolvimento"
+        keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/tea"
         structuredData={structuredData}
       />

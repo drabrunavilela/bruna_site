@@ -35,7 +35,7 @@ const TdahPage: React.FC = () => {
       <SEO 
         title="TDAH - Diagnóstico e Tratamento | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
         description="Especialista em TDAH em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento personalizado para crianças e adolescentes com Transtorno do Déficit de Atenção e Hiperatividade."
-        keywords="neuropediatra, TDAH, desenvolvimento"
+        keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/tdah"
         structuredData={structuredData}
       />
