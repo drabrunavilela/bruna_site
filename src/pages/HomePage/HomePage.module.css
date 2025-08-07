@@ -513,7 +513,7 @@
   .heroContainer {
     grid-template-columns: 1fr;
     gap: 1rem;
-    text-align: center !important;
+    text-align: center ;
     justify-items: center;
     align-items: center;
     margin: 0 auto;
@@ -522,32 +522,32 @@
   }
 
   .heroContent {
-    text-align: center !important;
+    text-align: center ;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    padding-right: 0 ;
+    padding-left: 0 ;
   }
 
   .logoTitle {
     font-size: 2.5rem;
     order: 1;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem ;
   }
 
   .logoSubtitle {
     font-size: 1rem;
     order: 2;
-    margin: 0.25rem 0 0.125rem 0 !important;
+    margin: 0.25rem 0 0.125rem 0 ;
   }
 
   .logoCredentials {
     font-size: 0.8rem;
     order: 3;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem ;
   }
 
   .heroTitle {
@@ -603,22 +603,22 @@
   .aboutContent {
     grid-template-columns: 1fr;
     gap: 1rem;
-    text-align: center !important;
+    text-align: center ;
   }
 
   .aboutTextSection {
-    text-align: center !important;
-    padding-left: 0 !important;
+    text-align: center ;
+    padding-left: 0 ;
   }
 
   .sectionTitle {
     font-size: 1.5rem;
-    text-align: center !important;
+    text-align: center ;
   }
 
   .aboutText {
     font-size: 1rem;
-    text-align: center !important;
+    text-align: center ;
   }
 
   .testimonialsGrid {
@@ -659,17 +659,17 @@
 
   .logoTitle {
     font-size: 2rem;
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.25rem ;
   }
 
   .logoSubtitle {
     font-size: 0.9rem;
-    margin: 0.125rem 0 0.0625rem 0 !important;
+    margin: 0.125rem 0 0.0625rem 0 ;
   }
 
   .logoCredentials {
     font-size: 0.7rem;
-    margin-bottom: 1rem !important;
+    margin-bottom: 1rem ;
   }
 
   .heroTitle {
@@ -689,7 +689,7 @@
 
   .sectionTitle {
     font-size: 1.3rem;
-    text-align: center !important;
+    text-align: center ;
   }
 
   .testimonial,

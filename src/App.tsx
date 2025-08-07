@@ -21,6 +21,40 @@ import GTM from './components/GTM/GTM';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import './App.css';
 
+// Componente para página 404
+const NotFoundPage = () => {
+  return (
+    <div style={{ 
+      textAlign: 'center', 
+      padding: '4rem 2rem',
+      minHeight: '60vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#C9C1E0' }}>404</h1>
+      <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Página não encontrada</h2>
+      <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#666' }}>
+        A página que você está procurando não existe ou foi movida.
+      </p>
+      <a 
+        href="/" 
+        style={{
+          padding: '1rem 2rem',
+          backgroundColor: '#C9C1E0',
+          color: 'white',
+          textDecoration: 'none',
+          borderRadius: '8px',
+          fontWeight: 'bold'
+        }}
+      >
+        Voltar ao Início
+      </a>
+    </div>
+  );
+};
+
 const AppContent = () => {
   useScrollToTop();
   
@@ -29,13 +63,13 @@ const AppContent = () => {
   const handleCookieAccept = () => {
     // Ativar analytics quando cookies forem aceitos
     setAnalyticsEnabled(true);
-    console.log('Cookies aceitos - Analytics ativado');
+    // Analytics ativado
   };
   
   const handleCookieDecline = () => {
     // Desativar analytics quando cookies forem recusados
     setAnalyticsEnabled(false);
-    console.log('Cookies recusados - Analytics desativado');
+    // Analytics desativado
   };
   
   return (
@@ -54,6 +88,8 @@ const AppContent = () => {
         <Route path="/glossario" element={<GlossarioPage />} />
         <Route path="/contato" element={<ContatoPage />} />
         <Route path="/politica-privacidade" element={<PoliticaPrivacidadePage />} />
+        {/* Rota para capturar todas as outras URLs */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <WhatsAppFloat />
       <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />

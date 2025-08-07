@@ -312,6 +312,31 @@
     text-align: center;
   }
 
+  /* Esconder imagem original como na Home */
+  .heroImageContainer {
+    display: none;
+  }
+
+  /* Usar ::after no título como na Home para inserir foto */
+  .heroTitle::after {
+    content: '';
+    display: block;
+    width: 95%;
+    height: 350px;
+    max-width: 450px;
+    margin: 0.75rem auto;
+    background-image: url('/src/assets/images/bruna/dra-bruna-vilela-consultorio-03.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+
+  .heroContent {
+    padding-right: 0;
+    text-align: center;
+  }
+
   .heroTitle {
     font-size: 2rem;
   }
@@ -368,6 +393,10 @@
     margin-top: 2rem;
   }
 
+  .heroContainer {
+    gap: 2rem;
+  }
+
   .heroTitle {
     font-size: 1.75rem;
   }
@@ -406,8 +435,13 @@
     font-size: 1.5rem;
   }
 
-  .heroImageContainer,
+  /* Ajustes de imagem já definidos em 768px */
+
   .heroImage {
-    display: none;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
   }
 } 

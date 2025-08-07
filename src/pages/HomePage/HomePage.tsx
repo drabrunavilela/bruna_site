@@ -10,7 +10,7 @@ import fotoAtenciosa from '../../assets/images/bruna/dra-bruna-vilela-atenciosa-
 import fotoAcolhedora from '../../assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp';
 
 const HomePage: React.FC = () => {
-  // Structured Data for Home Page
+  // Page metadata configuration
   const structuredData = {
     "@context": "https://schema.org",
     "@type": ["MedicalBusiness", "LocalBusiness", "Physician"],
@@ -112,13 +112,13 @@ const HomePage: React.FC = () => {
       <Header />
       
       <main className={styles.main}>
-        {/* Container do Degradê Lilás (Hero + Sobre) */}
+        {/* Main content container */}
         <div className={styles.heroAboutContainer}>
-          {/* Seção Hero */}
+          {/* Hero section */}
           <section className={styles.hero}>
             <div className={styles.heroContainer}>
               <div className={styles.heroContent}>
-                {/* Logo Profissional */}
+                {/* Professional logo */}
                 <div className={styles.heroLogo}>
                   <h1 className={styles.logoTitle} itemProp="name">Dra. Bruna Vilela</h1>
                   <h2 className={styles.logoSubtitle} itemProp="jobTitle">NEUROLOGISTA INFANTIL</h2>
@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
               
-              {/* Foto da Dra. Bruna no Hero */}
+              {/* Hero image */}
               <div className={styles.heroImageContainer}>
                 <img 
                   src={fotoAtenciosa}
@@ -166,11 +166,11 @@ const HomePage: React.FC = () => {
             </div>
           </section>
 
-          {/* Seção Sobre Mim (Resumo) */}
+          {/* About section */}
           <section className={styles.about}>
             <div className={styles.container}>
               <div className={styles.aboutContent}>
-                              {/* Foto da Dra. Bruna na seção Sobre */}
+                              {/* About section image */}
               <div className={styles.aboutImageContainer}>
                 <img 
                   src={fotoAcolhedora}
@@ -198,7 +198,7 @@ const HomePage: React.FC = () => {
           </section>
         </div>
 
-        {/* Seção Depoimentos */}
+        {/* Testimonials section */}
         <section className={styles.testimonials}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>O Que Dizem Sobre Mim</h2>
@@ -239,7 +239,7 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Seção Blog (Chamada) */}
+        {/* Blog section */}
         <section className={styles.blog}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Informação que Transforma: Artigos do Blog</h2>
@@ -302,7 +302,7 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Seção CTA Final */}
+        {/* Final CTA section */}
         <section className={styles.finalCTA}>
           <div className={styles.container}>
             <div className={styles.finalCTAContent}>

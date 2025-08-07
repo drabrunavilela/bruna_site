@@ -1,43 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './CefaleiasPage.module.css';
-import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
-
+import fotoNeuropediatra13 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-13.webp";
 
 const CefaleiasPage: React.FC = () => {
-  // Structured Data for Headaches Service
+  // Structured Data for Cefaleias Service
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalService",
-    "name": "Diagnóstico e Tratamento de Cefaleias Infantis - Dra. Bruna Vilela",
-    "description": "Especialista em cefaleias e enxaquecas infantis em Belo Horizonte. Diagnóstico preciso e tratamento para minimizar o impacto na vida escolar e social.",
+    "name": "Diagnóstico e Tratamento de Cefaleias e Enxaquecas",
+    "description": "Avaliação e manejo especializado de dores de cabeça em crianças e adolescentes",
     "provider": {
-      "@type": "Physician",
+      "@type": "MedicalBusiness",
       "name": "Dra. Bruna Vilela",
-      "medicalSpecialty": "Neuropediatria",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
-        "addressLocality": "Belo Horizonte",
-        "addressRegion": "MG",
-        "addressCountry": "BR"
-      }
+      "medicalSpecialty": "Neuropediatria"
     },
+    "serviceType": "MedicalService",
     "areaServed": {
       "@type": "City",
       "name": "Belo Horizonte"
     },
-    "serviceType": "Diagnóstico e Tratamento de Cefaleias Infantis"
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceType": "Consultation"
+    }
   };
 
   return (
     <>
       <SEO 
-        title="Cefaleias e Enxaquecas Infantis - Diagnóstico e Tratamento | Dra. Bruna Vilela"
-        description="Especialista em cefaleias e enxaquecas infantis em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento para minimizar o impacto na vida escolar e social."
-        keywords="neuropediatra, pediatra, belo horizonte"
+        title="Cefaleias e Enxaquecas - Diagnóstico e Tratamento | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
+        description="Especialista em cefaleias e enxaquecas em crianças e adolescentes em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento personalizado para dores de cabeça."
+        keywords="cefaleias, enxaquecas, dores de cabeça, neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/cefaleias"
         structuredData={structuredData}
       />
@@ -54,19 +51,14 @@ const CefaleiasPage: React.FC = () => {
               <p className={styles.heroSubtitle}>
                 Dores de cabeça são comuns em crianças e adolescentes, mas nem todas as dores de cabeça são iguais. Enquanto algumas são benignas e transitórias, outras podem ser mais graves, persistentes ou indicar condições subjacentes que necessitam de atenção médica especializada. A avaliação e o manejo adequados, especialmente por um neuropediatra, são essenciais para aliviar o sofrimento e garantir a saúde do seu filho.
               </p>
-              <a 
-                href="https://wa.me/5531983501417" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.buttonPrimary}
-              >
-                Agende uma Consulta Especializada
-              </a>
+              <Link to="#compreendendo-cefaleias" className={styles.buttonPrimary} onClick={() => document.getElementById('compreendendo-cefaleias')?.scrollIntoView({ behavior: 'smooth' })}>
+                Entenda as Cefaleias
+              </Link>
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src={fotoConsultorio03}
-                alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para cefaleias"
+                src={fotoNeuropediatra13}
+                alt="Dra. Bruna Vilela, especialista em cefaleias e enxaquecas em crianças"
                 className={styles.heroImage}
               />
             </div>
@@ -74,7 +66,7 @@ const CefaleiasPage: React.FC = () => {
         </section>
 
         {/* 2. Compreendendo as Cefaleias Pediátricas e Sinais de Alerta (Red Flags) */}
-        <section className={styles.sectionPadded}>
+        <section id="compreendendo-cefaleias" className={styles.sectionPadded}>
           <div className={styles.container}>
             <div className={styles.narrowContent}>
               <h2 className={styles.sectionTitle}>Compreendendo as Cefaleias Pediátricas</h2>

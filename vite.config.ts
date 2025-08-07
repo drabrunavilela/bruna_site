@@ -18,5 +18,10 @@ export default defineConfig({
   },
   server: {
     host: true
+  },
+  // Configuração para SPA routing
+  preview: {
+    port: 4173,
+    host: true
   }
 })

@@ -16,26 +16,26 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const SobrePage: React.FC = () => {
-  // Dados das Imagens para o Carrossel
+  // Carousel images data
   const carouselImages = [
     { src: fotoAtenciosa06, alt: 'Dra. Bruna Vilela atenciosa no consultório' },
     { src: fotoConsultorio03, alt: 'Dra. Bruna Vilela em ambiente profissional' },
     { src: fotoNeuropediatra17, alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
   ];
 
-  // Configurações do Carrossel
+  // Carousel configuration
   const settings = {
-    dots: true, // Mostrar indicadores de página
-    infinite: true, // Loop infinito
-    speed: 500, // Velocidade da transição
-    slidesToShow: 1, // Mostrar 1 slide por vez
-    slidesToScroll: 1, // Rolar 1 slide por vez
+    dots: true, // Show page indicators
+    infinite: true, // Infinite loop
+    speed: 500, // Transition speed
+    slidesToShow: 1, // Show 1 slide at a time
+    slidesToScroll: 1, // Scroll 1 slide at a time
     autoplay: true, // Auto-play
-    autoplaySpeed: 3000, // Tempo entre os slides (3 segundos)
-    fade: true, // Efeito de transição suave (fade)
+    autoplaySpeed: 3000, // Time between slides (3 seconds)
+    fade: true, // Smooth transition effect (fade)
   };
 
-  // Structured Data for Person
+  // Page metadata configuration
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -110,7 +110,7 @@ const SobrePage: React.FC = () => {
       <Header />
       
       <main className={styles.main}>
-        {/* 1. Hero Section: "Sobre a Dra. Bruna Vilela" */}
+        {/* 1. Hero Section */}
         <section className={styles.hero}>
           <div className={styles.heroContainer}>
             <div className={styles.heroContent}>
@@ -135,7 +135,7 @@ const SobrePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Carrossel de Fotos */}
+        {/* Photo carousel */}
         <section className={styles.photoCarouselSection}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Momentos da Minha Prática</h2>
@@ -155,7 +155,7 @@ const SobrePage: React.FC = () => {
           </div>
         </section>
 
-        {/* 2. Minha Jornada: Mais de Uma Década de Cuidado Especializado */}
+        {/* 2. Professional journey */}
         <section id="minha-trajetoria" className={styles.sectionPadded}>
           <div className={styles.container}>
             <div className={styles.narrowContent}>
@@ -177,7 +177,7 @@ const SobrePage: React.FC = () => {
           </div>
         </section>
 
-        {/* 3. Formação Sólida, Expertise Abrangente */}
+        {/* 3. Education and expertise */}
         <section className={styles.sectionPadded}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>

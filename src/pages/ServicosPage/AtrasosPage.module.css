@@ -161,14 +161,14 @@
   top: 0;
 }
 
-.bulletListStyled ul {
-  margin: 0.5rem 0 0 1rem;
-  padding-left: 1rem;
+.bulletListStyled li ul {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
 }
 
-.bulletListStyled ul li {
-  margin: 0.5rem 0;
-  padding-left: 1rem;
+.bulletListStyled li ul li {
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .numberedListStyled {
@@ -293,15 +293,15 @@
     font-size: 0.95rem;
   }
 
+  .bulletListStyled li,
+  .numberedListStyled li {
+    font-size: 0.95rem;
+  }
+
   .sectionSoftHighlight {
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 8px;
-  }
-
-  .bulletListStyled li,
-  .numberedListStyled li {
-    font-size: 0.95rem;
   }
 
   .heroImageWrapper,

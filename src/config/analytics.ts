@@ -1,16 +1,16 @@
-// Configuração do Google Analytics 4
+// Analytics configuration
 export const ANALYTICS_CONFIG = {
-  // ID do Google Analytics 4 (protegido por variável de ambiente)
+  // Analytics ID (protected by environment variable)
   GA_MEASUREMENT_ID: import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-Z4J4QM1ZJ1',
   
-  // Configurações de privacidade para LGPD
+  // Privacy settings for GDPR compliance
   PRIVACY_SETTINGS: {
     anonymize_ip: true,
     cookie_flags: 'SameSite=None;Secure',
     storage: 'granted',
   },
   
-  // Eventos personalizados
+  // Custom events
   EVENTS: {
     WHATSAPP_CLICK: 'whatsapp_click',
     APPOINTMENT_CLICK: 'appointment_click',
@@ -20,7 +20,7 @@ export const ANALYTICS_CONFIG = {
     EMAIL_CLICK: 'email_click',
   },
   
-  // Categorias de eventos
+  // Event categories
   EVENT_CATEGORIES: {
     ENGAGEMENT: 'engagement',
     CONVERSION: 'conversion',
@@ -28,7 +28,7 @@ export const ANALYTICS_CONFIG = {
     CONTACT: 'contact',
   },
   
-  // Labels de eventos
+  // Event labels
   EVENT_LABELS: {
     WHATSAPP_CONTACT: 'whatsapp_contact',
     APPOINTMENT_GENERAL: 'appointment_general',
@@ -38,7 +38,7 @@ export const ANALYTICS_CONFIG = {
     APPOINTMENT_SERVICES: 'appointment_services',
   },
   
-  // Conversões (para Google Ads)
+  // Conversions (for Google Ads)
   CONVERSIONS: {
     APPOINTMENT: {
       id: import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-XXXXXXXXXX',
@@ -51,13 +51,13 @@ export const ANALYTICS_CONFIG = {
   },
 };
 
-// Função para verificar se analytics está habilitado
+// Function to check if analytics is enabled
 export const isAnalyticsEnabled = (): boolean => {
   const cookieConsent = localStorage.getItem('cookieConsent');
   return cookieConsent === 'accepted';
 };
 
-// Função para rastrear evento de conversão
+// Function to track conversion event
 export const trackConversion = (conversionId: string, conversionLabel: string) => {
   if (window.gtag && isAnalyticsEnabled()) {
     window.gtag('event', 'conversion', {
@@ -66,14 +66,14 @@ export const trackConversion = (conversionId: string, conversionLabel: string) =
   }
 };
 
-// Função para rastrear evento personalizado
+// Function to track custom event
 export const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
   if (window.gtag && isAnalyticsEnabled()) {
     window.gtag('event', eventName, parameters);
   }
 };
 
-// Função para rastrear visualização de página
+// Function to track page view
 export const trackPageView = (pageTitle: string, pagePath: string) => {
   if (window.gtag && isAnalyticsEnabled()) {
     window.gtag('event', 'page_view', {

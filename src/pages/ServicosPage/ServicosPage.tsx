@@ -9,7 +9,7 @@ import styles from './ServicosPage.module.css';
 import fotoConsultorio03 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp';
 
 const ServicosPage: React.FC = () => {
-  // Structured Data for Medical Services
+  // Page metadata configuration
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",

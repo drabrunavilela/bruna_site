@@ -434,6 +434,26 @@
     text-align: center;
   }
 
+  /* Esconder imagem original como na Home */
+  .heroImageWrapper {
+    display: none;
+  }
+
+  /* Usar ::after no título como na Home para inserir foto */
+  .heroTitle::after {
+    content: '';
+    display: block;
+    width: 95%;
+    height: 350px;
+    max-width: 450px;
+    margin: 0.75rem auto;
+    background-image: url('/src/assets/images/bruna/dra-bruna-vilela-neuropediatra-18.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
+
   .heroTitle {
     font-size: 2rem;
   }
@@ -492,6 +512,10 @@
   .heroBlogPage {
     padding: 3rem 0;
     margin-top: 2.5rem;
+  }
+
+  .heroBlogPage .container {
+    gap: 2rem;
   }
 
   .heroTitle {

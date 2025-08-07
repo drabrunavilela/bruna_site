@@ -1,0 +1,23 @@
+# SPA Routing - Redirect all routes to index.html
+/*    /index.html   200
+
+# Specific redirects for better SEO
+/sobre    /index.html   200
+/servicos    /index.html   200
+/servicos/tdah    /index.html   200
+/servicos/tea    /index.html   200
+/servicos/epilepsia    /index.html   200
+/servicos/atrasos    /index.html   200
+/servicos/cefaleias    /index.html   200
+/servicos/segunda-opiniao    /index.html   200
+/blog    /index.html   200
+/glossario    /index.html   200
+/contato    /index.html   200
+/politica-privacidade    /index.html   200
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin 

@@ -1,43 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './AtrasosPage.module.css';
-import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
-
+import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp";
 
 const AtrasosPage: React.FC = () => {
-  // Structured Data for Developmental Delays Service
+  // Structured Data for Atrasos Service
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalService",
-    "name": "Avaliação de Atrasos no Neurodesenvolvimento - Dra. Bruna Vilela",
-    "description": "Especialista em atrasos no desenvolvimento infantil em Belo Horizonte. Avaliação completa e intervenção precoce para maximizar o potencial da criança.",
+    "name": "Avaliação de Atrasos no Neurodesenvolvimento",
+    "description": "Identificação precoce e intervenção para atrasos no desenvolvimento infantil",
     "provider": {
-      "@type": "Physician",
+      "@type": "MedicalBusiness",
       "name": "Dra. Bruna Vilela",
-      "medicalSpecialty": "Neuropediatria",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
-        "addressLocality": "Belo Horizonte",
-        "addressRegion": "MG",
-        "addressCountry": "BR"
-      }
+      "medicalSpecialty": "Neuropediatria"
     },
+    "serviceType": "MedicalService",
     "areaServed": {
       "@type": "City",
       "name": "Belo Horizonte"
     },
-    "serviceType": "Avaliação de Atrasos no Neurodesenvolvimento"
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceType": "Consultation"
+    }
   };
 
   return (
     <>
       <SEO 
-        title="Atrasos no Desenvolvimento Infantil - Avaliação e Intervenção | Dra. Bruna Vilela Neuropediatra"
-        description="Especialista em atrasos no desenvolvimento infantil em Belo Horizonte. Dra. Bruna Vilela oferece avaliação completa e intervenção precoce para maximizar o potencial da criança."
-        keywords="neuropediatra, pediatra, belo horizonte"
+        title="Atrasos no Neurodesenvolvimento - Avaliação e Intervenção | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
+        description="Especialista em atrasos no neurodesenvolvimento em Belo Horizonte. Dra. Bruna Vilela oferece avaliação abrangente e intervenção precoce para crianças com atrasos no desenvolvimento."
+        keywords="atrasos desenvolvimento, neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/atrasos"
         structuredData={structuredData}
       />
@@ -54,19 +51,14 @@ const AtrasosPage: React.FC = () => {
               <p className={styles.heroSubtitle}>
                 O desenvolvimento infantil é um processo dinâmico e complexo, onde cada criança atinge marcos importantes em diferentes ritmos. No entanto, quando há uma lacuna significativa entre o que é esperado para a idade e o que a criança consegue fazer, falamos em atrasos no neurodesenvolvimento. A identificação precoce e a avaliação abrangente são cruciais para que as intervenções possam ser iniciadas no momento certo, aproveitando as "janelas de oportunidade" do cérebro em desenvolvimento.
               </p>
-              <a 
-                href="https://wa.me/5531983501417" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.buttonPrimary}
-              >
-                Agende uma Avaliação Especializada
-              </a>
+              <Link to="#o-que-sao-atrasos" className={styles.buttonPrimary} onClick={() => document.getElementById('o-que-sao-atrasos')?.scrollIntoView({ behavior: 'smooth' })}>
+                Entenda os Atrasos
+              </Link>
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src={fotoConsultorio04}
-                alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para atrasos no desenvolvimento"
+                src={fotoNeuropediatra12}
+                alt="Dra. Bruna Vilela, especialista em neurodesenvolvimento infantil"
                 className={styles.heroImage}
               />
             </div>
@@ -74,7 +66,7 @@ const AtrasosPage: React.FC = () => {
         </section>
 
         {/* 2. O que são Atrasos no Neurodesenvolvimento? */}
-        <section className={styles.sectionPadded}>
+        <section id="o-que-sao-atrasos" className={styles.sectionPadded}>
           <div className={styles.container}>
             <div className={styles.narrowContent}>
               <h2 className={styles.sectionTitle}>O que são Atrasos no Neurodesenvolvimento?</h2>

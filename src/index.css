@@ -76,37 +76,37 @@ button:focus-visible {
 /* Centralização responsiva para todas as páginas */
 @media (max-width: 768px) {
   /* Centralização com maior especificidade para sobrescrever regras existentes */
-  .container,
-  .heroContent,
-  .aboutTextSection,
-  .testimonialsGrid,
-  .blogGrid,
-  .sectionPadded .container,
-  .narrowContent {
-    text-align: center !important;
+  body .container,
+  body .heroContent,
+  body .aboutTextSection,
+  body .testimonialsGrid,
+  body .blogGrid,
+  body .sectionPadded .container,
+  body .narrowContent {
+    text-align: center;
   }
   
   /* Centraliza todos os elementos de texto com maior especificidade */
-  h1, h2, h3, h4, h5, h6, p,
-  .heroTitle, .heroSubtitle, .sectionTitle, .paragraph,
-  .cardTitle, .cardDescription, .listItemTitle, .listItemDescription,
-  .testimonialText, .aboutText, .footerDescription {
-    text-align: center !important;
+  body h1, body h2, body h3, body h4, body h5, body h6, body p,
+  body .heroTitle, body .heroSubtitle, body .sectionTitle, body .paragraph,
+  body .cardTitle, body .cardDescription, body .listItemTitle, body .listItemDescription,
+  body .testimonialText, body .aboutText, body .footerDescription {
+    text-align: center;
   }
   
   /* Centraliza botões e links */
-  button, a, .ctaPrimary, .ctaSecondary, .buttonPrimary, .buttonSecondary {
-    text-align: center !important;
+  body button, body a, body .ctaPrimary, body .ctaSecondary, body .buttonPrimary, body .buttonSecondary {
+    text-align: center;
   }
   
   /* Centraliza grids e flex containers */
-  .grid, .flex, .heroContainer, .aboutContent, .testimonialsGrid, .blogGrid {
-    justify-content: center !important;
-    align-items: center !important;
+  body .grid, body .flex, body .heroContainer, body .aboutContent, body .testimonialsGrid, body .blogGrid {
+    justify-content: center;
+    align-items: center;
   }
   
   /* Centraliza elementos específicos que podem ter alinhamento à esquerda */
-  .navLink {
-    text-align: center !important;
+  body .navLink {
+    text-align: center;
   }
 }

@@ -1,43 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './EpilepsiaPage.module.css';
-import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
-
+import fotoNeuropediatra11 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-11.webp";
 
 const EpilepsiaPage: React.FC = () => {
-  // Structured Data for Epilepsy Service
+  // Structured Data for Epilepsia Service
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalService",
-    "name": "Diagnóstico e Tratamento de Epilepsia Infantil - Dra. Bruna Vilela",
-    "description": "Especialista em epilepsia infantil em Belo Horizonte. Diagnóstico preciso e tratamento personalizado para diferentes tipos de crises epilépticas.",
+    "name": "Diagnóstico e Tratamento de Epilepsia Infantil",
+    "description": "Diagnóstico preciso e opções de tratamento para epilepsia em crianças e adolescentes",
     "provider": {
-      "@type": "Physician",
+      "@type": "MedicalBusiness",
       "name": "Dra. Bruna Vilela",
-      "medicalSpecialty": "Neuropediatria",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
-        "addressLocality": "Belo Horizonte",
-        "addressRegion": "MG",
-        "addressCountry": "BR"
-      }
+      "medicalSpecialty": "Neuropediatria"
     },
+    "serviceType": "MedicalService",
     "areaServed": {
       "@type": "City",
       "name": "Belo Horizonte"
     },
-    "serviceType": "Diagnóstico e Tratamento de Epilepsia Infantil"
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceType": "Consultation"
+    }
   };
 
   return (
     <>
       <SEO 
         title="Epilepsia Infantil - Diagnóstico e Tratamento | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
-        description="Especialista em epilepsia infantil em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento personalizado para diferentes tipos de crises epilépticas."
-        keywords="neuropediatra, pediatra, belo horizonte"
+        description="Especialista em epilepsia infantil em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento personalizado para crianças com epilepsia."
+        keywords="epilepsia infantil, neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/epilepsia"
         structuredData={structuredData}
       />
@@ -54,19 +51,14 @@ const EpilepsiaPage: React.FC = () => {
               <p className={styles.heroSubtitle}>
                 A epilepsia é uma condição neurológica crônica caracterizada por crises epilépticas recorrentes e não provocadas. Embora o termo possa causar apreensão, é uma das condições neurológicas mais comuns na infância. Compreender seus tipos, causas e as opções de tratamento é fundamental para um manejo eficaz e para garantir a qualidade de vida da criança.
               </p>
-              <a 
-                href="https://wa.me/5531983501417" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.buttonPrimary}
-              >
-                Agende uma Consulta Especializada
-              </a>
+              <Link to="#crises-epilepticas" className={styles.buttonPrimary} onClick={() => document.getElementById('crises-epilepticas')?.scrollIntoView({ behavior: 'smooth' })}>
+                Entenda as Crises
+              </Link>
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src={fotoConsultorio03}
-                alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para epilepsia infantil"
+                src={fotoNeuropediatra11}
+                alt="Dra. Bruna Vilela, especialista em epilepsia infantil e neuropediatria"
                 className={styles.heroImage}
               />
             </div>
@@ -74,7 +66,7 @@ const EpilepsiaPage: React.FC = () => {
         </section>
 
         {/* 2. O que são Crises Epilépticas? */}
-        <section className={styles.sectionPadded}>
+        <section id="crises-epilepticas" className={styles.sectionPadded}>
           <div className={styles.container}>
             <div className={styles.narrowContent}>
               <h2 className={styles.sectionTitle}>O que são Crises Epilépticas?</h2>

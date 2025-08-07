@@ -133,7 +133,6 @@
   line-height: 1.3;
   margin: 2rem 0 1rem 0;
   color: var(--color-headings);
-  text-align: left;
 }
 
 .paragraph {
@@ -301,15 +300,15 @@
     font-size: 0.95rem;
   }
 
+  .bulletListStyled li,
+  .numberedListStyled li {
+    font-size: 0.95rem;
+  }
+
   .sectionSoftHighlight {
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 8px;
-  }
-
-  .bulletListStyled li,
-  .numberedListStyled li {
-    font-size: 0.95rem;
   }
 
   .heroImageWrapper,

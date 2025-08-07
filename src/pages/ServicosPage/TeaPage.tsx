@@ -1,43 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './TeaPage.module.css';
-import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
-
+import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
 
 const TeaPage: React.FC = () => {
   // Structured Data for TEA Service
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalService",
-    "name": "Diagnóstico e Tratamento de TEA - Dra. Bruna Vilela",
-    "description": "Especialista em Transtorno do Espectro Autista (TEA) em Belo Horizonte. Diagnóstico precoce e intervenções baseadas em evidências científicas.",
+    "name": "Diagnóstico e Tratamento de TEA",
+    "description": "Diagnóstico precoce e intervenções baseadas em evidências para Transtorno do Espectro Autista em crianças",
     "provider": {
-      "@type": "Physician",
+      "@type": "MedicalBusiness",
       "name": "Dra. Bruna Vilela",
-      "medicalSpecialty": "Neuropediatria",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
-        "addressLocality": "Belo Horizonte",
-        "addressRegion": "MG",
-        "addressCountry": "BR"
-      }
+      "medicalSpecialty": "Neuropediatria"
     },
+    "serviceType": "MedicalService",
     "areaServed": {
       "@type": "City",
       "name": "Belo Horizonte"
     },
-    "serviceType": "Diagnóstico e Tratamento de TEA"
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceType": "Consultation"
+    }
   };
 
   return (
     <>
       <SEO 
-        title="TEA - Transtorno do Espectro Autista | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
-        description="Especialista em TEA em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico precoce e intervenções baseadas em evidências para Transtorno do Espectro Autista."
-        keywords="neuropediatra, pediatra, belo horizonte"
+        title="TEA - Diagnóstico Precoce e Intervenções | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
+        description="Especialista em TEA em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico precoce e intervenções baseadas em evidências para crianças com Transtorno do Espectro Autista."
+        keywords="tea, autismo, neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/tea"
         structuredData={structuredData}
       />
@@ -54,19 +51,14 @@ const TeaPage: React.FC = () => {
               <p className={styles.heroSubtitle}>
                 O Transtorno do Espectro Autista (TEA) é uma condição do neurodesenvolvimento que afeta a comunicação social e o comportamento, manifestando-se de maneiras diversas em cada indivíduo – daí o termo "espectro". Compreender o TEA, seus sinais e as intervenções baseadas em evidências é o primeiro passo para oferecer o suporte necessário e maximizar o potencial de cada criança.
               </p>
-              <a 
-                href="https://wa.me/5531983501417" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.buttonPrimary}
-              >
-                Agende uma Avaliação Especializada
-              </a>
+              <Link to="#compreendendo-tea" className={styles.buttonPrimary} onClick={() => document.getElementById('compreendendo-tea')?.scrollIntoView({ behavior: 'smooth' })}>
+                Entenda o TEA
+              </Link>
             </div>
             <div className={styles.heroImageWrapper}>
               <img 
-                src={fotoConsultorio04}
-                alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para TEA"
+                src={fotoConsultorio03}
+                alt="Dra. Bruna Vilela em consultório, especialista em TEA e neuropediatria"
                 className={styles.heroImage}
               />
             </div>
@@ -74,7 +66,7 @@ const TeaPage: React.FC = () => {
         </section>
 
         {/* 2. Compreendendo o TEA */}
-        <section className={styles.sectionPadded}>
+        <section id="compreendendo-tea" className={styles.sectionPadded}>
           <div className={styles.container}>
             <div className={styles.narrowContent}>
               <h2 className={styles.sectionTitle}>Compreendendo o TEA</h2>
@@ -92,7 +84,7 @@ const TeaPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 3. A Importância Vital do Diagnóstico Precoce e Sinais de Alerta */}
+        {/* 3. A Importância Vital do Diagnóstico Precoce */}
         <section className={`${styles.sectionPadded} ${styles.sectionSoftHighlight}`}>
           <div className={styles.container}>
             <div className={styles.narrowContent}>
@@ -125,7 +117,6 @@ const TeaPage: React.FC = () => {
                 <li>Uso de instrumentos de rastreamento e avaliação validados.</li>
                 <li>Descarte de outras condições que possam causar sintomas semelhantes.</li>
               </ul>
-              
               <h2 className={styles.sectionTitle}>Intervenções Baseadas em Evidências para o TEA</h2>
               <p className={styles.paragraph}>
                 Uma vez diagnosticado, um plano de intervenção individualizado é essencial. As intervenções mais eficazes são baseadas em evidências científicas e podem incluir:
