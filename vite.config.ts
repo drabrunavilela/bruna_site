@@ -23,5 +23,7 @@ export default defineConfig({
   preview: {
     port: 4173,
     host: true
-  }
+  },
+  // Configuração adicional para fallback de SPA
+  base: '/'
 })
