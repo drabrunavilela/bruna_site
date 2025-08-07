@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "app/index.html": {
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
     {
       "source": "/((?!api/).*)",
