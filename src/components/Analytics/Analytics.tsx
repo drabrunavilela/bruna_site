@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from 'react';
 import { ANALYTICS_CONFIG } from '../../config/analytics';
-import type { WindowWithAnalytics, AnalyticsEvent, PageViewEvent } from '../../types/analytics';
+import type { WindowWithAnalytics, AnalyticsEvent, PageViewEvent, DataLayerItem } from '../../types/analytics';
 
 // Analytics ID
 const GA_MEASUREMENT_ID = ANALYTICS_CONFIG.GA_MEASUREMENT_ID;
@@ -25,7 +25,7 @@ const Analytics: React.FC<AnalyticsProps> = ({ enabled = false }) => {
     // Configure gtag
     (window as unknown as WindowWithAnalytics).dataLayer = (window as unknown as WindowWithAnalytics).dataLayer || [];
     (window as unknown as WindowWithAnalytics).gtag = function(...args: unknown[]) {
-      (window as unknown as WindowWithAnalytics).dataLayer.push(args);
+      (window as unknown as WindowWithAnalytics).dataLayer.push(...args as DataLayerItem[]);
     };
 
     // Initial configuration
