@@ -7,6 +7,7 @@ import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neur
 import logoInstagram from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png";
 import logoFacebook from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Facebook.png";
 import logoDoctoralia from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png";
+import whatsappIcon from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const ContatoPage: React.FC = () => {
@@ -91,26 +92,18 @@ const ContatoPage: React.FC = () => {
         <section className={styles.sectionPadded}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Agendamento de Consultas</h2>
-            <div className={styles.contactGrid}>
-              <div className={styles.contactCard}>
-                <div className={styles.contactIcon}>📱</div>
-                <h3 className={styles.contactTitle}>WhatsApp</h3>
-                <p className={styles.contactDescription}>
+            <div className={styles.bookingOptionsGrid}>
+              <div className={styles.bookingOptionCard}>
+                <div className={styles.whatsappIcon}>
+                  <img src={whatsappIcon} alt="WhatsApp" />
+                </div>
+                <h3 className={styles.cardTitle}>WhatsApp</h3>
+                <p className={styles.cardDescription}>
                   Agende sua consulta diretamente pelo WhatsApp
                 </p>
-                <a 
-                  href="https://wa.me/5531973178377" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={styles.contactLink}
-                  onClick={() => {
-                    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).trackWhatsAppClick) {
-                      (window as WindowWithAnalytics).trackWhatsAppClick();
-                    }
-                  }}
-                >
-                  <span className={styles.icon}>📞</span> (31) 97317-8377 (WhatsApp)
-                </a>
+                <div className={styles.contactInfo}>
+                  <span className={styles.icon}>📱</span> (31) 97317-8377
+                </div>
                 <a 
                   href="https://wa.me/5531973178377" 
                   target="_blank" 

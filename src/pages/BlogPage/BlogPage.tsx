@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
@@ -14,6 +14,9 @@ import fotoAcolhedora10 from '../../assets/images/bruna/dra-bruna-vilela-acolhed
 import fotoSorrindo02 from '../../assets/images/bruna/dra-bruna-vilela-sorrindo-02.webp';
 
 const BlogPage: React.FC = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const currentPage = parseInt(searchParams.get('page') || '1');
+  
   // Structured Data for Blog
   const structuredData = {
     "@context": "https://schema.org",
@@ -350,10 +353,30 @@ const BlogPage: React.FC = () => {
               </div>
             </div>
             <div className={styles.pagination}>
-              <Link to="#" className={styles.pageLink}>1</Link>
-              <Link to="#" className={`${styles.pageLink} ${styles.active}`}>2</Link>
-              <Link to="#" className={styles.pageLink}>3</Link>
-              <Link to="#" className={`${styles.pageLink} ${styles.next}`}>Próxima →</Link>
+              <Link 
+                to="/blog?page=1" 
+                className={`${styles.pageLink} ${currentPage === 1 ? styles.active : ''}`}
+              >
+                1
+              </Link>
+              <Link 
+                to="/blog?page=2" 
+                className={`${styles.pageLink} ${currentPage === 2 ? styles.active : ''}`}
+              >
+                2
+              </Link>
+              <Link 
+                to="/blog?page=3" 
+                className={`${styles.pageLink} ${currentPage === 3 ? styles.active : ''}`}
+              >
+                3
+              </Link>
+              <Link 
+                to={`/blog?page=${currentPage < 3 ? currentPage + 1 : 3}`} 
+                className={`${styles.pageLink} ${styles.next}`}
+              >
+                Próxima →
+              </Link>
             </div>
           </div>
         </section>

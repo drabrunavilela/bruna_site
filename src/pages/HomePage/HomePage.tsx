@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './HomePage.module.css';
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 // Importar imagens
 import fotoAtenciosa from '../../assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp';
@@ -136,8 +137,12 @@ const HomePage: React.FC = () => {
                     href="https://wa.me/5531973178377" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className={styles.buttonPrimary}
-                    onClick={() => (window as any).trackWhatsAppClick?.()}
+                    className={styles.ctaPrimary}
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as WindowWithAnalytics).trackWhatsAppClick) {
+                        (window as WindowWithAnalytics).trackWhatsAppClick();
+                      }
+                    }}
                   >
                     Agendar Consulta Online
                   </a>
@@ -310,7 +315,7 @@ const HomePage: React.FC = () => {
                 no desenvolvimento do seu filho.
               </p>
               <a 
-                href="https://wa.me/5531983501417" 
+                href="https://wa.me/5531973178377" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.finalCTAButton}

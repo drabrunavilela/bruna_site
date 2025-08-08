@@ -74,13 +74,13 @@
   border: 2px solid var(--color-primary);
   cursor: pointer;
   text-align: center;
-  align-self: flex-start;
 }
 
 .buttonPrimary:hover,
 .buttonPrimary:focus {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
+  color: var(--color-headings);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -121,6 +121,64 @@
   margin: 0 auto;
 }
 
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contactCard {
+  background: var(--color-white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--color-border);
+}
+
+.contactCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.contactIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contactTitle {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--color-headings);
+}
+
+.contactDescription {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  color: var(--color-text);
+}
+
+.contactLink {
+  display: block;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: var(--color-accent);
+}
+
 .sectionTitle {
   font-family: var(--font-body); /* Times New Roman para títulos de seção */
   font-size: 2.25rem;
@@ -142,10 +200,21 @@
 }
 
 .bookingOptionsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
+}
+
+.whatsappIcon {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.whatsappIcon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .bookingOptionCard {
@@ -156,6 +225,8 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--color-border);
+  max-width: 400px;
+  width: 100%;
 }
 
 .bookingOptionCard:hover {
@@ -444,7 +515,7 @@
   }
 
   .bookingOptionsGrid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.5rem;
   }
 
