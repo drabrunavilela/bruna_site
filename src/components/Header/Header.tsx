@@ -57,7 +57,7 @@ const Header: React.FC = () => {
             href="https://wa.me/5531973178377" 
             target="_blank" 
             rel="noopener noreferrer"
-            className={styles.contactButton}
+            className={styles.ctaButton}
             onClick={() => (window as any).trackWhatsAppClick?.()}
           >
             Agendar Consulta

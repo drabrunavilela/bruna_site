@@ -94,29 +94,27 @@ const Footer: React.FC = () => {
           {/* Contato e Agendamento */}
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Contato</h3>
-            <div className={styles.contactDetails}>
-              <p className={styles.contactText}>
+            <div className={styles.contactInfo}>
+              <p className={styles.contactItem}>
                 <strong>Endereço:</strong> Av. Raja Gabaglia 2000, Torre 1, Sala 313<br />
                 Belo Horizonte - MG
               </p>
-              <p className={styles.contactText}>
+              <p className={styles.contactItem}>
                 <strong>Telefone:</strong> (31) 97317-8377 (WhatsApp)<br />
                 <strong>Email:</strong> brunavilela.neuroped@gmail.com
               </p>
-              <p className={styles.contactText}>
+              <p className={styles.contactItem}>
                 <strong>Horário:</strong> Segunda a Sexta, 08:00 - 18:00
               </p>
-              <div className={styles.contactLinks}>
-                <a 
-                  href="https://wa.me/5531973178377" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={styles.contactLink}
-                  onClick={() => (window as any).trackWhatsAppClick?.()}
-                >
-                  Agendar Consulta
-                </a>
-              </div>
+              <a 
+                href="https://wa.me/5531973178377" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.ctaButton}
+                onClick={() => (window as any).trackWhatsAppClick?.()}
+              >
+                Agendar Consulta
+              </a>
             </div>
           </div>
         </div>
