@@ -23,7 +23,7 @@ const BlogPage: React.FC = () => {
     "@type": "Blog",
     "name": "Blog da Dra. Bruna Vilela - Neuropediatria",
     "description": "Artigos científicos sobre neuropediatria, TDAH, autismo, epilepsia e desenvolvimento infantil. Conhecimento científico traduzido para pais e profissionais.",
-    "url": "https://drabrunavilela.com.br/blog",
+    "url": "https://www.brunavilelaneuroped.com.br/blog",
     "publisher": {
       "@type": "Person",
       "name": "Dra. Bruna Vilela",

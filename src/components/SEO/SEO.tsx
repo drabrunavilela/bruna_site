@@ -33,7 +33,7 @@ const SEO: React.FC<SEOProps> = ({
   articleSection,
   articleTag
 }) => {
-  const baseUrl = "https://drabrunavilela.com.br";
+  const baseUrl = "https://www.brunavilelaneuroped.com.br";
   const fullCanonical = canonical ? `${baseUrl}${canonical}` : baseUrl;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
 

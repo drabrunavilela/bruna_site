@@ -16,7 +16,7 @@ const ServicosPage: React.FC = () => {
     "@type": "MedicalBusiness",
     "name": "Dra. Bruna Vilela - Consultório de Neuropediatria",
     "description": "Especialista em neuropediatria em Belo Horizonte. Serviços especializados em TDAH, autismo, epilepsia e desenvolvimento infantil.",
-    "url": "https://drabrunavilela.com.br/servicos",
+    "url": "https://www.brunavilelaneuroped.com.br/servicos",
     "telephone": "+5531973178377",
     "email": "brunavilela.neuroped@gmail.com",
     "address": {

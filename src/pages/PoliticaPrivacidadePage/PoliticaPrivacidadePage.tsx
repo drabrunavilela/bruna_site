@@ -11,7 +11,7 @@ const PoliticaPrivacidadePage: React.FC = () => {
     "@type": "WebPage",
     "name": "Política de Privacidade - Dra. Bruna Vilela",
     "description": "Política de Privacidade do site da Dra. Bruna Vilela, neuropediatra em Belo Horizonte",
-    "url": "https://drabrunavilela.com.br/politica-privacidade"
+    "url": "https://www.brunavilelaneuroped.com.br/politica-privacidade"
   };
 
   return (

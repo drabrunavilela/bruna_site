@@ -14,7 +14,7 @@ const GlossarioPage: React.FC = () => {
     "@type": "WebPage",
     "name": "Glossário Científico - Neuropediatria",
     "description": "Guia prático para entender os termos técnicos da neuropediatria e empoderar sua jornada com informação clara e precisa",
-    "url": "https://drabrunavilela.com.br/glossario",
+    "url": "https://www.brunavilelaneuroped.com.br/glossario",
     "mainEntity": {
       "@type": "ItemList",
       "name": "Termos de Neuropediatria",

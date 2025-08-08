@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
     "name": "Dra. Bruna Vilela - Neuropediatra",
     "alternateName": "Dra. Bruna Vilela - Consultório",
     "description": "Neuropediatra e pediatra em Belo Horizonte, especialista em TDAH, autismo, epilepsia e desenvolvimento infantil. CRMMG 80690 | RQE 66867",
-    "url": "https://drabrunavilela.com.br",
+    "url": "https://www.brunavilelaneuroped.com.br",
     "telephone": "+5531973178377",
     "email": "brunavilela.neuroped@gmail.com",
     "medicalSpecialty": ["Neuropediatria", "Pediatria", "Neurologia Infantil"],

@@ -17,7 +17,7 @@ const ContatoPage: React.FC = () => {
     "@type": ["MedicalBusiness", "LocalBusiness"],
     "name": "Dra. Bruna Vilela - Consultório",
     "description": "Neuropediatra e pediatra em Belo Horizonte, especialista em TDAH, autismo e desenvolvimento infantil",
-    "url": "https://drabrunavilela.com.br/contato",
+    "url": "https://www.brunavilelaneuroped.com.br/contato",
     "telephone": "+5531973178377",
     "email": "brunavilela.neuroped@gmail.com",
     "address": {
