@@ -120,9 +120,9 @@ const HomePage: React.FC = () => {
               <div className={styles.heroContent}>
                 {/* Professional logo */}
                 <div className={styles.heroLogo}>
-                  <h1 className={styles.logoTitle} itemProp="name">Dra. Bruna Vilela</h1>
-                  <h2 className={styles.logoSubtitle} itemProp="jobTitle">NEUROLOGISTA INFANTIL</h2>
-                  <h3 className={styles.logoCredentials} itemProp="identifier">CRMMG 80690 | RQE 66867</h3>
+                  <h2 className={styles.logoTitle} itemProp="name">Dra. Bruna Vilela</h2>
+                  <h3 className={styles.logoSubtitle} itemProp="jobTitle">NEUROLOGISTA INFANTIL</h3>
+                  <h4 className={styles.logoCredentials} itemProp="identifier">CRMMG 80690 | RQE 66867</h4>
                 </div>
                 
                 <h1 className={styles.heroTitle}>
@@ -155,7 +155,7 @@ const HomePage: React.FC = () => {
               <div className={styles.heroImageContainer}>
                 <img 
                   src={fotoAtenciosa}
-                  alt="Dra. Bruna Vilela atenciosa, neuropediatra e pediatra em Belo Horizonte"
+                  alt="Dra. Bruna Vilela, neuropediatra atenciosa em Belo Horizonte, especialista em TDAH e autismo infantil"
                   className={styles.heroImage}
                   loading="eager"
                   fetchPriority="high"
