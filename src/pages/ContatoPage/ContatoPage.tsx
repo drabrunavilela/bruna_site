@@ -7,7 +7,7 @@ import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neur
 import logoInstagram from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png";
 import logoFacebook from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Facebook.png";
 import logoDoctoralia from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png";
-
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const ContatoPage: React.FC = () => {
   // Structured Data for Contact
@@ -17,7 +17,7 @@ const ContatoPage: React.FC = () => {
     "name": "Dra. Bruna Vilela - Consultório",
     "description": "Neuropediatra e pediatra em Belo Horizonte, especialista em TDAH, autismo e desenvolvimento infantil",
     "url": "https://drabrunavilela.com.br/contato",
-    "telephone": "+5531983501417",
+    "telephone": "+5531973178377",
     "email": "brunavilela.neuroped@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -35,7 +35,7 @@ const ContatoPage: React.FC = () => {
     "openingHours": "Mo-Fr 08:00-18:00",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+5531983501417",
+      "telephone": "+5531973178377",
       "contactType": "customer service",
       "availableLanguage": "Portuguese"
     },
@@ -69,7 +69,7 @@ const ContatoPage: React.FC = () => {
                 Agende sua consulta, tire suas dúvidas ou nos visite. Estamos prontos para acolher você e sua família com a atenção e expertise que merecem.
               </p>
               <a 
-                href="https://wa.me/5531983501417" 
+                href="https://wa.me/5531973178377" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.buttonPrimary}
@@ -88,48 +88,42 @@ const ContatoPage: React.FC = () => {
         </section>
 
         {/* 2. Agendamento de Consultas */}
-        <section id="agendamento-online" className={styles.sectionPadded}>
+        <section className={styles.sectionPadded}>
           <div className={styles.container}>
-            <div className={styles.narrowContent}>
-              <h2 className={styles.sectionTitle}>Facilidade no Agendamento</h2>
-              <p className={styles.paragraph}>
-                Para otimizar seu tempo e garantir o melhor atendimento, nosso processo de agendamento é simples e rápido.
-              </p>
-              <div className={styles.bookingOptionsGrid}>
-                <div className={styles.bookingOptionCard}>
-                  <h3 className={styles.cardTitle}>Agendamento Online</h3>
-                  <p className={styles.cardDescription}>
-                    Escolha o melhor dia e horário na nossa agenda online, de forma prática e rápida.
-                  </p>
-                  <a 
-                    href="https://wa.me/5531983501417" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className={styles.buttonPrimary}
-                  >
-                    Agendar Agora
-                  </a>
-                </div>
-                <div className={styles.bookingOptionCard}>
-                  <h3 className={styles.cardTitle}>Por Telefone ou WhatsApp</h3>
-                  <p className={styles.cardDescription}>
-                    Fale diretamente com nossa equipe de atendimento para agendar ou esclarecer dúvidas.
-                  </p>
-                  <p className={styles.contactInfo}>
-                    <span className={styles.icon}>📞</span> (31) 98350-1417 (WhatsApp)
-                  </p>
-                  <p className={styles.contactInfo}>
-                    <span className={styles.icon}>📞</span> (31) 3291-9009
-                  </p>
-                  <a 
-                    href="https://wa.me/5531983501417" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className={styles.buttonSecondary}
-                  >
-                    Chamar no WhatsApp
-                  </a>
-                </div>
+            <h2 className={styles.sectionTitle}>Agendamento de Consultas</h2>
+            <div className={styles.contactGrid}>
+              <div className={styles.contactCard}>
+                <div className={styles.contactIcon}>📱</div>
+                <h3 className={styles.contactTitle}>WhatsApp</h3>
+                <p className={styles.contactDescription}>
+                  Agende sua consulta diretamente pelo WhatsApp
+                </p>
+                <a 
+                  href="https://wa.me/5531973178377" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.contactLink}
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).trackWhatsAppClick) {
+                      (window as WindowWithAnalytics).trackWhatsAppClick();
+                    }
+                  }}
+                >
+                  <span className={styles.icon}>📞</span> (31) 97317-8377 (WhatsApp)
+                </a>
+                <a 
+                  href="https://wa.me/5531973178377" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.buttonPrimary}
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).trackWhatsAppClick) {
+                      (window as WindowWithAnalytics).trackWhatsAppClick();
+                    }
+                  }}
+                >
+                  Agendar via WhatsApp
+                </a>
               </div>
             </div>
           </div>

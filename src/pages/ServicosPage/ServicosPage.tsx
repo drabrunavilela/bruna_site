@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './ServicosPage.module.css';
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 // Importar imagens
 import fotoConsultorio03 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp';
@@ -16,7 +17,7 @@ const ServicosPage: React.FC = () => {
     "name": "Dra. Bruna Vilela - Consultório de Neuropediatria",
     "description": "Especialista em neuropediatria em Belo Horizonte. Serviços especializados em TDAH, autismo, epilepsia e desenvolvimento infantil.",
     "url": "https://drabrunavilela.com.br/servicos",
-    "telephone": "+5531983501417",
+    "telephone": "+5531973178377",
     "email": "brunavilela.neuroped@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -33,7 +34,7 @@ const ServicosPage: React.FC = () => {
     "openingHours": "Mo-Fr 08:00-18:00",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+5531983501417",
+      "telephone": "+5531973178377",
       "contactType": "customer service",
       "availableLanguage": "Portuguese"
     },
@@ -231,12 +232,13 @@ const ServicosPage: React.FC = () => {
                   Entre em Contato
                 </Link>
                 <a 
-                  href="https://wa.me/5531983501417" 
+                  href="https://wa.me/5531973178377" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className={styles.buttonSecondary}
+                  className={styles.buttonPrimary}
+                  onClick={() => (window as WindowWithAnalytics)?.trackWhatsAppClick?.()}
                 >
-                  Agendar Consulta Agora
+                  Agendar Consulta
                 </a>
               </div>
             </div>

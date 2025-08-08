@@ -8,16 +8,18 @@ export const CONTENT_CONFIG = {
     DEFAULT_TWITTER_CARD: "summary_large_image"
   },
   
-  // Contact information
+  // Informações de contato
   CONTACT: {
-    PHONE: "+5531983501417",
+    PHONE: "+5531973178377",
+    PHONE_DISPLAY: "(31) 97317-8377",
+    WHATSAPP: "5531973178377",
     EMAIL: "brunavilela.neuroped@gmail.com",
     ADDRESS: {
       STREET: "Avenida Raja Gabaglia 2000, Torre 1, Sala 313",
       CITY: "Belo Horizonte",
       STATE: "MG",
-      COUNTRY: "BR",
-      POSTAL_CODE: "30000-000"
+      ZIP: "30000-000",
+      COUNTRY: "BR"
     },
     COORDINATES: {
       LATITUDE: -19.9167,
@@ -25,10 +27,18 @@ export const CONTENT_CONFIG = {
     }
   },
   
-  // Professional credentials
+  // Horários de atendimento
+  SCHEDULE: {
+    WEEKDAYS: "Segunda a Sexta: 08:00 - 18:00",
+    WEEKEND: "Sábado: 08:00 - 12:00",
+    SUNDAY: "Domingo: Fechado"
+  },
+  
+  // Credenciais médicas
   CREDENTIALS: {
-    CRMMG: "80690",
-    RQE: "66867"
+    CRM: "CRMMG 80690",
+    RQE: "RQE 66867",
+    SPECIALTIES: ["Neuropediatria", "Pediatria"]
   },
   
   // Services configuration

@@ -249,7 +249,7 @@ const PoliticaPrivacidadePage: React.FC = () => {
                 <div className={styles.contactInfo}>
                   <p><strong>Dra. Bruna Vilela</strong></p>
                   <p>Email: brunavilela.neuroped@gmail.com</p>
-                  <p>Telefone: (31) 98350-1417</p>
+                  <p>Telefone: (31) 97317-8377</p>
                   <p>Endereço: Avenida Raja Gabaglia 2000, Torre 1, Sala 313 - Belo Horizonte/MG</p>
                 </div>
               </div>

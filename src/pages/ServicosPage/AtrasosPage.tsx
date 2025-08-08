@@ -158,12 +158,13 @@ const AtrasosPage: React.FC = () => {
               </p>
               <div className={styles.buttonCenter}>
                 <a 
-                  href="https://wa.me/5531983501417" 
+                  href="https://wa.me/5531973178377" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={styles.buttonPrimary}
+                  onClick={() => (window as WindowWithAnalytics)?.trackWhatsAppClick?.()}
                 >
-                  Agende uma Avaliação Especializada
+                  Agendar Consulta
                 </a>
               </div>
             </div>

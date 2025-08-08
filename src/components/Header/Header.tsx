@@ -54,10 +54,11 @@ const Header: React.FC = () => {
 
         <div className={styles.ctaContainer}>
           <a 
-            href="https://wa.me/5531983501417" 
+            href="https://wa.me/5531973178377" 
             target="_blank" 
             rel="noopener noreferrer"
-            className={styles.ctaButton}
+            className={styles.contactButton}
+            onClick={() => (window as any).trackWhatsAppClick?.()}
           >
             Agendar Consulta
           </a>

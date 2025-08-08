@@ -287,12 +287,13 @@ const SobrePage: React.FC = () => {
                 Cada criança merece o melhor cuidado possível. Vamos trabalhar juntos para desvendar o potencial único do seu filho e construir um futuro brilhante.
               </p>
               <a 
-                href="https://wa.me/5531983501417" 
+                href="https://wa.me/5531973178377" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.buttonPrimary}
+                onClick={() => (window as WindowWithAnalytics)?.trackWhatsAppClick?.()}
               >
-                Agende Sua Primeira Consulta
+                Agendar Consulta
               </a>
             </div>
           </div>

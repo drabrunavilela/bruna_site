@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             
             <div className={styles.footerSocialIcons}>
               <a 
-                href="https://wa.me/5531983501417" 
+                href="https://wa.me/5531973178377" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.footerSocialIcon}
@@ -93,31 +93,30 @@ const Footer: React.FC = () => {
 
           {/* Contato e Agendamento */}
           <div className={styles.footerSection}>
-            <h4 className={styles.sectionTitle}>Contato</h4>
-            <div className={styles.contactInfo}>
-              <p className={styles.contactItem}>
-                <strong>Endereço:</strong><br />
-                Avenida Raja Gabaglia 2000, Torre 1, Sala 313<br />
-                Bairro Belvedere, Belo Horizonte - MG
+            <h3 className={styles.footerTitle}>Contato</h3>
+            <div className={styles.contactDetails}>
+              <p className={styles.contactText}>
+                <strong>Endereço:</strong> Av. Raja Gabaglia 2000, Torre 1, Sala 313<br />
+                Belo Horizonte - MG
               </p>
-              <p className={styles.contactItem}>
-                <strong>Telefone:</strong> (31) 98350-1417 (WhatsApp)<br />
-                <strong>Telefone:</strong> (31) 3291-9009
+              <p className={styles.contactText}>
+                <strong>Telefone:</strong> (31) 97317-8377 (WhatsApp)<br />
+                <strong>Email:</strong> brunavilela.neuroped@gmail.com
               </p>
-              <p className={styles.contactItem}>
-                <strong>E-mail:</strong> brunavilela.neuroped@gmail.com
+              <p className={styles.contactText}>
+                <strong>Horário:</strong> Segunda a Sexta, 08:00 - 18:00
               </p>
-              <p className={styles.contactItem}>
-                <strong>Atendimento:</strong> Segunda a Sexta
-              </p>
-              <a 
-                href="https://wa.me/5531983501417" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.ctaButton}
-              >
-                Agendar Consulta
-              </a>
+              <div className={styles.contactLinks}>
+                <a 
+                  href="https://wa.me/5531973178377" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.contactLink}
+                  onClick={() => (window as any).trackWhatsAppClick?.()}
+                >
+                  Agendar Consulta
+                </a>
+              </div>
             </div>
           </div>
         </div>

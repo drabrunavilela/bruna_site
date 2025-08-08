@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './SegundaOpiniaoPage.module.css';
 import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 
 const SegundaOpiniaoPage: React.FC = () => {
@@ -153,12 +154,13 @@ const SegundaOpiniaoPage: React.FC = () => {
               </p>
               <div className={styles.buttonCenter}>
                 <a 
-                  href="https://wa.me/5531983501417" 
+                  href="https://wa.me/5531973178377" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={styles.buttonPrimary}
+                  onClick={() => (window as WindowWithAnalytics)?.trackWhatsAppClick?.()}
                 >
-                  Agendar Consulta de Segunda Opinião
+                  Agendar Consulta
                 </a>
               </div>
             </div>
