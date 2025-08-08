@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './EpilepsiaPage.module.css';
 import fotoNeuropediatra11 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-11.webp";
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const EpilepsiaPage: React.FC = () => {
   // Structured Data for Epilepsia Service

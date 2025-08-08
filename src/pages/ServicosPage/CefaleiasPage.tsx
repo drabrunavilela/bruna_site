@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './CefaleiasPage.module.css';
 import fotoNeuropediatra13 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-13.webp";
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const CefaleiasPage: React.FC = () => {
   // Structured Data for Cefaleias Service

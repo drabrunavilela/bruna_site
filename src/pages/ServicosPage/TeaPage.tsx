@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './TeaPage.module.css';
 import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const TeaPage: React.FC = () => {
   // Structured Data for TEA Service

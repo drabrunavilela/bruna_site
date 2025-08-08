@@ -1,19 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './SobrePage.module.css';
-
-// Importar imagens
-import fotoAtenciosa06 from '../../assets/images/bruna/dra-bruna-vilela-atenciosa-06.webp';
-import fotoConsultorio03 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp';
-import fotoNeuropediatra17 from '../../assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp';
-import fotoProfissional07 from '../../assets/images/bruna/dra-bruna-vilela-profissional-07.webp';
-
-// Importar os componentes e estilos do react-slick
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import fotoAtenciosa06 from "../../assets/images/bruna/dra-bruna-vilela-atenciosa-06.webp";
+import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
+import fotoNeuropediatra17 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp";
+import fotoProfissional07 from "../../assets/images/bruna/dra-bruna-vilela-profissional-07.webp";
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const SobrePage: React.FC = () => {
   // Carousel images data

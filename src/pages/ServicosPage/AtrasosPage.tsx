@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './AtrasosPage.module.css';
 import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp";
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const AtrasosPage: React.FC = () => {
   // Structured Data for Atrasos Service

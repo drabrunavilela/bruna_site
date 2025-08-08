@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import styles from './TdahPage.module.css';
 import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 
 const TdahPage: React.FC = () => {
