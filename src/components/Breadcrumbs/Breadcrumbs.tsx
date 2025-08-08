@@ -21,7 +21,7 @@ const Breadcrumbs: React.FC = () => {
     }
 
     let currentPath = '';
-    pathSegments.forEach((segment, index) => {
+    pathSegments.forEach((segment) => {
       currentPath += `/${segment}`;
       
       // Mapear segmentos para labels amigáveis
