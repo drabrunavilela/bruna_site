@@ -14,7 +14,7 @@ import fotoAcolhedora10 from '../../assets/images/bruna/dra-bruna-vilela-acolhed
 import fotoSorrindo02 from '../../assets/images/bruna/dra-bruna-vilela-sorrindo-02.webp';
 
 const BlogPage: React.FC = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const currentPage = parseInt(searchParams.get('page') || '1');
   
   // Structured Data for Blog
