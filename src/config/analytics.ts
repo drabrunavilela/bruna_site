@@ -41,11 +41,11 @@ export const ANALYTICS_CONFIG = {
   // Conversions (for Google Ads)
   CONVERSIONS: {
     APPOINTMENT: {
-      id: import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-XXXXXXXXXX',
+      id: import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-9651994072',
       label: 'appointment_conversion',
     },
     CONTACT: {
-      id: import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-XXXXXXXXXX',
+      id: import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-9651994072',
       label: 'contact_conversion',
     },
   },
