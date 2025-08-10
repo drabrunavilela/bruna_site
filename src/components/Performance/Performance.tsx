@@ -8,19 +8,8 @@ const Performance: React.FC = () => {
       // Performance monitoring enabled
     }
 
-    // Preload critical resources
-    const preloadLinks = [
-      '/src/assets/images/identidade-visual/logo-dra-bruna-vilela-header.webp',
-      '/src/assets/images/bruna/dra-bruna-vilela-sorrindo-01.webp'
-    ];
-
-    preloadLinks.forEach(href => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = href;
-      document.head.appendChild(link);
-    });
+    // Performance monitoring enabled
+    // Removed unnecessary preloads to fix console warnings
   }, []);
 
   return null; // This component doesn't render anything
