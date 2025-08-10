@@ -47,7 +47,7 @@
   line-height: 1.2;
   margin: 0 0 1.5rem 0;
   color: var(--color-headings);
-  letter-spacing: 0.05em;
+  letter-spacing: 0; /* Remove espaçamento para Cataline Script */
   margin-top: 0.5rem;
 }
 

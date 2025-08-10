@@ -38,6 +38,7 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   color: var(--color-headings);
+  letter-spacing: -0.02em; /* Reduz espaçamento da fonte cursiva */
 }
 
 h2, h3, h4, h5, h6 {
@@ -71,6 +72,19 @@ button:focus-visible {
 
 * {
   box-sizing: border-box;
+}
+
+/* Títulos decorativos - Controle de espaçamento */
+.decorativeTitle {
+  font-family: var(--font-decorative);
+  letter-spacing: 0; /* Remove espaçamento entre letras */
+  word-spacing: 0; /* Remove espaçamento entre palavras */
+}
+
+/* Controle específico para Cataline Script */
+h1, .heroTitle, .sectionTitle {
+  letter-spacing: 0; /* Remove espaçamento entre letras */
+  word-spacing: 0; /* Remove espaçamento entre palavras */
 }
 
 /* Centralização responsiva para todas as páginas */
