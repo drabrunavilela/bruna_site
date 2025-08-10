@@ -1,4 +1,5 @@
 import { useEffect, useCallback } from 'react';
+import { GTM_CONFIG } from '../../config/gtm';
 import type { DataLayerItem } from '../../types/analytics';
 
 interface GTMProps {
@@ -46,7 +47,7 @@ const GTM: React.FC<GTMProps> = ({ enabled = false }) => {
 
   const loadGTM = useCallback(() => {
     // Verificar se o script já foi carregado
-    if (window.dataLayer) {
+    if (window.dataLayer && window.gtag) {
       return;
     }
 
@@ -55,6 +56,12 @@ const GTM: React.FC<GTMProps> = ({ enabled = false }) => {
     window.gtag = function(...args: unknown[]) {
       window.dataLayer.push(...args as DataLayerItem[]);
     };
+
+    // Carregar script do Google Tag Manager
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_CONFIG.GTM_ID}`;
+    document.head.appendChild(script);
 
     // Evento de consentimento
     window.dataLayer.push({

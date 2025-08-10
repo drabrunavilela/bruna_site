@@ -16,7 +16,7 @@ import PoliticaPrivacidadePage from './pages/PoliticaPrivacidadePage/PoliticaPri
 import Performance from './components/Performance/Performance';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 import CookieBanner from './components/CookieBanner/CookieBanner';
-import Analytics from './components/Analytics/Analytics';
+
 import GTM from './components/GTM/GTM';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import './App.css';
@@ -93,7 +93,7 @@ const AppContent = () => {
       </Routes>
       <WhatsAppFloat />
       <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
-      <Analytics enabled={analyticsEnabled} />
+
       <GTM enabled={analyticsEnabled} />
     </div>
   );

@@ -37,3 +37,6 @@ scripts/convert-images.js
 .env.local
 .env.production
 
+# Documentação de configuração (contém IDs e estratégias)
+CONFIGURACAO_ANALYTICS.md
+
