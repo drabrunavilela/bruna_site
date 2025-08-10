@@ -15,9 +15,9 @@
   --color-soft-highlight: #F5F5DC; /* Bege suave - Fundos de destaque leve */
 
   /* Tipografia - Estratégia Definida */
-  --font-decorative: 'Cataline Script', cursive;    /* Títulos principais (H1) */
-  --font-heading: 'Times New Roman', serif;         /* Títulos e subtítulos */
-  --font-body: 'Times New Roman', serif;            /* Corpo de texto, menus, botões */
+  --font-decorative: 'Playfair Display', serif;     /* Títulos principais (H1) */
+  --font-heading: 'Playfair Display', serif;        /* Títulos e subtítulos */
+  --font-body: 'Inter', sans-serif;                 /* Corpo de texto, menus, botões */
 
   /* Espaçamentos e tamanhos base */
   --spacing-unit: 0.5rem; /* Unidade base para espaçamentos (8px) */
