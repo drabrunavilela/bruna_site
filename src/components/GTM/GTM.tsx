@@ -47,7 +47,7 @@ const GTM: React.FC<GTMProps> = ({ enabled = false }) => {
 
   const loadGTM = useCallback(() => {
     // Verificar se o script já foi carregado
-    if (window.dataLayer && window.gtag) {
+    if (window.dataLayer && typeof window.gtag === 'function') {
       return;
     }
 
