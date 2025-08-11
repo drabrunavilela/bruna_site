@@ -39,4 +39,11 @@ scripts/convert-images.js
 
 # Documentação de configuração (contém IDs e estratégias)
 CONFIGURACAO_ANALYTICS.md
+CORRECAO_INCOMPATIBILIDADES.md
+
+# Diagnósticos completos das ferramentas Google (contém IDs e estratégias)
+diagnostico_gtm/
+
+# Documentação de correções e configurações (contém IDs e estratégias)
+CORRECAO_INCOMPATIBILIDADES.md
 

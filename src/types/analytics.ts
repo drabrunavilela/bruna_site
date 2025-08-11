@@ -1,22 +1,18 @@
-// Analytics types
-export interface GtagFunction {
-  (...args: unknown[]): void;
-}
-
+// Analytics types for GTM
 export interface DataLayerItem {
   event: string;
   [key: string]: unknown;
 }
 
 export interface WindowWithAnalytics extends Window {
-  gtag: GtagFunction;
   dataLayer: DataLayerItem[];
+  gtag: (...args: unknown[]) => void;
   trackWhatsAppClick: () => void;
   trackAppointment: (service?: string) => void;
   trackPageView: (pageTitle: string, pagePath: string) => void;
 }
 
-// Analytics event types
+// Event types for GTM
 export interface AnalyticsEvent {
   event_category: string;
   event_label: string;
@@ -29,7 +25,6 @@ export interface PageViewEvent {
   page_path: string;
 }
 
-// Conversion tracking types
 export interface ConversionEvent {
   send_to: string;
   [key: string]: unknown;
