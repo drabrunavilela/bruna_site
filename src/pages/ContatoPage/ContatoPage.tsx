@@ -57,11 +57,8 @@ const ContatoPage: React.FC = () => {
       const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
       
       // Rastrear evento no GTM
-      if (window.trackEvent) {
-        window.trackEvent('form_submit', {
-          event_category: 'engagement',
-          event_label: 'form_contact'
-        });
+      if (window.trackAppointment) {
+        window.trackAppointment('form_contact');
       }
 
       // Abrir WhatsApp
