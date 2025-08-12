@@ -47,3 +47,7 @@ diagnostico_gtm/
 # Documentação de correções e configurações (contém IDs e estratégias)
 CORRECAO_INCOMPATIBILIDADES.md
 
+# Documentação de eventos e métricas (contém IDs e estratégias)
+DOCUMENTACAO_EVENTOS.md
+RESUMO_RAPIDO_EVENTOS.md
+

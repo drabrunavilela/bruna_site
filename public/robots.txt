@@ -2,12 +2,9 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.brunavilelaneuroped.com.br/sitemap.xml
+Sitemap: https://brunavilelaneuroped.com.br/sitemap.xml
 
-# Crawl-delay
-Crawl-delay: 1
-
-# Disallow admin areas (if any)
+# Disallow admin areas
 Disallow: /admin/
 Disallow: /private/
 

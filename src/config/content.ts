@@ -2,7 +2,7 @@
 export const CONTENT_CONFIG = {
   // Page metadata
   METADATA: {
-    BASE_URL: "https://drabrunavilela.com.br",
+    BASE_URL: "https://www.brunavilelaneuroped.com.br",
     DEFAULT_KEYWORDS: "neuropediatra, pediatra, belo horizonte",
     DEFAULT_OG_TYPE: "website",
     DEFAULT_TWITTER_CARD: "summary_large_image"

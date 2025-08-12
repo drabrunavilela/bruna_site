@@ -11,6 +11,83 @@ import whatsappIcon from "../../assets/images/Icon/dra-bruna-vilela-neuropediatr
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const ContatoPage: React.FC = () => {
+  // Estados do formulário
+  const [formData, setFormData] = React.useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    assunto: '',
+    mensagem: '',
+    aceitePolitica: false
+  });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  // Função para enviar formulário para WhatsApp
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.aceitePolitica) {
+      alert('Por favor, aceite a Política de Privacidade.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Formatar mensagem para WhatsApp
+      const mensagem = `🆕 *NOVO CONTATO VIA SITE*
+
+👤 *Nome:* ${formData.nome}
+📧 *Email:* ${formData.email}
+📱 *Telefone:* ${formData.telefone || 'Não informado'}
+📋 *Assunto:* ${formData.assunto}
+💬 *Mensagem:* ${formData.mensagem}
+
+🌐 *Enviado de:* brunavilelaneuroped.com.br
+📅 *Data:* ${new Date().toLocaleDateString('pt-BR')}
+⏰ *Hora:* ${new Date().toLocaleTimeString('pt-BR')}`;
+
+      // Codificar mensagem para URL
+      const mensagemCodificada = encodeURIComponent(mensagem);
+      
+      // Número do WhatsApp da Bruna
+      const numeroWhatsApp = '5531973178377';
+      
+      // Criar link do WhatsApp
+      const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+      
+      // Rastrear evento no GTM
+      if (window.trackEvent) {
+        window.trackEvent('form_submit', {
+          event_category: 'engagement',
+          event_label: 'form_contact'
+        });
+      }
+
+      // Abrir WhatsApp
+      window.open(linkWhatsApp, '_blank');
+      
+      // Limpar formulário
+      setFormData({
+        nome: '',
+        email: '',
+        telefone: '',
+        assunto: '',
+        mensagem: '',
+        aceitePolitica: false
+      });
+
+      // Mostrar mensagem de sucesso
+      alert('Mensagem enviada com sucesso! Abrindo WhatsApp...');
+
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      alert('Erro ao enviar mensagem. Tente novamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   // Structured Data for Contact
   const structuredData = {
     "@context": "https://schema.org",
@@ -130,20 +207,59 @@ const ContatoPage: React.FC = () => {
               <p className={styles.paragraph}>
                 Se preferir, preencha o formulário abaixo e retornaremos o mais breve possível.
               </p>
-              <form className={styles.contactForm}>
-                <input type="text" placeholder="Nome Completo" className={styles.formInput} />
-                <input type="email" placeholder="E-mail" className={styles.formInput} />
-                <input type="tel" placeholder="Telefone (Opcional)" className={styles.formInput} />
-                <input type="text" placeholder="Assunto" className={styles.formInput} />
-                <textarea placeholder="Sua Mensagem" className={styles.formTextarea}></textarea>
+              <form className={styles.contactForm} onSubmit={handleFormSubmit}>
+                <input 
+                  type="text" 
+                  placeholder="Nome Completo" 
+                  className={styles.formInput}
+                  value={formData.nome}
+                  onChange={(e) => setFormData({...formData, nome: e.target.value})}
+                  required
+                />
+                <input 
+                  type="email" 
+                  placeholder="E-mail" 
+                  className={styles.formInput}
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                />
+                <input 
+                  type="tel" 
+                  placeholder="Telefone (Opcional)" 
+                  className={styles.formInput}
+                  value={formData.telefone}
+                  onChange={(e) => setFormData({...formData, telefone: e.target.value})}
+                />
+                <input 
+                  type="text" 
+                  placeholder="Assunto" 
+                  className={styles.formInput}
+                  value={formData.assunto}
+                  onChange={(e) => setFormData({...formData, assunto: e.target.value})}
+                  required
+                />
+                <textarea 
+                  placeholder="Sua Mensagem" 
+                  className={styles.formTextarea}
+                  value={formData.mensagem}
+                  onChange={(e) => setFormData({...formData, mensagem: e.target.value})}
+                  required
+                ></textarea>
                 <div className={styles.privacyCheckbox}>
-                  <input type="checkbox" id="privacy-policy" />
+                  <input 
+                    type="checkbox" 
+                    id="privacy-policy" 
+                    checked={formData.aceitePolitica}
+                    onChange={(e) => setFormData({...formData, aceitePolitica: e.target.checked})}
+                    required
+                  />
                   <label htmlFor="privacy-policy">
                     Li e aceito a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a>.
                   </label>
                 </div>
-                <button type="submit" className={styles.buttonPrimary}>
-                  Enviar Mensagem
+                <button type="submit" className={styles.buttonPrimary} disabled={isSubmitting}>
+                  {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
                 </button>
               </form>
             </div>
