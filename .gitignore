@@ -23,31 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-# Documentação e estratégia privada
-GUIA_MESTRE.md
-documentosImportantes/
-
-# Scripts de otimização (contêm estratégias)
-scripts/optimize-images.js
-scripts/rename-seo-images.js
-scripts/convert-images.js
+# Documentação e estratégias privadas
+documentos/
 
 # Variáveis de ambiente (contêm IDs sensíveis)
 .env
 .env.local
 .env.production
-
-# Documentação de configuração (contém IDs e estratégias)
-CONFIGURACAO_ANALYTICS.md
-CORRECAO_INCOMPATIBILIDADES.md
-
-# Diagnósticos completos das ferramentas Google (contém IDs e estratégias)
-diagnostico_gtm/
-
-# Documentação de correções e configurações (contém IDs e estratégias)
-CORRECAO_INCOMPATIBILIDADES.md
-
-# Documentação de eventos e métricas (contém IDs e estratégias)
-DOCUMENTACAO_EVENTOS.md
-RESUMO_RAPIDO_EVENTOS.md
 
