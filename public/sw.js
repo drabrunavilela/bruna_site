@@ -1,14 +1,24 @@
 // Service Worker para cache avançado e performance
-const CACHE_NAME = 'bruna-site-v1.0.0';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
+const CACHE_NAME = 'bruna-site-v1.1.0';
+const STATIC_CACHE = 'static-v1.1';
+const DYNAMIC_CACHE = 'dynamic-v1.1';
+const IMAGES_CACHE = 'images-v1.1';
 
 // Recursos críticos para cache
 const STATIC_ASSETS = [
   '/',
+  '/offline',
   '/src/assets/styles/variables.css',
   '/src/assets/images/identidade-visual/logo-dra-bruna-vilela-header.webp',
-  '/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp'
+  '/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp',
+  '/src/assets/images/identidade-visual/logo-dra-bruna-vilela-principal.webp'
+];
+
+// Recursos importantes para cache
+const IMPORTANT_ROUTES = [
+  '/contato',
+  '/servicos',
+  '/sobre'
 ];
 
 // Instalar Service Worker
@@ -28,8 +38,12 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-            console.log('Service Worker: Clearing old cache');
+          if (
+            cacheName !== STATIC_CACHE && 
+            cacheName !== DYNAMIC_CACHE && 
+            cacheName !== IMAGES_CACHE
+          ) {
+            console.log('Service Worker: Clearing old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -47,6 +61,40 @@ self.addEventListener('fetch', (event) => {
   // Skip external requests
   if (!event.request.url.startsWith(self.location.origin)) return;
 
+  // Handle navigation requests
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .catch(() => {
+          return caches.match('/offline') || caches.match('/');
+        })
+    );
+    return;
+  }
+
+  // Handle images with specific cache strategy
+  if (event.request.destination === 'image') {
+    event.respondWith(
+      caches.open(IMAGES_CACHE).then(cache => {
+        return cache.match(event.request).then(response => {
+          if (response) {
+            return response;
+          }
+          
+          return fetch(event.request).then(fetchResponse => {
+            cache.put(event.request, fetchResponse.clone());
+            return fetchResponse;
+          }).catch(() => {
+            // Return placeholder for images if offline
+            return new Response('', { status: 404 });
+          });
+        });
+      })
+    );
+    return;
+  }
+
+  // Handle other requests
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       // Return cached version if available
@@ -75,7 +123,7 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           // Return offline page for navigation requests
           if (event.request.mode === 'navigate') {
-            return caches.match('/');
+            return caches.match('/offline') || caches.match('/');
           }
         });
     })

@@ -1,0 +1,217 @@
+/* PWA Install Prompt Styles */
+.installPrompt {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+  border: 1px solid var(--color-gray-light);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.promptContent {
+  padding: 16px;
+}
+
+.promptHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.appIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.promptText {
+  flex: 1;
+  min-width: 0;
+}
+
+.promptTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.promptDescription {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.dismissButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dismissButton:hover {
+  color: var(--color-text);
+  background-color: var(--color-gray-light);
+}
+
+.dismissButton:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.promptActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.dismissTextButton {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.dismissTextButton:hover {
+  color: var(--color-text);
+  background-color: var(--color-gray-light);
+}
+
+.installButton {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.installButton:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.installButton:active {
+  transform: translateY(0);
+}
+
+.installButton:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .installPrompt {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: none;
+  }
+  
+  .promptContent {
+    padding: 14px;
+  }
+  
+  .promptHeader {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  
+  .promptTitle {
+    font-size: 15px;
+  }
+  
+  .promptDescription {
+    font-size: 13px;
+  }
+  
+  .promptActions {
+    gap: 10px;
+  }
+  
+  .dismissTextButton {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .installButton {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Dark mode support (preparado para futuro) */
+@media (prefers-color-scheme: dark) {
+  .installPrompt {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+  
+  .promptTitle {
+    color: #e0e0e0;
+  }
+  
+  .promptDescription {
+    color: #a0a0a0;
+  }
+  
+  .dismissButton:hover {
+    background-color: #333;
+  }
+  
+  .dismissTextButton:hover {
+    background-color: #333;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .installPrompt {
+    animation: none;
+  }
+  
+  .installButton:hover {
+    transform: none;
+  }
+  
+  .installButton:active {
+    transform: none;
+  }
+}

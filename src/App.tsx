@@ -13,9 +13,13 @@ import BlogPage from './pages/BlogPage/BlogPage';
 import GlossarioPage from './pages/GlossarioPage/GlossarioPage';
 import ContatoPage from './pages/ContatoPage/ContatoPage';
 import PoliticaPrivacidadePage from './pages/PoliticaPrivacidadePage/PoliticaPrivacidadePage';
+import OfflinePage from './components/OfflinePage/OfflinePage';
 import Performance from './components/Performance/Performance';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 import CookieBanner from './components/CookieBanner/CookieBanner';
+import PWAInstall from './components/PWAInstall/PWAInstall';
+import CriticalCSS from './components/CriticalCSS/CriticalCSS';
+import ResourceOptimization from './components/ResourceOptimization/ResourceOptimization';
 
 import GTM from './components/GTM/GTM';
 import { useScrollToTop } from './hooks/useScrollToTop';
@@ -74,6 +78,14 @@ const AppContent = () => {
   
   return (
     <div className="App">
+      <CriticalCSS />
+      <ResourceOptimization 
+        heroImages={[
+          '/src/assets/images/bruna/dra-bruna-vilela-acolhedora-09.webp',
+          '/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp'
+        ]}
+        criticalPages={['/sobre', '/servicos', '/contato', '/blog']}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sobre" element={<SobrePage />} />
@@ -88,10 +100,12 @@ const AppContent = () => {
         <Route path="/glossario" element={<GlossarioPage />} />
         <Route path="/contato" element={<ContatoPage />} />
         <Route path="/politica-privacidade" element={<PoliticaPrivacidadePage />} />
+        <Route path="/offline" element={<OfflinePage />} />
         {/* Rota para capturar todas as outras URLs */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <WhatsAppFloat />
+      <PWAInstall />
       <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
 
       <GTM enabled={analyticsEnabled} />
