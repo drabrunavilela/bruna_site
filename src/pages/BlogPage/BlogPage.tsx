@@ -346,8 +346,8 @@ const BlogPage: React.FC = () => {
               {/* Artigo List Item 2 */}
               <div className={styles.articleListItem}>
                 <ResponsiveImage 
-                  src="bruna/dra-bruna-vilela-consultorio-04"
-                  alt="Criança em desenvolvimento" 
+                  src="bruna/dra-bruna-vilela-acolhedora-10"
+                  alt="Dra. Bruna Vilela acolhendo criança, simbolizando marcos do desenvolvimento infantil" 
                   className={styles.listItemImage}
                   loading="lazy"
                   sizes="(max-width: 768px) 80px, 100px"
