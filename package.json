@@ -7,7 +7,15 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:analyze": "tsc -b && vite build --mode analyze",
+    "build:prod": "tsc -b && vite build && npm run copy-files",
+    "copy-files": "cp public/sw.js dist/ && cp public/manifest.json dist/",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "generate-jpg": "node scripts/generate-jpg-fallbacks.js",
+    "generate-responsive": "node scripts/generate-responsive-images.js",
+    "clean": "rm -rf dist node_modules/.vite"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.6.4",
@@ -22,10 +30,12 @@
     "react-router-dom": "^7.7.1",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
+    "web-vitals": "^4.2.4",
     "zustand": "^5.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
+    "@squoosh/lib": "^0.3.1",
     "@types/jest": "^30.0.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
@@ -36,8 +46,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
-    "imagemin": "^9.0.1",
-    "imagemin-webp": "^8.0.0",
+    "sharp": "^0.34.3",
     "terser": "^5.43.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",

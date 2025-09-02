@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
+import FadeInSection from '../../components/FadeInSection/FadeInSection';
+import LeadCapture from '../../components/LeadCapture/LeadCapture';
 import styles from './HomePage.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
-// Importar imagens
-import fotoAtenciosa from '../../assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp';
-import fotoAcolhedora from '../../assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp';
+// Definir caminhos das imagens como strings
+const fotoAtenciosaPath = 'bruna/dra-bruna-vilela-atenciosa-05';
+const fotoAcolhedoraPath = 'bruna/dra-bruna-vilela-acolhedora-10';
 
 const HomePage: React.FC = () => {
   // Page metadata configuration
@@ -110,9 +114,10 @@ const HomePage: React.FC = () => {
         canonical="/"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* Main content container */}
         <div className={styles.heroAboutContainer}>
           {/* Hero section */}
@@ -154,91 +159,99 @@ const HomePage: React.FC = () => {
               
               {/* Hero image */}
               <div className={styles.heroImageContainer}>
-                <img 
-                  src={fotoAtenciosa}
+                <ResponsiveImage 
+                  src={fotoAtenciosaPath}
                   alt="Dra. Bruna Vilela, neuropediatra atenciosa em Belo Horizonte, especialista em TDAH e autismo infantil"
                   className={styles.heroImage}
                   loading="eager"
-                  fetchPriority="high"
-                  width="500"
-                  height="600"
+                  priority={true}
+                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 80vw, (max-width: 1200px) 50vw, 40vw"
+                  useResponsive={true}
+                  showSkeleton={true}
+                  skeletonHeight="500px"
                 />
               </div>
             </div>
           </section>
 
           {/* About section */}
-          <section className={styles.about}>
-            <div className={styles.container}>
-              <div className={styles.aboutContent}>
-                              {/* About section image */}
-              <div className={styles.aboutImageContainer}>
-                <img 
-                  src={fotoAcolhedora}
-                  alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
-                  className={styles.aboutImage}
-                  loading="lazy"
-                  width="400"
-                  height="500"
-                />
+          <FadeInSection direction="up" threshold={0.2}>
+            <section className={styles.about}>
+              <div className={styles.container}>
+                <div className={styles.aboutContent}>
+                                {/* About section image */}
+                <div className={styles.aboutImageContainer}>
+                  <ResponsiveImage 
+                    src={fotoAcolhedoraPath}
+                    alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
+                    className={styles.aboutImage}
+                    loading="lazy"
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 70vw, (max-width: 1200px) 40vw, 35vw"
+                    useResponsive={true}
+                    showSkeleton={true}
+                    skeletonHeight="400px"
+                  />
+                </div>
+                  
+                  <div className={styles.aboutTextSection}>
+                    <h2 className={styles.sectionTitle}>Sobre Mim</h2>
+                    <p className={styles.aboutText}>
+                      Mais de 10 anos dedicados a unir a pesquisa de ponta em neuropediatria com a prática clínica diária. 
+                      Minha missão é traduzir a complexidade da ciência em estratégias práticas e eficazes para o desenvolvimento 
+                      do seu filho, sempre com um olhar atento e humano para as necessidades únicas da sua família.
+                    </p>
+                    <Link to="/sobre" className={styles.aboutLink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                      Conheça Minha História Completa →
+                    </Link>
+                  </div>
+                </div>
               </div>
-                
-                <div className={styles.aboutTextSection}>
-                  <h2 className={styles.sectionTitle}>Sobre Mim</h2>
-                  <p className={styles.aboutText}>
-                    Mais de 10 anos dedicados a unir a pesquisa de ponta em neuropediatria com a prática clínica diária. 
-                    Minha missão é traduzir a complexidade da ciência em estratégias práticas e eficazes para o desenvolvimento 
-                    do seu filho, sempre com um olhar atento e humano para as necessidades únicas da sua família.
+            </section>
+          </FadeInSection>
+        </div>
+
+        {/* Testimonials section */}
+        <FadeInSection direction="up" threshold={0.1} delay={200}>
+          <section className={styles.testimonials}>
+            <div className={styles.container}>
+              <h2 className={styles.sectionTitle}>O Que Dizem Sobre Mim</h2>
+              <div className={styles.testimonialsGrid}>
+                <div className={styles.testimonial}>
+                  <p className={styles.testimonialText}>
+                    "A Dra. Bruna tem uma abordagem única que combina conhecimento científico com sensibilidade humana. 
+                    Ela não apenas trata meu filho, mas educa nossa família inteira."
                   </p>
-                  <Link to="/sobre" className={styles.aboutLink} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    Conheça Minha História Completa →
-                  </Link>
+                  <div className={styles.testimonialAuthor}>
+                    <strong>Maria Silva</strong>
+                    <span>Mãe do João, 8 anos</span>
+                  </div>
+                </div>
+                
+                <div className={styles.testimonial}>
+                  <p className={styles.testimonialText}>
+                    "Finalmente encontramos uma profissional que entende as necessidades especiais do nosso filho. 
+                    A Dra. Bruna é referência em neuropediatria em Belo Horizonte."
+                  </p>
+                  <div className={styles.testimonialAuthor}>
+                    <strong>Carlos Santos</strong>
+                    <span>Pai da Ana, 6 anos</span>
+                  </div>
+                </div>
+                
+                <div className={styles.testimonial}>
+                  <p className={styles.testimonialText}>
+                    "A diferença que a Dra. Bruna fez na vida do nosso filho é incrível. 
+                    Sua abordagem científica e humanizada transformou nossa perspectiva."
+                  </p>
+                  <div className={styles.testimonialAuthor}>
+                    <strong>Patrícia Costa</strong>
+                    <span>Mãe do Pedro, 10 anos</span>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
-        </div>
-
-        {/* Testimonials section */}
-        <section className={styles.testimonials}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>O Que Dizem Sobre Mim</h2>
-            <div className={styles.testimonialsGrid}>
-              <div className={styles.testimonial}>
-                <p className={styles.testimonialText}>
-                  "A Dra. Bruna tem uma abordagem única que combina conhecimento científico com sensibilidade humana. 
-                  Ela não apenas trata meu filho, mas educa nossa família inteira."
-                </p>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Maria Silva</strong>
-                  <span>Mãe do João, 8 anos</span>
-                </div>
-              </div>
-              
-              <div className={styles.testimonial}>
-                <p className={styles.testimonialText}>
-                  "Finalmente encontramos uma profissional que entende as necessidades especiais do nosso filho. 
-                  A Dra. Bruna é referência em neuropediatria em Belo Horizonte."
-                </p>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Carlos Santos</strong>
-                  <span>Pai da Ana, 6 anos</span>
-                </div>
-              </div>
-              
-              <div className={styles.testimonial}>
-                <p className={styles.testimonialText}>
-                  "A diferença que a Dra. Bruna fez na vida do nosso filho é incrível. 
-                  Sua abordagem científica e humanizada transformou nossa perspectiva."
-                </p>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Patrícia Costa</strong>
-                  <span>Mãe do Pedro, 10 anos</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        </FadeInSection>
 
         {/* Blog section */}
         <section className={styles.blog}>
@@ -331,6 +344,17 @@ const HomePage: React.FC = () => {
           </div>
         </section>
       </main>
+
+      {/* Lead Capture - ativado por scroll aos 60% da página */}
+      <LeadCapture 
+        trigger="scroll"
+        scrollPercentage={60}
+        title="🌟 Primeira Consulta com Desconto Especial!"
+        subtitle="Avaliação neurológica completa para seu filho com a Dra. Bruna Vilela"
+        buttonText="Quero Agendar Agora"
+        incentive="✅ Consulta presencial em Belo Horizonte&#10;✅ Mais de 10 anos de experiência&#10;✅ Atendimento humanizado e acolhedor&#10;✅ Especialista em TDAH, TEA e Desenvolvimento"
+        formFields={['nome', 'email', 'telefone', 'interesse']}
+      />
 
       <Footer />
     </>

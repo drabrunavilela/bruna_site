@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useFocusManagement from '../../hooks/useFocusManagement';
 import styles from './CookieBanner.module.css';
 
 interface CookieBannerProps {
@@ -10,6 +11,13 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ onAccept, onDecline }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // Focus management para acessibilidade
+  const { containerRef, trapFocus, restoreFocus } = useFocusManagement<HTMLDivElement>({
+    autoFocus: true,
+    restoreFocus: true,
+    trapFocus: isExpanded
+  });
+
   useEffect(() => {
     // Verificar se o usuário já deu consentimento
     const consent = localStorage.getItem('cookieConsent');
@@ -17,6 +25,17 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ onAccept, onDecline }) => {
       setIsVisible(true);
     }
   }, []);
+
+  // Gerenciar trap de foco quando expandido
+  useEffect(() => {
+    trapFocus(isExpanded);
+    
+    return () => {
+      if (isExpanded) {
+        restoreFocus();
+      }
+    };
+  }, [isExpanded, trapFocus, restoreFocus]);
 
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');
@@ -42,7 +61,7 @@ const CookieBanner: React.FC<CookieBannerProps> = ({ onAccept, onDecline }) => {
 
   return (
     <div className={styles.cookieBanner}>
-      <div className={styles.bannerContent}>
+      <div className={styles.bannerContent} ref={containerRef}>
         <div className={styles.mainContent}>
           <div className={styles.cookieIcon}>
             🍪

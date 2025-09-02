@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './GlossarioPage.module.css';
-import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
 
 
 const GlossarioPage: React.FC = () => {
@@ -60,9 +61,10 @@ const GlossarioPage: React.FC = () => {
         canonical="/glossario"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Glossário Científico: Descomplicando a Neuropediatria" */}
         <section className={styles.heroGlossaryPage}>
           <div className={styles.container}>
@@ -79,10 +81,13 @@ const GlossarioPage: React.FC = () => {
               </div>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoConsultorio03}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-consultorio-03"
                 alt="Dra. Bruna Vilela em consultório, demonstrando conhecimento científico"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

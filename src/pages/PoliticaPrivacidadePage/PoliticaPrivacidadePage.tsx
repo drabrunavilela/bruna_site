@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
 import styles from './PoliticaPrivacidadePage.module.css';
 
 const PoliticaPrivacidadePage: React.FC = () => {
@@ -23,9 +24,10 @@ const PoliticaPrivacidadePage: React.FC = () => {
         canonical="/politica-privacidade"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.container}>

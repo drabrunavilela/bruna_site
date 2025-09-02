@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './AtrasosPage.module.css';
-import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const AtrasosPage: React.FC = () => {
@@ -39,9 +40,10 @@ const AtrasosPage: React.FC = () => {
         canonical="/servicos/atrasos"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Atrasos no Neurodesenvolvimento: Identificação, Avaliação e Intervenção Precisa" */}
         <section className={styles.heroServicePage}>
           <div className={styles.container}>
@@ -57,10 +59,13 @@ const AtrasosPage: React.FC = () => {
               </Link>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoNeuropediatra12}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-neuropediatra-12"
                 alt="Dra. Bruna Vilela, especialista em neurodesenvolvimento infantil"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

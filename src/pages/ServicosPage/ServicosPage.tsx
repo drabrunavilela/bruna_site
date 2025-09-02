@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './ServicosPage.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
-
-// Importar imagens
-import fotoConsultorio03 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp';
 
 const ServicosPage: React.FC = () => {
   // Page metadata configuration
@@ -103,9 +102,10 @@ const ServicosPage: React.FC = () => {
         canonical="/servicos"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Áreas de Atuação: Especialidades em Neuropediatria" */}
         <section className={styles.hero}>
           <div className={styles.heroContainer}>
@@ -118,10 +118,13 @@ const ServicosPage: React.FC = () => {
               </p>
             </div>
             <div className={styles.heroImageContainer}>
-              <img 
-                src={fotoConsultorio03}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-consultorio-03"
                 alt="Dra. Bruna Vilela em consultório, demonstrando especialização em neuropediatria"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

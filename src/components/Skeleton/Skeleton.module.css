@@ -1,0 +1,231 @@
+/* Base Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base Skeleton Styles */
+.skeletonBase {
+  background: linear-gradient(90deg, 
+    var(--color-background-secondary) 25%, 
+    rgba(255, 255, 255, 0.5) 37%, 
+    var(--color-background-secondary) 63%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Skeleton Image */
+.skeletonImage {
+  background: linear-gradient(90deg, 
+    var(--color-background-secondary) 25%, 
+    rgba(255, 255, 255, 0.5) 37%, 
+    var(--color-background-secondary) 63%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonImage::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(var(--color-primary-rgb), 0.2);
+}
+
+/* Skeleton Text */
+.skeletonTextContainer {
+  width: 100%;
+}
+
+.skeletonText {
+  background: linear-gradient(90deg, 
+    var(--color-background-secondary) 25%, 
+    rgba(255, 255, 255, 0.5) 37%, 
+    var(--color-background-secondary) 63%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 4px;
+  display: block;
+}
+
+/* Skeleton Card */
+.skeletonCard {
+  background: var(--color-background);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: var(--box-shadow-light);
+  animation: fadeIn 0.5s ease-out;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.skeletonCard:hover {
+  box-shadow: var(--box-shadow-medium);
+  transform: translateY(-2px);
+}
+
+.skeletonCardImage {
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.skeletonCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeletonCardTitle {
+  margin-bottom: 0.5rem;
+}
+
+.skeletonCardDescription {
+  margin-bottom: 1rem;
+}
+
+.skeletonCardMeta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.skeletonCardButton {
+  margin-top: 0.5rem;
+  border-radius: 20px;
+}
+
+/* Variações por tipo */
+.skeletonCard--service {
+  min-height: 350px;
+}
+
+.skeletonCard--blog {
+  min-height: 400px;
+}
+
+.skeletonCard--testimonial {
+  min-height: 200px;
+  text-align: center;
+}
+
+.skeletonCard--testimonial .skeletonCardImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+/* Loading Grid */
+.skeletonGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2rem 0;
+}
+
+.skeletonGrid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.skeletonGrid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.skeletonGrid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .skeletonCard {
+    padding: 0.75rem;
+  }
+  
+  .skeletonCardContent {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeletonCard {
+    padding: 0.5rem;
+  }
+  
+  .skeletonCardContent {
+    gap: 0.5rem;
+  }
+  
+  .skeletonCardImage {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skeletonBase {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  .skeletonCard {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .skeletonBase {
+    background: linear-gradient(90deg, 
+      #2a2a2a 25%, 
+      rgba(255, 255, 255, 0.1) 37%, 
+      #2a2a2a 63%
+    );
+  }
+  
+  .skeletonCard {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+}

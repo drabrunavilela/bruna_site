@@ -1,0 +1,85 @@
+{
+  "name": "Dra. Bruna Vilela - Neuropediatra",
+  "short_name": "Dra. Bruna",
+  "description": "Neuropediatra e Pediatra em Belo Horizonte - Especialista em TDAH, Autismo e Epilepsia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#C9C1E0",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["medical", "health", "lifestyle"],
+  "icons": [
+    {
+      "src": "/src/assets/images/identidade-visual/logo-dra-bruna-vilela-principal.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp", 
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Agendar Consulta",
+      "short_name": "Agendar",
+      "description": "Agendar consulta via WhatsApp",
+      "url": "/contato",
+      "icons": [
+        {
+          "src": "/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Serviços",
+      "short_name": "Serviços",
+      "description": "Áreas de atuação médica",
+      "url": "/servicos",
+      "icons": [
+        {
+          "src": "/src/assets/images/identidade-visual/logo-dra-bruna-vilela-principal.webp",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Sobre",
+      "short_name": "Sobre",
+      "description": "Conheça a Dra. Bruna Vilela",
+      "url": "/sobre",
+      "icons": [
+        {
+          "src": "/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "Dra. Bruna Vilela - Neuropediatra"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+brunavilela",
+      "url": "/contato?action=%s"
+    }
+  ]
+}

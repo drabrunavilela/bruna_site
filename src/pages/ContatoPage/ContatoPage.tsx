@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+// import AgendamentoForm from '../../components/Agendamento/AgendamentoForm'; // Temporariamente desabilitado até backend ficar pronto
 import styles from './ContatoPage.module.css';
 import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp";
 import logoInstagram from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png";
@@ -162,10 +163,26 @@ const ContatoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 2. Agendamento de Consultas */}
+        {/* 2. Sistema de Agendamento Online - TEMPORARIAMENTE DESABILITADO ATÉ BACKEND FICAR PRONTO */}
+        {/* 
+        <section className={`${styles.sectionPadded} ${styles.sectionHighlight}`}>
+          <div className={styles.container}>
+            <div className={styles.narrowContent}>
+              <h2 className={styles.sectionTitle}>🗓️ Agendamento Online</h2>
+              <p className={styles.paragraph}>
+                Agende sua consulta de forma rápida e prática através do nosso sistema online. 
+                Escolha o dia e horário que melhor se adequa à sua agenda.
+              </p>
+              <AgendamentoForm />
+            </div>
+          </div>
+        </section>
+        */}
+
+        {/* 3. Agendamento via WhatsApp */}
         <section className={styles.sectionPadded}>
           <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Agendamento de Consultas</h2>
+            <h2 className={styles.sectionTitle}>📱 Agendamento via WhatsApp</h2>
             <div className={styles.bookingOptionsGrid}>
               <div className={styles.bookingOptionCard}>
                 <div className={styles.whatsappIcon}>
@@ -196,7 +213,7 @@ const ContatoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 3. Fale Conosco (Formulário de Contato) */}
+        {/* 4. Fale Conosco (Formulário de Contato) */}
         <section className={`${styles.sectionPadded} ${styles.sectionSoftHighlight}`}>
           <div className={styles.container}>
             <div className={styles.narrowContent}>
@@ -263,7 +280,7 @@ const ContatoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 4. Nossa Localização e Horários */}
+        {/* 5. Nossa Localização e Horários */}
         <section className={styles.sectionPadded}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Onde Nos Encontrar</h2>
@@ -313,7 +330,7 @@ const ContatoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 5. Redes Sociais */}
+        {/* 6. Redes Sociais */}
         <section className={`${styles.sectionPadded} ${styles.sectionSoftHighlight}`}>
           <div className={styles.container}>
             <div className={`${styles.narrowContent} ${styles.textCenter}`}>

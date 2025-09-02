@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './CefaleiasPage.module.css';
-import fotoNeuropediatra13 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-13.webp";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const CefaleiasPage: React.FC = () => {
@@ -39,9 +40,10 @@ const CefaleiasPage: React.FC = () => {
         canonical="/servicos/cefaleias"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Cefaleias e Enxaquecas em Crianças e Adolescentes: Diagnóstico e Manejo Especializado" */}
         <section className={styles.heroServicePage}>
           <div className={styles.container}>
@@ -57,10 +59,13 @@ const CefaleiasPage: React.FC = () => {
               </Link>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoNeuropediatra13}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-neuropediatra-13"
                 alt="Dra. Bruna Vilela, especialista em cefaleias e enxaquecas em crianças"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

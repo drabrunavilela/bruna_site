@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './TeaPage.module.css';
-import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const TeaPage: React.FC = () => {
@@ -39,9 +40,10 @@ const TeaPage: React.FC = () => {
         canonical="/servicos/tea"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Transtorno do Espectro Autista (TEA): Diagnóstico Precoce, Intervenções e Apoio Familiar" */}
         <section className={styles.heroServicePage}>
           <div className={styles.container}>
@@ -57,10 +59,13 @@ const TeaPage: React.FC = () => {
               </Link>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoConsultorio03}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-consultorio-03"
                 alt="Dra. Bruna Vilela em consultório, especialista em TEA e neuropediatria"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

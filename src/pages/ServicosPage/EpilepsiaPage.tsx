@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './EpilepsiaPage.module.css';
-import fotoNeuropediatra11 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-11.webp";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const EpilepsiaPage: React.FC = () => {
@@ -39,9 +40,10 @@ const EpilepsiaPage: React.FC = () => {
         canonical="/servicos/epilepsia"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Epilepsia Infantil: Entendimento, Diagnóstico e Abordagens Terapêuticas" */}
         <section className={styles.heroServicePage}>
           <div className={styles.container}>
@@ -57,10 +59,13 @@ const EpilepsiaPage: React.FC = () => {
               </Link>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoNeuropediatra11}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-neuropediatra-11"
                 alt="Dra. Bruna Vilela, especialista em epilepsia infantil e neuropediatria"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

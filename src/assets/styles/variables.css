@@ -5,6 +5,7 @@
   --color-accent: #A7D0F1;         /* Azul claro para hover */
   --color-background: #FFFFFF;     /* Fundo principal (Branco) */
   --color-text: #333333;           /* Cor de texto principal */
+  --color-text-muted: #666666;     /* Cor de texto secundário/muted */
   --color-headings: #000000;       /* Cor dos títulos (Preto) */
   --color-white: #FFFFFF;          /* Branco */
 

@@ -116,6 +116,12 @@
   max-width: 1200px;
 }
 
+.sectionHighlight {
+  background: linear-gradient(135deg, rgba(201, 193, 224, 0.03) 0%, rgba(201, 193, 224, 0.08) 100%);
+  border-top: 1px solid rgba(201, 193, 224, 0.1);
+  border-bottom: 1px solid rgba(201, 193, 224, 0.1);
+}
+
 .narrowContent {
   max-width: 800px;
   margin: 0 auto;

@@ -1,0 +1,83 @@
+/* FadeInSection Base Styles */
+.fadeInSection {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity, transform;
+}
+
+/* Direction-based animations */
+.fadeIn {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+.fadeIn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.down {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.down.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fadeInSection {
+    transition-duration: 0.6s;
+  }
+  
+  .up, .down {
+    transform: translateY(20px);
+  }
+  
+  .left, .right {
+    transform: translateX(20px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fadeInSection {
+    transition-duration: 0.3s;
+    transform: none !important;
+  }
+  
+  .fadeInSection:not(.visible) {
+    opacity: 0.3;
+  }
+}

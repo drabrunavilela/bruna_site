@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logoHeader from '../../assets/images/identidade-visual/logo-dra-bruna-vilela-header.webp';
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +59,7 @@ const Header: React.FC = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.ctaButton}
-            onClick={() => (window as any).trackWhatsAppClick?.()}
+            onClick={() => (window as WindowWithAnalytics).trackWhatsAppClick?.()}
           >
             Agendar Consulta
           </a>

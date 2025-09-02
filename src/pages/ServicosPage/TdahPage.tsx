@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './TdahPage.module.css';
-import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 
 const TdahPage: React.FC = () => {
+  const fotoConsultorioPath = 'bruna/dra-bruna-vilela-consultorio-04';
   // Structured Data for TDAH Service
   const structuredData = {
     "@context": "https://schema.org",
@@ -35,14 +37,15 @@ const TdahPage: React.FC = () => {
     <>
       <SEO 
         title="TDAH - Diagnóstico e Tratamento | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
-        description="Especialista em TDAH em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento personalizado para crianças e adolescentes com Transtorno do Déficit de Atenção e Hiperatividade."
-        keywords="neuropediatra, pediatra, belo horizonte"
+        description="Diagnóstico e tratamento especializado de TDAH (Transtorno do Déficit de Atenção e Hiperatividade) em crianças e adolescentes. Dra. Bruna Vilela, neuropediatra em Belo Horizonte."
+        keywords="TDAH, neuropediatra, déficit de atenção"
         canonical="/servicos/tdah"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "TDAH: Compreendendo e Tratando com Precisão Científica" */}
         <section className={styles.heroServicePage}>
           <div className={styles.container}>
@@ -58,10 +61,13 @@ const TdahPage: React.FC = () => {
               </Link>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoConsultorio04}
+              <ResponsiveImage 
+                src={fotoConsultorioPath}
                 alt="Dra. Bruna Vilela em consultório, especialista em TDAH e neuropediatria"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

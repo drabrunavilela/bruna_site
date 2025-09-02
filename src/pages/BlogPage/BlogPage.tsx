@@ -3,15 +3,9 @@ import { Link, useSearchParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './BlogPage.module.css';
-
-// Importar imagens do blog
-import fotoNeuropediatra18 from '../../assets/images/bruna/dra-bruna-vilela-neuropediatra-18.webp';
-import fotoConsultorio04 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp';
-import fotoConsultorio03 from '../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp';
-import fotoNeuropediatra17 from '../../assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp';
-import fotoAcolhedora10 from '../../assets/images/bruna/dra-bruna-vilela-acolhedora-10.webp';
-import fotoSorrindo02 from '../../assets/images/bruna/dra-bruna-vilela-sorrindo-02.webp';
 
 const BlogPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -90,9 +84,10 @@ const BlogPage: React.FC = () => {
         canonical="/blog"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Conhecimento Científico: Informação Que Transforma" */}
         <section className={styles.heroBlogPage}>
           <div className={styles.container}>
@@ -112,10 +107,15 @@ const BlogPage: React.FC = () => {
               </Link>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoNeuropediatra18}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-neuropediatra-18"
                 alt="Dra. Bruna Vilela em consultório, demonstrando conhecimento científico"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                showSkeleton={true}
+                skeletonHeight="400px"
               />
             </div>
           </div>
@@ -141,13 +141,14 @@ const BlogPage: React.FC = () => {
             <div className={styles.articleGrid}>
               {/* Artigo 1 - TDAH */}
               <Link to="/blog/tdah-alem-dos-rotulos" className={styles.articleCard}>
-                <img 
-                  src={fotoConsultorio04} 
+                <ResponsiveImage 
+                  src="bruna/dra-bruna-vilela-consultorio-04"
                   alt="Criança brincando com blocos, simbolizando desenvolvimento e aprendizado." 
                   className={styles.cardImage}
                   loading="lazy"
-                  width="300"
-                  height="200"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  showSkeleton={true}
+                  skeletonHeight="200px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>TDAH: Além dos Rótulos – Uma Abordagem Integral</h3>
@@ -169,13 +170,14 @@ const BlogPage: React.FC = () => {
 
               {/* Artigo 2 - Autismo */}
               <Link to="/blog/autismo-diagnostico-precoce" className={styles.articleCard}>
-                <img 
-                  src={fotoConsultorio03} 
+                <ResponsiveImage 
+                  src="bruna/dra-bruna-vilela-consultorio-03"
                   alt="Criança com autismo em ambiente de aprendizado" 
                   className={styles.cardImage}
                   loading="lazy"
-                  width="300"
-                  height="200"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  showSkeleton={true}
+                  skeletonHeight="200px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Autismo: A Importância do Diagnóstico Precoce</h3>
@@ -197,13 +199,12 @@ const BlogPage: React.FC = () => {
 
               {/* Artigo 3 - Epilepsia */}
               <Link to="/blog/epilepsia-infantil" className={styles.articleCard}>
-                <img 
-                  src={fotoNeuropediatra17} 
+                <ResponsiveImage 
+                  src="bruna/dra-bruna-vilela-neuropediatra-17"
                   alt="Criança em ambiente médico, simbolizando cuidado especializado" 
                   className={styles.cardImage}
                   loading="lazy"
-                  width="300"
-                  height="200"
+                  sizes="(max-width: 768px) 100vw, 300px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Epilepsia Infantil: Mitos e Verdades</h3>
@@ -225,13 +226,12 @@ const BlogPage: React.FC = () => {
 
               {/* Artigo 4 - Desenvolvimento Infantil */}
               <Link to="/blog/desenvolvimento-infantil-marcos" className={styles.articleCard}>
-                <img 
-                  src={fotoAcolhedora10} 
+                <ResponsiveImage 
+                  src="bruna/dra-bruna-vilela-acolhedora-10"
                   alt="Criança brincando, simbolizando desenvolvimento saudável" 
                   className={styles.cardImage}
                   loading="lazy"
-                  width="300"
-                  height="200"
+                  sizes="(max-width: 768px) 100vw, 300px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Marcos do Desenvolvimento: O que Esperar em Cada Idade</h3>
@@ -253,13 +253,12 @@ const BlogPage: React.FC = () => {
 
               {/* Artigo 5 - Atrasos no Desenvolvimento */}
               <Link to="/blog/atrasos-desenvolvimento-quando-procurar-ajuda" className={styles.articleCard}>
-                <img 
-                  src={fotoSorrindo02} 
+                <ResponsiveImage 
+                  src="bruna/dra-bruna-vilela-sorrindo-02"
                   alt="Criança em avaliação, simbolizando diagnóstico precoce" 
                   className={styles.cardImage}
                   loading="lazy"
-                  width="300"
-                  height="200"
+                  sizes="(max-width: 768px) 100vw, 300px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Atrasos no Desenvolvimento: Quando Procurar Ajuda</h3>
@@ -308,10 +307,12 @@ const BlogPage: React.FC = () => {
             <div className={styles.articleList}>
               {/* Artigo List Item 1 */}
               <div className={styles.articleListItem}>
-                <img 
-                  src={fotoConsultorio03} 
+                <ResponsiveImage 
+                  src="bruna/dra-bruna-vilela-consultorio-03"
                   alt="Ícone de molécula, representando pesquisa científica." 
                   className={styles.listItemImage}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 80px, 100px"
                 />
                 <div className={styles.listItemContent}>
                   <h3 className={styles.listItemTitle}>O Resveratrol e o TEA: O Que a Ciência Atual Sugere?</h3>
@@ -331,10 +332,12 @@ const BlogPage: React.FC = () => {
 
               {/* Artigo List Item 2 */}
               <div className={styles.articleListItem}>
-                <img 
-                  src={fotoConsultorio04} 
+                <ResponsiveImage 
+                  src="bruna/dra-bruna-vilela-consultorio-04"
                   alt="Criança em desenvolvimento" 
                   className={styles.listItemImage}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 80px, 100px"
                 />
                 <div className={styles.listItemContent}>
                   <h3 className={styles.listItemTitle}>Marcos do Desenvolvimento: O Que Esperar em Cada Idade</h3>

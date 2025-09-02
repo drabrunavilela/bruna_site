@@ -4,6 +4,7 @@ import styles from './Footer.module.css';
 import whatsappIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png';
 import instagramIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png';
 import doctoraliaIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png';
+import type { WindowWithAnalytics } from '../../types/analytics';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -111,7 +112,7 @@ const Footer: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.ctaButton}
-                onClick={() => (window as any).trackWhatsAppClick?.()}
+                onClick={() => (window as WindowWithAnalytics).trackWhatsAppClick?.()}
               >
                 Agendar Consulta
               </a>

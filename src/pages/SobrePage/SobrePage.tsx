@@ -2,23 +2,23 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './SobrePage.module.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import fotoAtenciosa06 from "../../assets/images/bruna/dra-bruna-vilela-atenciosa-06.webp";
-import fotoConsultorio03 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-03.webp";
-import fotoNeuropediatra17 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-17.webp";
-import fotoProfissional07 from "../../assets/images/bruna/dra-bruna-vilela-profissional-07.webp";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const SobrePage: React.FC = () => {
-  // Carousel images data
+  // Definir caminhos das imagens
   const carouselImages = [
-    { src: fotoAtenciosa06, alt: 'Dra. Bruna Vilela atenciosa no consultório' },
-    { src: fotoConsultorio03, alt: 'Dra. Bruna Vilela em ambiente profissional' },
-    { src: fotoNeuropediatra17, alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
+    { src: 'bruna/dra-bruna-vilela-atenciosa-06', alt: 'Dra. Bruna Vilela atenciosa no consultório' },
+    { src: 'bruna/dra-bruna-vilela-consultorio-03', alt: 'Dra. Bruna Vilela em ambiente profissional' },
+    { src: 'bruna/dra-bruna-vilela-neuropediatra-17', alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
   ];
+
+  const fotoProfissionalPath = 'bruna/dra-bruna-vilela-profissional-07';
 
   // Carousel configuration
   const settings = {
@@ -104,9 +104,10 @@ const SobrePage: React.FC = () => {
         canonical="/sobre"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section */}
         <section className={styles.hero}>
           <div className={styles.heroContainer}>
@@ -119,14 +120,13 @@ const SobrePage: React.FC = () => {
               </p>
             </div>
             <div className={styles.heroImageContainer}>
-              <img 
-                src={fotoProfissional07}
+              <ResponsiveImage 
+                src={fotoProfissionalPath}
                 alt="Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte"
                 className={styles.heroImage}
                 loading="eager"
-                fetchPriority="high"
-                width="500"
-                height="600"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -140,10 +140,12 @@ const SobrePage: React.FC = () => {
               <Slider {...settings}>
                 {carouselImages.map((image, index) => (
                   <div key={index} className={styles.carouselImageContainer}>
-                    <img 
-                      src={image.src} 
-                      alt={image.alt} 
-                      className={styles.carouselImage} 
+                    <ResponsiveImage 
+                      src={image.src}
+                      alt={image.alt}
+                      className={styles.carouselImage}
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 ))}

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
+import SkipLink from '../../components/SkipLink/SkipLink';
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import styles from './SegundaOpiniaoPage.module.css';
-import fotoConsultorio04 from "../../assets/images/bruna/dra-bruna-vilela-consultorio-04.webp";
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 
@@ -43,9 +44,10 @@ const SegundaOpiniaoPage: React.FC = () => {
         canonical="/servicos/segunda-opiniao"
         structuredData={structuredData}
       />
+      <SkipLink />
       <Header />
       
-      <main className={styles.main}>
+      <main id="main-content" className={styles.main}>
         {/* 1. Hero Section: "Segunda Opinião em Neuropediatria: Clareza e Segurança para Decisões Cruciais" */}
         <section className={styles.heroServicePage}>
           <div className={styles.container}>
@@ -61,10 +63,13 @@ const SegundaOpiniaoPage: React.FC = () => {
               </Link>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoConsultorio04}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-consultorio-04"
                 alt="Dra. Bruna Vilela em consultório, demonstrando cuidado especializado para segunda opinião"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
