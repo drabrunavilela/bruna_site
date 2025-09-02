@@ -22,7 +22,7 @@ const SEO: React.FC<SEOProps> = ({
   description,
   keywords,
   canonical,
-  ogImage = "/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp",
+  ogImage = "/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp",
   ogType = "website",
   twitterCard = "summary_large_image",
   noIndex = false,

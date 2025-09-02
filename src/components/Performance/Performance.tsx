@@ -32,7 +32,7 @@ const Performance: React.FC = () => {
     // Preload critical resources
     const preloadLinks = [
       { href: '/src/assets/styles/variables.css', as: 'style' },
-      { href: '/src/assets/images/identidade-visual/logo-dra-bruna-vilela-header.webp', as: 'image' }
+      { href: '/images/identidade-visual/logo-dra-bruna-vilela-header.webp', as: 'image' }
     ];
 
     preloadLinks.forEach(link => {

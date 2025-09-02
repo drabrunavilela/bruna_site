@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import logoHeader from '../../assets/images/identidade-visual/logo-dra-bruna-vilela-header.webp';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const Header: React.FC = () => {
@@ -26,7 +25,7 @@ const Header: React.FC = () => {
         <div className={styles.logo}>
           <Link to="/" aria-label="Página inicial - Dra. Bruna Vilela" onClick={scrollToTop}>
             <img 
-              src={logoHeader}
+              src="/images/identidade-visual/logo-dra-bruna-vilela-header.webp"
               alt="Logotipo oficial Dra. Bruna Vilela - Neuropediatra e Pediatra"
               className={styles.logoImage}
             />

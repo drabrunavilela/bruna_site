@@ -40,7 +40,7 @@ const SobrePage: React.FC = () => {
     "jobTitle": "Neuropediatra e Pediatra",
     "description": "Especialista em neuropediatria e pediatria com abordagem científica e humanizada",
     "url": "https://www.brunavilelaneuroped.com.br/sobre",
-    "image": "https://www.brunavilelaneuroped.com.br/src/assets/images/bruna/dra-bruna-vilela-profissional-07.webp",
+    "image": "https://www.brunavilelaneuroped.com.br/images/bruna/dra-bruna-vilela-profissional-07.webp",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Belo Horizonte",

@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
-import whatsappIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png';
-import instagramIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png';
-import doctoraliaIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const Footer: React.FC = () => {
@@ -41,7 +38,7 @@ const Footer: React.FC = () => {
                 className={styles.footerSocialIcon}
                 aria-label="WhatsApp"
               >
-                <img src={whatsappIcon} alt="WhatsApp" />
+                <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp" />
               </a>
               
               <a 
@@ -51,7 +48,7 @@ const Footer: React.FC = () => {
                 className={styles.footerSocialIcon}
                 aria-label="Instagram"
               >
-                <img src={instagramIcon} alt="Instagram" />
+                <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png" alt="Instagram" />
               </a>
               
               <a 
@@ -61,7 +58,7 @@ const Footer: React.FC = () => {
                 className={styles.footerSocialIcon}
                 aria-label="Doctoralia"
               >
-                <img src={doctoraliaIcon} alt="Doctoralia" />
+                <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png" alt="Doctoralia" />
               </a>
             </div>
           </div>

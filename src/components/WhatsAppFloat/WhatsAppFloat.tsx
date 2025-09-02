@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './WhatsAppFloat.module.css';
-import whatsappIcon from '../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 interface WhatsAppFloatProps {
@@ -83,7 +82,7 @@ const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ customMessage, source }) 
         onClick={handleClick}
         aria-label="Agendar consulta via WhatsApp"
       >
-        <img src={whatsappIcon} alt="WhatsApp - Agende sua consulta" />
+        <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp - Agende sua consulta" />
         
         {/* Tooltip com informação contextual */}
         <div className={styles.tooltip}>

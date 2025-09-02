@@ -81,8 +81,8 @@ const AppContent = () => {
       <CriticalCSS />
       <ResourceOptimization 
         heroImages={[
-          '/src/assets/images/bruna/dra-bruna-vilela-acolhedora-09.webp',
-          '/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp'
+          '/images/bruna/dra-bruna-vilela-acolhedora-09.webp',
+          '/images/bruna/dra-bruna-vilela-atenciosa-05.webp'
         ]}
         criticalPages={['/sobre', '/servicos', '/contato', '/blog']}
       />

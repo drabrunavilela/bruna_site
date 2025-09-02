@@ -61,7 +61,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   };
   // Construir URLs para diferentes tamanhos
   const buildImageUrls = (basePath: string): ImageUrlsSimple | ImageUrlsResponsive => {
-    const baseUrl = `/src/assets/images/${basePath}`;
+    const baseUrl = `/images/${basePath}`;
     
     if (!useResponsive) {
       // Modo simples - apenas WebP + JPG fallback
