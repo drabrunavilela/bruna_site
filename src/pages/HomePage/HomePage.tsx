@@ -175,7 +175,7 @@ const HomePage: React.FC = () => {
           </section>
 
           {/* About section */}
-          <FadeInSection direction="up" threshold={0.8}>
+          <FadeInSection direction="up" threshold={0.2}>
             <section className={styles.about}>
               <div className={styles.container}>
                 <div className={styles.aboutContent}>

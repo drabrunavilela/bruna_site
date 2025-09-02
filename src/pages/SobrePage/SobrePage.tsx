@@ -144,7 +144,8 @@ const SobrePage: React.FC = () => {
                       src={image.src}
                       alt={image.alt}
                       className={styles.carouselImage}
-                      loading="lazy"
+                      loading="eager"
+                      priority={index === 0}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
