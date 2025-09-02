@@ -175,7 +175,7 @@ const HomePage: React.FC = () => {
           </section>
 
           {/* About section */}
-          <FadeInSection direction="up" threshold={0.2}>
+          <FadeInSection direction="up" threshold={0.8}>
             <section className={styles.about}>
               <div className={styles.container}>
                 <div className={styles.aboutContent}>
@@ -185,7 +185,8 @@ const HomePage: React.FC = () => {
                     src={fotoAcolhedoraPath}
                     alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
                     className={styles.aboutImage}
-                    loading="lazy"
+                    loading="eager"
+                    priority={true}
                     sizes="(max-width: 480px) 100vw, (max-width: 768px) 70vw, (max-width: 1200px) 40vw, 35vw"
                     useResponsive={true}
                     showSkeleton={true}

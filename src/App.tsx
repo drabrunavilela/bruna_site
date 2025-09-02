@@ -82,7 +82,8 @@ const AppContent = () => {
       <ResourceOptimization 
         heroImages={[
           '/images/bruna/dra-bruna-vilela-acolhedora-09.webp',
-          '/images/bruna/dra-bruna-vilela-atenciosa-05.webp'
+          '/images/bruna/dra-bruna-vilela-atenciosa-05.webp',
+          '/images/bruna/dra-bruna-vilela-acolhedora-10.webp'
         ]}
         criticalPages={['/sobre', '/servicos', '/contato', '/blog']}
       />

@@ -4,11 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 // import AgendamentoForm from '../../components/Agendamento/AgendamentoForm'; // Temporariamente desabilitado até backend ficar pronto
 import styles from './ContatoPage.module.css';
-import fotoNeuropediatra12 from "../../assets/images/bruna/dra-bruna-vilela-neuropediatra-12.webp";
-import logoInstagram from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png";
-import logoFacebook from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Facebook.png";
-import logoDoctoralia from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png";
-import whatsappIcon from "../../assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png";
+import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const ContatoPage: React.FC = () => {
@@ -154,10 +150,16 @@ const ContatoPage: React.FC = () => {
               </a>
             </div>
             <div className={styles.heroImageWrapper}>
-              <img 
-                src={fotoNeuropediatra12}
+              <ResponsiveImage 
+                src="bruna/dra-bruna-vilela-neuropediatra-12"
                 alt="Dra. Bruna Vilela em consultório, demonstrando cuidado e atenção"
                 className={styles.heroImage}
+                loading="eager"
+                priority={true}
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 70vw, 50vw"
+                useResponsive={true}
+                showSkeleton={true}
+                skeletonHeight="400px"
               />
             </div>
           </div>
@@ -186,7 +188,7 @@ const ContatoPage: React.FC = () => {
             <div className={styles.bookingOptionsGrid}>
               <div className={styles.bookingOptionCard}>
                 <div className={styles.whatsappIcon}>
-                  <img src={whatsappIcon} alt="WhatsApp" />
+                  <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp" />
                 </div>
                 <h3 className={styles.cardTitle}>WhatsApp</h3>
                 <p className={styles.cardDescription}>
@@ -346,7 +348,7 @@ const ContatoPage: React.FC = () => {
                   className={styles.socialIconLink}
                 >
                   <img 
-                    src={logoInstagram} 
+                    src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Instagram.png" 
                     alt="Instagram" 
                     className={styles.socialIcon}
                   />
@@ -359,7 +361,7 @@ const ContatoPage: React.FC = () => {
                   title="Página em breve - esta semana"
                 >
                   <img 
-                    src={logoFacebook} 
+                    src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Facebook.png" 
                     alt="Facebook" 
                     className={styles.socialIcon}
                   />
@@ -375,7 +377,7 @@ const ContatoPage: React.FC = () => {
                   className={styles.socialIconLink}
                 >
                   <img 
-                    src={logoDoctoralia} 
+                    src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Doctoralia.png" 
                     alt="Doctoralia" 
                     className={styles.socialIcon}
                   />
