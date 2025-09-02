@@ -142,10 +142,11 @@ const BlogPage: React.FC = () => {
               {/* Artigo 1 - TDAH */}
               <Link to="/blog/tdah-alem-dos-rotulos" className={styles.articleCard}>
                 <ResponsiveImage 
-                  src="bruna/dra-bruna-vilela-consultorio-04"
+                  src="bruna/dra-bruna-vilela-neuropediatra-6"
                   alt="Criança brincando com blocos, simbolizando desenvolvimento e aprendizado." 
-                  className={styles.cardImage}
-                  loading="lazy"
+                  className={`${styles.cardImage} ${styles.tdahImage}`}
+                  loading="eager"
+                  priority={true}
                   sizes="(max-width: 768px) 100vw, 300px"
                   showSkeleton={true}
                   skeletonHeight="200px"
@@ -173,8 +174,9 @@ const BlogPage: React.FC = () => {
                 <ResponsiveImage 
                   src="bruna/dra-bruna-vilela-consultorio-03"
                   alt="Criança com autismo em ambiente de aprendizado" 
-                  className={styles.cardImage}
-                  loading="lazy"
+                  className={`${styles.cardImage} ${styles.autismoImage}`}
+                  loading="eager"
+                  priority={true}
                   sizes="(max-width: 768px) 100vw, 300px"
                   showSkeleton={true}
                   skeletonHeight="200px"
@@ -202,9 +204,12 @@ const BlogPage: React.FC = () => {
                 <ResponsiveImage 
                   src="bruna/dra-bruna-vilela-neuropediatra-17"
                   alt="Criança em ambiente médico, simbolizando cuidado especializado" 
-                  className={styles.cardImage}
-                  loading="lazy"
+                  className={`${styles.cardImage} ${styles.epilepsiaImage}`}
+                  loading="eager" 
+                  priority={true}
                   sizes="(max-width: 768px) 100vw, 300px"
+                  showSkeleton={true}
+                  skeletonHeight="200px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Epilepsia Infantil: Mitos e Verdades</h3>
@@ -229,9 +234,12 @@ const BlogPage: React.FC = () => {
                 <ResponsiveImage 
                   src="bruna/dra-bruna-vilela-acolhedora-10"
                   alt="Criança brincando, simbolizando desenvolvimento saudável" 
-                  className={styles.cardImage}
-                  loading="lazy"
+                  className={`${styles.cardImage} ${styles.desenvolvimentoImage}`}
+                  loading="eager"
+                  priority={false}
                   sizes="(max-width: 768px) 100vw, 300px"
+                  showSkeleton={true}
+                  skeletonHeight="200px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Marcos do Desenvolvimento: O que Esperar em Cada Idade</h3>
@@ -256,9 +264,12 @@ const BlogPage: React.FC = () => {
                 <ResponsiveImage 
                   src="bruna/dra-bruna-vilela-sorrindo-02"
                   alt="Criança em avaliação, simbolizando diagnóstico precoce" 
-                  className={styles.cardImage}
-                  loading="lazy"
+                  className={`${styles.cardImage} ${styles.atrasosImage}`}
+                  loading="eager"
+                  priority={false}
                   sizes="(max-width: 768px) 100vw, 300px"
+                  showSkeleton={true}
+                  skeletonHeight="200px"
                 />
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>Atrasos no Desenvolvimento: Quando Procurar Ajuda</h3>
@@ -313,6 +324,8 @@ const BlogPage: React.FC = () => {
                   className={styles.listItemImage}
                   loading="lazy"
                   sizes="(max-width: 768px) 80px, 100px"
+                  showSkeleton={true}
+                  skeletonHeight="100px"
                 />
                 <div className={styles.listItemContent}>
                   <h3 className={styles.listItemTitle}>O Resveratrol e o TEA: O Que a Ciência Atual Sugere?</h3>
@@ -338,6 +351,8 @@ const BlogPage: React.FC = () => {
                   className={styles.listItemImage}
                   loading="lazy"
                   sizes="(max-width: 768px) 80px, 100px"
+                  showSkeleton={true}
+                  skeletonHeight="100px"
                 />
                 <div className={styles.listItemContent}>
                   <h3 className={styles.listItemTitle}>Marcos do Desenvolvimento: O Que Esperar em Cada Idade</h3>

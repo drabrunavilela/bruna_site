@@ -58,6 +58,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
 
   const handleImageError = () => {
     setIsLoading(false);
+    console.error(`Failed to load image: ${src}`);
   };
   // Construir URLs para diferentes tamanhos
   const buildImageUrls = (basePath: string): ImageUrlsSimple | ImageUrlsResponsive => {
