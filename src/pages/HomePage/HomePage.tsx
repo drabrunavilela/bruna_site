@@ -6,7 +6,7 @@ import SEO from '../../components/SEO/SEO';
 import SkipLink from '../../components/SkipLink/SkipLink';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import FadeInSection from '../../components/FadeInSection/FadeInSection';
-import LeadCapture from '../../components/LeadCapture/LeadCapture';
+// import LeadCapture from '../../components/LeadCapture/LeadCapture';
 import styles from './HomePage.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
@@ -346,7 +346,7 @@ const HomePage: React.FC = () => {
       </main>
 
       {/* Lead Capture - ativado por scroll aos 60% da página */}
-      <LeadCapture 
+      {/* <LeadCapture 
         trigger="scroll"
         scrollPercentage={60}
         title="🌟 Primeira Consulta com Desconto Especial!"
@@ -354,7 +354,7 @@ const HomePage: React.FC = () => {
         buttonText="Quero Agendar Agora"
         incentive="✅ Consulta presencial em Belo Horizonte&#10;✅ Mais de 10 anos de experiência&#10;✅ Atendimento humanizado e acolhedor&#10;✅ Especialista em TDAH, TEA e Desenvolvimento"
         formFields={['nome', 'email', 'telefone', 'interesse']}
-      />
+      /> */}
 
       <Footer />
     </>

@@ -16,8 +16,8 @@ import PoliticaPrivacidadePage from './pages/PoliticaPrivacidadePage/PoliticaPri
 import OfflinePage from './components/OfflinePage/OfflinePage';
 import Performance from './components/Performance/Performance';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
-import CookieBanner from './components/CookieBanner/CookieBanner';
-import PWAInstall from './components/PWAInstall/PWAInstall';
+// import CookieBanner from './components/CookieBanner/CookieBanner';
+// import PWAInstall from './components/PWAInstall/PWAInstall';
 import CriticalCSS from './components/CriticalCSS/CriticalCSS';
 import ResourceOptimization from './components/ResourceOptimization/ResourceOptimization';
 
@@ -62,19 +62,19 @@ const NotFoundPage = () => {
 const AppContent = () => {
   useScrollToTop();
   
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [analyticsEnabled] = useState(false);
 
-  const handleCookieAccept = () => {
-    // Ativar analytics quando cookies forem aceitos
-    setAnalyticsEnabled(true);
-    // Analytics ativado
-  };
+  // const handleCookieAccept = () => {
+  //   // Ativar analytics quando cookies forem aceitos
+  //   setAnalyticsEnabled(true);
+  //   // Analytics ativado
+  // };
   
-  const handleCookieDecline = () => {
-    // Desativar analytics quando cookies forem recusados
-    setAnalyticsEnabled(false);
-    // Analytics desativado
-  };
+  // const handleCookieDecline = () => {
+  //   // Desativar analytics quando cookies forem recusados
+  //   setAnalyticsEnabled(false);
+  //   // Analytics desativado
+  // };
   
   return (
     <div className="App">
@@ -105,8 +105,8 @@ const AppContent = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <WhatsAppFloat />
-      <PWAInstall />
-      <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
+      {/* <PWAInstall /> */}
+      {/* <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} /> */}
 
       <GTM enabled={analyticsEnabled} />
     </div>
