@@ -1,10 +1,35 @@
-import React, { useEffect, useState } from 'react';
+// 🚧 COMPONENTE PREPARADO PARA IMPLEMENTAÇÃO FUTURA
+// Será ativado após implementação do backend para notificações
+// Para ativar: descomente este arquivo
 
-interface PushNotificationsProps {
-  onSubscriptionChange?: (subscription: PushSubscription | null) => void;
-}
+// import { useState, useEffect } from 'react';
 
-const PushNotifications: React.FC<PushNotificationsProps> = ({ onSubscriptionChange }) => {
+// interface NotificationPermission {
+//   granted: boolean;
+//   denied: boolean;
+//   default: boolean;
+// }
+
+// interface MedicalNotification {
+//   id: string;
+//   type: 'appointment' | 'health_tip' | 'emergency' | 'blog_post';
+//   title: string;
+//   body: string;
+//   icon?: string;
+//   scheduledTime?: Date;
+// }
+
+// Componente stub temporário
+const PushNotifications: React.FC = () => {
+  return null;
+};
+
+export default PushNotifications;
+
+/*
+CÓDIGO COMPLETO COMENTADO PARA IMPLEMENTAÇÃO FUTURA:
+
+const PushNotifications: React.FC = () => {<PushNotificationsProps> = ({ onSubscriptionChange }) => {
   const [isSupported, setIsSupported] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [subscription, setSubscription] = useState<PushSubscription | null>(null);
@@ -174,10 +199,4 @@ const PushNotifications: React.FC<PushNotificationsProps> = ({ onSubscriptionCha
           >
             🔕 Desativar
           </button>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default PushNotifications;
+*/

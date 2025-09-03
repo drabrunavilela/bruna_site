@@ -1,17 +1,3 @@
-// 🚧 COMPONENTE PREPARADO PARA IMPLEMENTAÇÃO FUTURA
-// Será ativado após implementação do backend para métricas
-// Para ativar: descomente todo o código abaixo e importe no App.tsx
-
-// Componente stub temporário
-const PerformanceDashboard: React.FC = () => {
-  return null;
-};
-
-export default PerformanceDashboard;
-
-/*
-CÓDIGO COMPLETO COMENTADO PARA IMPLEMENTAÇÃO FUTURA:
-
 import { useState, useEffect } from 'react';
 import styles from './PerformanceDashboard.module.css';
 
@@ -194,4 +180,13 @@ const PerformanceDashboard: React.FC = () => {
         </div>
       </div>
 
-*/
+      <div className={styles.footer}>
+        <small>
+          💡 Dashboard visível apenas em desenvolvimento ou com ?perf-dashboard na URL
+        </small>
+      </div>
+    </div>
+  );
+};
+
+export default PerformanceDashboard;
