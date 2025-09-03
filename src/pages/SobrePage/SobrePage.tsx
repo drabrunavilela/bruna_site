@@ -4,10 +4,12 @@ import Footer from '../../components/Footer/Footer';
 import SEO from '../../components/SEO/SEO';
 import SkipLink from '../../components/SkipLink/SkipLink';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
-import styles from './SobrePage.module.css';
+// import FadeInSection from '../../components/FadeInSection/FadeInSection';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import styles from './SobrePage.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const SobrePage: React.FC = () => {
@@ -98,14 +100,15 @@ const SobrePage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Sobre Dra. Bruna Vilela - Neuropediatra e Pediatra em Belo Horizonte | Trajetória e Especializações"
-        description="Conheça a trajetória da Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte. Especialista em TDAH, autismo, epilepsia e desenvolvimento infantil com abordagem científica e humanizada."
+        title="Sobre Dra. Bruna Vilela - Neuropediatra e Pediatra | Trajetória Profissional"
+        description=" Conheça a Dra. Bruna: 10+ anos salvando vidas infantis! Formação internacional, especialista em casos complexos. Sua história inspira confiança! "
         keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/sobre"
         structuredData={structuredData}
       />
       <SkipLink />
       <Header />
+      <Breadcrumbs />
       
       <main id="main-content" className={styles.main}>
         {/* 1. Hero Section */}

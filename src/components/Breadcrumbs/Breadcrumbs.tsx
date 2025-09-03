@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Breadcrumbs.module.css';
 
@@ -10,14 +10,14 @@ interface BreadcrumbItem {
 const Breadcrumbs: React.FC = () => {
   const location = useLocation();
   
-  const getBreadcrumbs = (): BreadcrumbItem[] => {
+  const breadcrumbs = useMemo((): BreadcrumbItem[] => {
     const pathSegments = location.pathname.split('/').filter(Boolean);
-    const breadcrumbs: BreadcrumbItem[] = [
+    const breadcrumbList: BreadcrumbItem[] = [
       { label: 'Início', path: '/' }
     ];
 
     if (pathSegments.length === 0) {
-      return breadcrumbs;
+      return breadcrumbList;
     }
 
     let currentPath = '';
@@ -41,13 +41,45 @@ const Breadcrumbs: React.FC = () => {
       };
 
       const label = labelMap[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
-      breadcrumbs.push({ label, path: currentPath });
+      breadcrumbList.push({ label, path: currentPath });
     });
 
-    return breadcrumbs;
-  };
+    return breadcrumbList;
+  }, [location.pathname]);
 
-  const breadcrumbs = getBreadcrumbs();
+  // Adicionar Schema.org BreadcrumbList JSON-LD
+  useEffect(() => {
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.label,
+        "item": `https://brunavilelaneuroped.com.br${item.path === '/' ? '' : item.path}`
+      }))
+    };
+
+    // Remover schema anterior se existir
+    const existingScript = document.querySelector('script[data-breadcrumb-schema]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Adicionar novo schema
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-breadcrumb-schema', 'true');
+    script.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      const scriptToRemove = document.querySelector('script[data-breadcrumb-schema]');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, [breadcrumbs]);
 
   return (
     <nav className={styles.breadcrumbs} aria-label="Breadcrumb">

@@ -35,7 +35,7 @@ const TeaPage: React.FC = () => {
     <>
       <SEO 
         title="TEA - Diagnóstico Precoce e Intervenções | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
-        description="Especialista em TEA em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico precoce e intervenções baseadas em evidências para crianças com Transtorno do Espectro Autista."
+        description=" Autismo/TEA: Diagnóstico Precoce + Plano Terapêutico Completo! Dra. Bruna, referência em BH. Mude o futuro do seu filho! "
         keywords="tea, autismo, neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/tea"
         structuredData={structuredData}

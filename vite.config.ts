@@ -11,8 +11,17 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          router: ['react-router-dom']
+          router: ['react-router-dom'],
+          animations: ['framer-motion'],
+          forms: ['react-hook-form'],
+          analytics: ['react-ga4', 'web-vitals']
         }
+      }
+    },
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
       }
     }
   },

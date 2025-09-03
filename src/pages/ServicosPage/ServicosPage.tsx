@@ -97,7 +97,7 @@ const ServicosPage: React.FC = () => {
     <>
       <SEO 
         title="Serviços de Neuropediatria - Dra. Bruna Vilela | TDAH, Autismo, Epilepsia e Desenvolvimento Infantil"
-        description="Conheça os serviços de neuropediatria da Dra. Bruna Vilela em Belo Horizonte. Especialista em TDAH, autismo, epilepsia, atrasos no desenvolvimento e cefaleias infantis."
+        description=" Serviços Especializados: TDAH, Autismo, Epilepsia + Mais! Dra. Bruna, neuropediatra referência em BH. Cuidado completo para seu filho! "
         keywords="neuropediatra, serviços, especialidades"
         canonical="/servicos"
         structuredData={structuredData}

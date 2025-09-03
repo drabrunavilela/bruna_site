@@ -6,6 +6,10 @@ import SEO from '../../components/SEO/SEO';
 import SkipLink from '../../components/SkipLink/SkipLink';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 import FadeInSection from '../../components/FadeInSection/FadeInSection';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import ReviewSchema from '../../components/ReviewSchema/ReviewSchema';
+import PushNotifications from '../../components/PushNotifications/PushNotifications';
+import CoreWebVitals from '../../components/CoreWebVitals/CoreWebVitals';
 // import LeadCapture from '../../components/LeadCapture/LeadCapture';
 import styles from './HomePage.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
@@ -109,7 +113,7 @@ const HomePage: React.FC = () => {
     <>
       <SEO 
         title="Dra. Bruna Vilela - Neuropediatra e Pediatra em Belo Horizonte | Especialista em TDAH, Autismo e Epilepsia"
-        description="Dra. Bruna Vilela, neuropediatra e pediatra em Belo Horizonte. Especialista em TDAH, autismo, epilepsia e desenvolvimento infantil. Agende sua consulta."
+        description="🏆 Neuropediatra referência em BH! Especialista em TDAH, autismo e epilepsia infantil. Consultas humanizadas com resultados comprovados. Agende já! ⚡"
         keywords="neuropediatra, pediatra, belo horizonte"
         canonical="/"
         structuredData={structuredData}
@@ -118,6 +122,8 @@ const HomePage: React.FC = () => {
       <Header />
       
       <main id="main-content" className={styles.main}>
+        <Breadcrumbs />
+        <ReviewSchema />
         {/* Main content container */}
         <div className={styles.heroAboutContainer}>
           {/* Hero section */}
@@ -346,20 +352,11 @@ const HomePage: React.FC = () => {
         </section>
       </main>
 
-      {/* Lead Capture - ativado por scroll aos 60% da página */}
-      {/* <LeadCapture 
-        trigger="scroll"
-        scrollPercentage={60}
-        title="🌟 Primeira Consulta com Desconto Especial!"
-        subtitle="Avaliação neurológica completa para seu filho com a Dra. Bruna Vilela"
-        buttonText="Quero Agendar Agora"
-        incentive="✅ Consulta presencial em Belo Horizonte&#10;✅ Mais de 10 anos de experiência&#10;✅ Atendimento humanizado e acolhedor&#10;✅ Especialista em TDAH, TEA e Desenvolvimento"
-        formFields={['nome', 'email', 'telefone', 'interesse']}
-      /> */}
-
       <Footer />
+      <PushNotifications />
+      <CoreWebVitals />
     </>
   );
 };
 
-export default HomePage; 
+export default HomePage;

@@ -130,20 +130,299 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-// Background sync for form submissions
+// Background Sync - Sistema avançado para formulários offline
 self.addEventListener('sync', (event) => {
-  if (event.tag === 'background-sync') {
-    console.log('Service Worker: Background sync triggered');
+  console.log('Background sync triggered:', event.tag);
+  
+  if (event.tag === 'contact-form-sync') {
+    event.waitUntil(syncContactForms());
+  } else if (event.tag === 'appointment-sync') {
+    event.waitUntil(syncAppointments());
+  } else if (event.tag === 'analytics-sync') {
+    event.waitUntil(syncAnalytics());
   }
 });
 
-// Push notifications (preparado para futuro)
-self.addEventListener('push', (event) => {
+// Sincronizar formulários de contato offline
+async function syncContactForms() {
+  try {
+    const db = await openIndexedDB();
+    const pendingForms = await getPendingData(db, 'contact-forms');
+    
+    for (const form of pendingForms) {
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form.data)
+        });
+        
+        if (response.ok) {
+          await removePendingData(db, 'contact-forms', form.id);
+          console.log('Formulário de contato sincronizado:', form.id);
+          
+          // Notificar usuário do sucesso
+          self.registration.showNotification('✅ Mensagem Enviada', {
+            body: 'Sua mensagem foi enviada com sucesso para a Dra. Bruna!',
+            icon: '/images/Icon/icon-192x192.png',
+            tag: 'form-success'
+          });
+        }
+      } catch (error) {
+        console.error('Erro ao sincronizar formulário:', error);
+      }
+    }
+  } catch (error) {
+    console.error('Erro no background sync de formulários:', error);
+  }
+}
+
+// Sincronizar agendamentos offline
+async function syncAppointments() {
+  try {
+    const db = await openIndexedDB();
+    const pendingAppointments = await getPendingData(db, 'appointments');
+    
+    for (const appointment of pendingAppointments) {
+      try {
+        const response = await fetch('/api/appointments', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(appointment.data)
+        });
+        
+        if (response.ok) {
+          await removePendingData(db, 'appointments', appointment.id);
+          console.log('Agendamento sincronizado:', appointment.id);
+          
+          // Notificar usuário
+          self.registration.showNotification('📅 Agendamento Confirmado', {
+            body: 'Sua solicitação de consulta foi enviada para a Dra. Bruna!',
+            icon: '/images/Icon/icon-192x192.png',
+            tag: 'appointment-success',
+            actions: [
+              {
+                action: 'view',
+                title: 'Ver Detalhes'
+              }
+            ]
+          });
+        }
+      } catch (error) {
+        console.error('Erro ao sincronizar agendamento:', error);
+      }
+    }
+  } catch (error) {
+    console.error('Erro no background sync de agendamentos:', error);
+  }
+}
+
+// Sincronizar dados de analytics offline
+async function syncAnalytics() {
+  try {
+    const db = await openIndexedDB();
+    const pendingAnalytics = await getPendingData(db, 'analytics');
+    
+    for (const event of pendingAnalytics) {
+      try {
+        // Enviar para Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', event.data.action, {
+            event_category: event.data.category,
+            event_label: event.data.label,
+            value: event.data.value
+          });
+        }
+        
+        await removePendingData(db, 'analytics', event.id);
+        console.log('Evento de analytics sincronizado:', event.id);
+      } catch (error) {
+        console.error('Erro ao sincronizar analytics:', error);
+      }
+    }
+  } catch (error) {
+    console.error('Erro no background sync de analytics:', error);
+  }
+}
+
+// Utilitários IndexedDB para Background Sync
+function openIndexedDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('BrunaVilelaDB', 1);
+    
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+    
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result;
+      
+      // Store para formulários de contato
+      if (!db.objectStoreNames.contains('contact-forms')) {
+        db.createObjectStore('contact-forms', { keyPath: 'id', autoIncrement: true });
+      }
+      
+      // Store para agendamentos
+      if (!db.objectStoreNames.contains('appointments')) {
+        db.createObjectStore('appointments', { keyPath: 'id', autoIncrement: true });
+      }
+      
+      // Store para analytics
+      if (!db.objectStoreNames.contains('analytics')) {
+        db.createObjectStore('analytics', { keyPath: 'id', autoIncrement: true });
+      }
+    };
+  });
+}
+
+function getPendingData(db, storeName) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction([storeName], 'readonly');
+    const store = transaction.objectStore(storeName);
+    const request = store.getAll();
+    
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+  });
+}
+
+function removePendingData(db, storeName, id) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction([storeName], 'readwrite');
+    const store = transaction.objectStore(storeName);
+    const request = store.delete(id);
+    
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve();
+  });
+}
+
+// Push Notifications - Sistema completo de engajamento
+self.addEventListener('push', function(event) {
+  console.log('Push notification received:', event);
+  
+  let notificationData = {
+    title: 'Dra. Bruna Vilela',
+    body: 'Nova informação disponível',
+    icon: '/images/Icon/icon-192x192.png',
+    badge: '/images/Icon/icon-72x72.png',
+    tag: 'medical-update',
+    requireInteraction: true,
+    vibrate: [200, 100, 200],
+    data: {
+      url: '/',
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    },
+    actions: [
+      {
+        action: 'view',
+        title: '👀 Ver Agora',
+        icon: '/images/Icon/icon-72x72.png'
+      },
+      {
+        action: 'schedule',
+        title: '📅 Agendar',
+        icon: '/images/Icon/icon-72x72.png'
+      },
+      {
+        action: 'close',
+        title: '❌ Fechar',
+        icon: '/images/Icon/icon-72x72.png'
+      }
+    ]
+  };
+
+  // Personalizar notificação baseada nos dados recebidos
   if (event.data) {
-    const data = event.data.json();
-    self.registration.showNotification(data.title, {
-      body: data.body,
-      icon: '/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp'
-    });
+    try {
+      const payload = event.data.json();
+      notificationData = { ...notificationData, ...payload };
+    } catch (e) {
+      notificationData.body = event.data.text();
+    }
+  }
+
+  // Tipos de notificação médica
+  if (notificationData.type) {
+    switch (notificationData.type) {
+      case 'appointment':
+        notificationData.title = '📅 Lembrete de Consulta';
+        notificationData.body = 'Sua consulta com a Dra. Bruna é amanhã!';
+        notificationData.tag = 'appointment-reminder';
+        break;
+      case 'health-tip':
+        notificationData.title = '💡 Dica de Saúde Infantil';
+        notificationData.tag = 'health-tip';
+        break;
+      case 'emergency':
+        notificationData.title = '🚨 Informação Importante';
+        notificationData.requireInteraction = true;
+        notificationData.tag = 'emergency';
+        break;
+    }
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(notificationData.title, notificationData)
+  );
+});
+
+// Manipular cliques nas notificações
+self.addEventListener('notificationclick', function(event) {
+  console.log('Notification clicked:', event);
+  
+  event.notification.close();
+  
+  let targetUrl = '/';
+  
+  // Ações específicas
+  if (event.action === 'view') {
+    targetUrl = event.notification.data?.url || '/';
+  } else if (event.action === 'schedule') {
+    targetUrl = '/contato';
+  } else if (event.action === 'close') {
+    return; // Apenas fechar
+  } else {
+    // Clique na notificação (não em ação)
+    targetUrl = event.notification.data?.url || '/';
+  }
+
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true })
+      .then(function(clientList) {
+        // Verificar se já existe uma janela aberta
+        for (let client of clientList) {
+          if (client.url.includes(self.location.origin) && 'focus' in client) {
+            client.navigate(targetUrl);
+            return client.focus();
+          }
+        }
+        
+        // Abrir nova janela se necessário
+        if (clients.openWindow) {
+          return clients.openWindow(targetUrl);
+        }
+      })
+  );
+});
+
+// Fechar notificação
+self.addEventListener('notificationclose', function(event) {
+  console.log('Notification closed:', event.notification.tag);
+  
+  // Analytics para notificações fechadas
+  if (event.notification.data?.trackClose) {
+    // Enviar evento de analytics
+    fetch('/api/analytics/notification-close', {
+      method: 'POST',
+      body: JSON.stringify({
+        tag: event.notification.tag,
+        timestamp: Date.now()
+      })
+    }).catch(() => {}); // Falha silenciosa
   }
 });

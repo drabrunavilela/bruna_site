@@ -122,7 +122,7 @@ const ContatoPage: React.FC = () => {
     <>
       <SEO 
         title="Contato - Dra. Bruna Vilela Neuropediatra em Belo Horizonte | Agende sua Consulta"
-        description="Entre em contato com a Dra. Bruna Vilela, neuropediatra em Belo Horizonte. Agende sua consulta, tire suas dúvidas via WhatsApp, telefone ou formulário. Localização e horários de atendimento."
+        description="📞 Agende AGORA com a Dra. Bruna! Neuropediatra #1 em BH. Atendimento humanizado + resultados comprovados. Seu filho merece o melhor! ✨"
         keywords="neuropediatra, contato, agendar consulta"
         canonical="/contato"
         structuredData={structuredData}

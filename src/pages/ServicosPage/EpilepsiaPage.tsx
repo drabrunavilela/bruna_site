@@ -35,7 +35,7 @@ const EpilepsiaPage: React.FC = () => {
     <>
       <SEO 
         title="Epilepsia Infantil - Diagnóstico e Tratamento | Dra. Bruna Vilela Neuropediatra em Belo Horizonte"
-        description="Especialista em epilepsia infantil em Belo Horizonte. Dra. Bruna Vilela oferece diagnóstico preciso e tratamento personalizado para crianças com epilepsia."
+        description=" Epilepsia Infantil: Controle Total das Crises! Dra. Bruna, especialista em casos complexos. Vida normal para seu filho é possível! Consulte"
         keywords="epilepsia infantil, neuropediatra, pediatra, belo horizonte"
         canonical="/servicos/epilepsia"
         structuredData={structuredData}
