@@ -139,6 +139,25 @@ const SEO: React.FC<SEOProps> = ({
       document.head.appendChild(script);
     }
 
+    // Add LocalBusiness schema
+    const localBusinessSchema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dra. Bruna Vilela - Neuropediatra",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Raja Gabaglia 2000, Torre 1, Sala 313",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG"
+      },
+      "telephone": "+5531973178377"
+    };
+
+    const localBusinessScript = document.createElement('script');
+    localBusinessScript.setAttribute('type', 'application/ld+json');
+    localBusinessScript.textContent = JSON.stringify(localBusinessSchema);
+    document.head.appendChild(localBusinessScript);
+
     // Add expanded FAQ Schema for medical specialties
     const expandedFAQSchema = {
       "@context": "https://schema.org",

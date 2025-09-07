@@ -64,6 +64,35 @@
     <!-- Import Google Fonts -->
     <!-- Removido: Playfair Display e Inter - Agora usando Times New Roman (fonte do sistema) -->
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/images/hero.webp" as="image">
+    
+    <!-- Inline critical CSS -->
+    <style>
+      /* Critical CSS inline */
+      .header { 
+        background-color: #f2f2f2; 
+        padding: 20px; 
+        text-align: center; 
+      }
+      .hero { 
+        background-image: url('/images/hero.webp'); 
+        background-size: cover; 
+        height: 100vh; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        color: #fff; 
+      }
+      .main-nav { 
+        background-color: #333; 
+        color: #fff; 
+        padding: 10px; 
+        text-align: center; 
+      }
+    </style>
+    
     <!-- Import critical CSS -->
     <link rel="stylesheet" href="/src/index.css" />
     
