@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Dra. Bruna Vilela</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Times New Roman', serif;
+      background: linear-gradient(135deg, #f5f3ff 0%, #e0e7ff 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4c1d95;
+    }
+
+    .offline-container {
+      text-align: center;
+      padding: 2rem;
+      max-width: 500px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(76, 29, 149, 0.1);
+    }
+
+    .offline-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #6b21a8;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #6b7280;
+    }
+
+    .contact-info {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .retry-btn {
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .retry-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 480px) {
+      .offline-container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <div class="offline-icon">📱</div>
+    
+    <h1>Você está offline</h1>
+    
+    <p>
+      Não foi possível conectar à internet. Verifique sua conexão e tente novamente.
+    </p>
+
+    <div class="contact-info">
+      <h3 style="margin-bottom: 1rem; color: #6b21a8;">Contato de Emergência</h3>
+      
+      <div class="contact-item">
+        <span class="contact-icon">📱</span>
+        <strong>(31) 97317-8377</strong>
+      </div>
+      
+      <div class="contact-item">
+        <span class="contact-icon">📧</span>
+        brunavilela.neuroped@gmail.com
+      </div>
+      
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        Av. Raja Gabaglia 2000, Torre 1, Sala 313
+      </div>
+    </div>
+
+    <button class="retry-btn" onclick="window.location.reload()">
+      🔄 Tentar Novamente
+    </button>
+
+    <script>
+      // Verificar conexão automaticamente
+      window.addEventListener('online', () => {
+        window.location.reload();
+      });
+
+      // Tentar reconectar a cada 30 segundos
+      setInterval(() => {
+        if (navigator.onLine) {
+          window.location.reload();
+        }
+      }, 30000);
+    </script>
+  </div>
+</body>
+</html>
