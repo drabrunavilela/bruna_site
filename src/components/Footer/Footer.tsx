@@ -38,7 +38,13 @@ const Footer: React.FC = () => {
                 className={styles.footerSocialIcon}
                 aria-label="WhatsApp"
               >
-                <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp" />
+                <img 
+                  src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" 
+                  alt="WhatsApp"
+                  width="48"
+                  height="48"
+                  decoding="async"
+                />
               </a>
               
               <a 

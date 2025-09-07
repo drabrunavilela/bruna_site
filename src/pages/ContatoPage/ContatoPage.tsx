@@ -188,7 +188,13 @@ const ContatoPage: React.FC = () => {
             <div className={styles.bookingOptionsGrid}>
               <div className={styles.bookingOptionCard}>
                 <div className={styles.whatsappIcon}>
-                  <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp" />
+                  <img 
+                    src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" 
+                    alt="WhatsApp"
+                    width="48"
+                    height="48"
+                    decoding="async"
+                  />
                 </div>
                 <h3 className={styles.cardTitle}>WhatsApp</h3>
                 <p className={styles.cardDescription}>

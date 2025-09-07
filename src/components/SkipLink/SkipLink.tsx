@@ -26,7 +26,6 @@ const SkipLink: React.FC<SkipLinkProps> = ({
       className={styles.skipLink}
       onClick={handleClick}
       aria-label={`${children} - Pressione Enter para navegar`}
-      role="navigation"
     >
       {children}
     </a>

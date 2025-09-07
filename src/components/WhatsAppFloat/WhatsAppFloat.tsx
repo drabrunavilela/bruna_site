@@ -82,7 +82,13 @@ const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ customMessage, source }) 
       aria-label={`Abrir WhatsApp para conversar com Dra. Bruna Vilela - ${message}`}
       role="button"
     >
-      <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp - Agende sua consulta" />
+      <img 
+        src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" 
+        alt="WhatsApp - Agende sua consulta"
+        width="48"
+        height="48"
+        decoding="async"
+      />
       
       {/* Tooltip com informação contextual */}
       <div className={styles.tooltip}>

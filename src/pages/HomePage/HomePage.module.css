@@ -112,7 +112,7 @@
 .ctaPrimary {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: var(--color-primary);
+  background-color: #1a73e8; /* Azul mais escuro para melhor contraste */
   color: var(--color-white);
   text-decoration: none;
   border-radius: var(--border-radius);
@@ -120,14 +120,14 @@
   font-size: 1.1rem;
   font-weight: normal;
   transition: all 0.3s ease;
-  border: 2px solid var(--color-primary);
+  border: 2px solid #1a73e8;
 }
 
 .ctaPrimary:hover,
 .ctaPrimary:focus {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-headings);
+  background-color: #1557b0; /* Azul mais escuro no hover */
+  border-color: #1557b0;
+  color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--box-shadow-medium);
   outline: none;
@@ -137,21 +137,21 @@
   display: inline-block;
   padding: 1rem 2rem;
   background-color: transparent;
-  color: var(--color-primary);
+  color: #1a73e8; /* Azul mais escuro para melhor contraste */
   text-decoration: none;
   border-radius: var(--border-radius);
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: normal;
   transition: all 0.3s ease;
-  border: 2px solid var(--color-primary);
+  border: 2px solid #1a73e8;
 }
 
 .ctaSecondary:hover,
 .ctaSecondary:focus {
-  background-color: var(--color-accent);
-  color: var(--color-headings);
-  border-color: var(--color-accent);
+  background-color: #1a73e8; /* Azul no hover */
+  color: var(--color-white);
+  border-color: #1a73e8;
   transform: translateY(-2px);
   box-shadow: var(--box-shadow-medium);
   outline: none;
@@ -162,7 +162,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  min-height: 500px;
+  height: 500px; /* Altura fixa para evitar CLS */
   position: relative;
   overflow: hidden;
   padding-left: 2rem;
@@ -175,6 +176,8 @@
   object-fit: cover;
   border-radius: 16px;
   transition: transform 0.3s ease;
+  /* Adicionar aspect-ratio para manter proporção */
+  aspect-ratio: 3/4;
 }
 
 .heroImage:hover {
@@ -247,7 +250,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  min-height: 450px;
+  height: 450px; /* Altura fixa para evitar CLS */
   position: relative;
   overflow: hidden;
   padding-right: 2rem;
@@ -260,6 +264,8 @@
   object-fit: cover;
   border-radius: 16px;
   transition: transform 0.3s ease;
+  /* Adicionar aspect-ratio para manter proporção */
+  aspect-ratio: 4/5;
 }
 
 .aboutImage:hover {
@@ -393,7 +399,7 @@
 }
 
 .blogCardLink {
-  color: var(--color-primary);
+  color: #1a73e8; /* Azul mais escuro para melhor contraste */
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -403,7 +409,7 @@
 
 .blogCardLink:hover,
 .blogCardLink:focus {
-  color: var(--color-secondary);
+  color: #1557b0; /* Azul mais escuro no hover */
   outline: none;
 }
 
