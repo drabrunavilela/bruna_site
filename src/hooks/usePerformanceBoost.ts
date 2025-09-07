@@ -50,7 +50,7 @@ export const usePerformanceBoost = () => {
           memoryUsage = performanceMemory.usedJSHeapSize / performanceMemory.totalJSHeapSize;
         }
       } catch {
-        console.debug('Memory API not available');
+        // Memory API not available
       }
 
       setMetrics(prev => ({
@@ -118,7 +118,7 @@ export const usePerformanceBoost = () => {
         visited: true
       }));
     } catch {
-      console.debug('SessionStorage not available');
+      // SessionStorage not available
     }
   }, [location.pathname, optimizations.enableCache]);
 

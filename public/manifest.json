@@ -31,7 +31,7 @@
       "url": "/contato",
       "icons": [
         {
-          "src": "/src/assets/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png",
+          "src": "/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png",
           "sizes": "96x96"
         }
       ]
@@ -43,7 +43,7 @@
       "url": "/servicos",
       "icons": [
         {
-          "src": "/src/assets/images/identidade-visual/logo-dra-bruna-vilela-principal.webp",
+          "src": "/images/identidade-visual/logo-dra-bruna-vilela-principal.webp",
           "sizes": "96x96"
         }
       ]
@@ -55,7 +55,7 @@
       "url": "/sobre",
       "icons": [
         {
-          "src": "/src/assets/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp",
+          "src": "/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp",
           "sizes": "96x96"
         }
       ]
@@ -63,7 +63,7 @@
   ],
   "screenshots": [
     {
-      "src": "/src/assets/images/bruna/dra-bruna-vilela-atenciosa-05.webp",
+      "src": "/images/bruna/dra-bruna-vilela-atenciosa-05.webp",
       "sizes": "1280x720",
       "type": "image/webp",
       "platform": "wide",

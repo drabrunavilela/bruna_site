@@ -13,6 +13,7 @@ import BlogPage from './pages/BlogPage/BlogPage';
 import GlossarioPage from './pages/GlossarioPage/GlossarioPage';
 import ContatoPage from './pages/ContatoPage/ContatoPage';
 import PoliticaPrivacidadePage from './pages/PoliticaPrivacidadePage/PoliticaPrivacidadePage';
+import TermosUsoPage from './pages/TermosUsoPage/TermosUsoPage';
 import OfflinePage from './components/OfflinePage/OfflinePage';
 import Performance from './components/Performance/Performance';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
@@ -104,6 +105,7 @@ const AppContent = () => {
         <Route path="/glossario" element={<GlossarioPage />} />
         <Route path="/contato" element={<ContatoPage />} />
         <Route path="/politica-privacidade" element={<PoliticaPrivacidadePage />} />
+        <Route path="/termos-uso" element={<TermosUsoPage />} />
         <Route path="/offline" element={<OfflinePage />} />
         {/* Rota para capturar todas as outras URLs */}
         <Route path="*" element={<NotFoundPage />} />

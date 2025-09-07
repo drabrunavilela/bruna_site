@@ -48,8 +48,7 @@ const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ customMessage, source }) 
       (window as WindowWithAnalytics).trackWhatsAppClick();
     }
     
-    // Console log para debug (pode ser removido em produção)
-    console.log(`WhatsApp clicked from: ${analyticSource}`);
+    // Analytics tracking only
     
     // Track no Google Analytics se disponível
     if (typeof window !== 'undefined' && (window as WindowWithAnalytics).gtag) {

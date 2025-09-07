@@ -45,8 +45,7 @@ export const useConversionTracking = () => {
       });
     }
 
-    // Console log para debug
-    console.log('Conversion tracked:', data);
+    // Conversion tracked successfully
   };
 
   const trackWhatsAppClick = (source?: string) => {
