@@ -41,25 +41,27 @@ const CoreWebVitals: React.FC = () => {
           id: metric.id
         });
 
-        // Enviar para endpoint personalizado (se disponível)
-        fetch('/api/analytics/web-vitals', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            metric: metric.name,
-            value: metric.value,
-            rating: metric.rating,
-            delta: metric.delta,
-            id: metric.id,
-            url: window.location.href,
-            userAgent: navigator.userAgent,
-            timestamp: Date.now()
-          })
-        }).catch(() => {
-          // Falha silenciosa - não interromper UX
-        });
+        // Enviar para endpoint personalizado apenas em produção
+        if (window.location.hostname !== 'localhost') {
+          fetch('/api/analytics/web-vitals', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              metric: metric.name,
+              value: metric.value,
+              rating: metric.rating,
+              delta: metric.delta,
+              id: metric.id,
+              url: window.location.href,
+              userAgent: navigator.userAgent,
+              timestamp: Date.now()
+            })
+          }).catch(() => {
+            // Falha silenciosa - não interromper UX
+          });
+        }
       };
 
       // Coletar métricas Core Web Vitals

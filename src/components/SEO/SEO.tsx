@@ -210,13 +210,45 @@ const SEO: React.FC<SEOProps> = ({
             "text": "A família é fundamental no processo. Orientações incluem criar rotinas estruturadas, usar comunicação clara, estimular interações sociais adequadas e seguir as orientações terapêuticas. O apoio familiar potencializa os resultados."
           }
         },
-        // Epilepsia - 3 perguntas
+        // Epilepsia - 5 perguntas
         {
           "@type": "Question",
           "name": "Quais são os tipos mais comuns de epilepsia infantil?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Os tipos mais comuns incluem epilepsia focal, generalizada, ausências típicas e síndrome de West. Cada tipo tem características específicas e requer abordagem terapêutica diferenciada pela neuropediatra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como diferenciar uma crise epiléptica de outros eventos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Crises epilépticas têm características específicas como alteração da consciência, movimentos involuntários e período pós-ictal. É importante diferenciá-las de desmaios, terrores noturnos ou outros eventos. A avaliação médica é essencial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando uma criança com epilepsia pode praticar esportes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Com controle adequado das crises e orientação médica, a maioria das crianças pode praticar esportes. Algumas atividades podem ter restrições específicas. A Dra. Bruna orienta sobre atividades seguras para cada caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o papel da medicação no tratamento da epilepsia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A medicação antiepiléptica é fundamental para controlar as crises. O objetivo é encontrar o medicamento e dose ideais para cada criança, minimizando efeitos colaterais e maximizando o controle das crises."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Epilepsia infantil tem cura?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Muitas formas de epilepsia infantil têm excelente prognóstico, com possibilidade de remissão completa. Algumas crianças podem suspender a medicação após anos sem crises. O acompanhamento regular é fundamental."
           }
         },
         {
@@ -266,7 +298,50 @@ const SEO: React.FC<SEOProps> = ({
           "name": "Como é a primeira consulta com a Dra. Bruna Vilela?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A primeira consulta inclui anamnese detalhada, exame neurológico completo, avaliação do desenvolvimento, orientações aos pais e definição de plano terapêutico. Traga exames anteriores, relatórios escolares e lista de medicações."
+            "text": "A primeira consulta inclui anamnese detalhada, exame neurológico completo, avaliação do desenvolvimento e orientações específicas. A Dra. Bruna dedica tempo adequado para entender cada caso e elaborar um plano personalizado de cuidados."
+          }
+        },
+        // Desenvolvimento - Perguntas adicionais
+        {
+          "@type": "Question",
+          "name": "Meu filho tem dificuldades na escola. Pode ser neurológico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dificuldades escolares podem ter causas neurológicas como TDAH, dislexia, discalculia ou outros transtornos de aprendizagem. A avaliação neuropediátrica pode identificar a causa e orientar intervenções adequadas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre atraso e transtorno do desenvolvimento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atraso é quando a criança atinge marcos mais tarde que o esperado, mas pode recuperar. Transtorno é uma condição persistente que afeta o desenvolvimento. A avaliação especializada define o diagnóstico correto."
+          }
+        },
+        // Cefaleias - Novas perguntas
+        {
+          "@type": "Question",
+          "name": "Crianças podem ter enxaqueca?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, enxaqueca é comum na infância e adolescência. Pode apresentar características diferentes dos adultos, como dor bilateral e sintomas gastrointestinais. O diagnóstico e tratamento adequados são fundamentais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando a dor de cabeça infantil é preocupante?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Procure avaliação para dores frequentes, intensas, que acordam a criança, acompanhadas de vômitos, alterações visuais, febre ou mudanças comportamentais. Dores que interferem nas atividades diárias também merecem atenção."
+          }
+        },
+        // Segunda Opinião
+        {
+          "@type": "Question",
+          "name": "Quando buscar uma segunda opinião médica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Busque segunda opinião em casos complexos, diagnósticos incertos, quando o tratamento não está funcionando ou para confirmar indicações cirúrgicas. A Dra. Bruna oferece avaliações detalhadas para esclarecer dúvidas e otimizar o cuidado."
           }
         }
       ]

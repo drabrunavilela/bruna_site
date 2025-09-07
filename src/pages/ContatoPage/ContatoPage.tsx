@@ -223,45 +223,86 @@ const ContatoPage: React.FC = () => {
               <p className={styles.paragraph}>
                 Se preferir, preencha o formulário abaixo e retornaremos o mais breve possível.
               </p>
-              <form className={styles.contactForm} onSubmit={handleFormSubmit}>
-                <input 
-                  type="text" 
-                  placeholder="Nome Completo" 
-                  className={styles.formInput}
-                  value={formData.nome}
-                  onChange={(e) => setFormData({...formData, nome: e.target.value})}
-                  required
-                />
-                <input 
-                  type="email" 
-                  placeholder="E-mail" 
-                  className={styles.formInput}
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  required
-                />
-                <input 
-                  type="tel" 
-                  placeholder="Telefone (Opcional)" 
-                  className={styles.formInput}
-                  value={formData.telefone}
-                  onChange={(e) => setFormData({...formData, telefone: e.target.value})}
-                />
-                <input 
-                  type="text" 
-                  placeholder="Assunto" 
-                  className={styles.formInput}
-                  value={formData.assunto}
-                  onChange={(e) => setFormData({...formData, assunto: e.target.value})}
-                  required
-                />
-                <textarea 
-                  placeholder="Sua Mensagem" 
-                  className={styles.formTextarea}
-                  value={formData.mensagem}
-                  onChange={(e) => setFormData({...formData, mensagem: e.target.value})}
-                  required
-                ></textarea>
+              <form className={styles.contactForm} onSubmit={handleFormSubmit} role="form" aria-label="Formulário de contato">
+                <div className={styles.formGroup}>
+                  <label htmlFor="nome" className={styles.formLabel}>Nome Completo *</label>
+                  <input 
+                    id="nome"
+                    type="text" 
+                    placeholder="Digite seu nome completo" 
+                    className={styles.formInput}
+                    value={formData.nome}
+                    onChange={(e) => setFormData({...formData, nome: e.target.value})}
+                    required
+                    aria-required="true"
+                    aria-describedby="nome-error"
+                  />
+                  <div id="nome-error" className={styles.errorMessage} aria-live="polite"></div>
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <label htmlFor="email" className={styles.formLabel}>E-mail *</label>
+                  <input 
+                    id="email"
+                    type="email" 
+                    placeholder="Digite seu melhor e-mail" 
+                    className={styles.formInput}
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    required
+                    aria-required="true"
+                    aria-describedby="email-error email-help"
+                  />
+                  <div id="email-help" className={styles.helpText}>Usaremos apenas para responder sua mensagem</div>
+                  <div id="email-error" className={styles.errorMessage} aria-live="polite"></div>
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <label htmlFor="telefone" className={styles.formLabel}>Telefone</label>
+                  <input 
+                    id="telefone"
+                    type="tel" 
+                    placeholder="(31) 99999-9999 (Opcional)" 
+                    className={styles.formInput}
+                    value={formData.telefone}
+                    onChange={(e) => setFormData({...formData, telefone: e.target.value})}
+                    aria-describedby="telefone-help"
+                  />
+                  <div id="telefone-help" className={styles.helpText}>Opcional - para contato mais rápido</div>
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="assunto" className={styles.formLabel}>Assunto *</label>
+                  <input 
+                    id="assunto"
+                    type="text" 
+                    placeholder="Ex: Consulta para TDAH, Avaliação neurológica..." 
+                    className={styles.formInput}
+                    value={formData.assunto}
+                    onChange={(e) => setFormData({...formData, assunto: e.target.value})}
+                    required
+                    aria-required="true"
+                    aria-describedby="assunto-error"
+                  />
+                  <div id="assunto-error" className={styles.errorMessage} aria-live="polite"></div>
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <label htmlFor="mensagem" className={styles.formLabel}>Sua Mensagem *</label>
+                  <textarea 
+                    id="mensagem"
+                    placeholder="Descreva brevemente o motivo do contato, idade da criança e principais preocupações..." 
+                    className={styles.formTextarea}
+                    value={formData.mensagem}
+                    onChange={(e) => setFormData({...formData, mensagem: e.target.value})}
+                    required
+                    aria-required="true"
+                    aria-describedby="mensagem-error mensagem-help"
+                    rows={5}
+                  ></textarea>
+                  <div id="mensagem-help" className={styles.helpText}>Quanto mais detalhes, melhor poderemos ajudar</div>
+                  <div id="mensagem-error" className={styles.errorMessage} aria-live="polite"></div>
+                </div>
+                
                 <div className={styles.privacyCheckbox}>
                   <input 
                     type="checkbox" 
@@ -269,14 +310,24 @@ const ContatoPage: React.FC = () => {
                     checked={formData.aceitePolitica}
                     onChange={(e) => setFormData({...formData, aceitePolitica: e.target.checked})}
                     required
+                    aria-required="true"
+                    aria-describedby="privacy-error"
                   />
                   <label htmlFor="privacy-policy">
-                    Li e aceito a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a>.
+                    Li e aceito a <a href="/politica-privacidade" target="_blank" rel="noopener noreferrer" aria-label="Abrir Política de Privacidade em nova aba">Política de Privacidade</a> *
                   </label>
+                  <div id="privacy-error" className={styles.errorMessage} aria-live="polite"></div>
                 </div>
-                <button type="submit" className={styles.buttonPrimary} disabled={isSubmitting}>
-                  {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+                
+                <button 
+                  type="submit" 
+                  className={styles.buttonPrimary} 
+                  disabled={isSubmitting}
+                  aria-describedby="submit-help"
+                >
+                  {isSubmitting ? 'Enviando mensagem...' : 'Enviar Mensagem'}
                 </button>
+                <div id="submit-help" className={styles.helpText}>Sua mensagem será enviada via WhatsApp</div>
               </form>
             </div>
           </div>

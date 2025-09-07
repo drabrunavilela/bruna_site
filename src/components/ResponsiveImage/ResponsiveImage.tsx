@@ -51,13 +51,18 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   skeletonHeight = '200px'
 }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   const handleImageLoad = () => {
-    setIsLoading(false);
+    // Pequeno delay para transição suave
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 150);
   };
 
   const handleImageError = () => {
     setIsLoading(false);
+    setHasError(true);
     console.error(`Failed to load image: ${src}`);
   };
   // Construir URLs para diferentes tamanhos
@@ -108,7 +113,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         <picture 
           className={className} 
           style={{ 
-            display: isLoading ? 'none' : 'block'
+            display: isLoading ? 'none' : 'block',
+            opacity: hasError ? 0.5 : 1,
+            transition: 'opacity 0.3s ease'
           }}
         >
           <source
@@ -166,7 +173,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       <picture 
         className={className}
         style={{ 
-          display: isLoading ? 'none' : 'block'
+          display: isLoading ? 'none' : 'block',
+          opacity: hasError ? 0.5 : 1,
+          transition: 'opacity 0.3s ease'
         }}
       >
         {/* Fonte WebP responsiva para navegadores modernos */}

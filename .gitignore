@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # Documentação e estratégias privadas
-documentos/
+# documentos/
 
 # Variáveis de ambiente (contêm IDs sensíveis)
 .env

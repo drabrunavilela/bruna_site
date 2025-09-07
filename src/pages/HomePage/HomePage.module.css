@@ -433,8 +433,8 @@
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-headings);
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow-medium);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   outline: none;
 }
 

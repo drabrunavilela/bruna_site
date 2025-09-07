@@ -11,6 +11,8 @@ interface SkeletonCardProps {
   descriptionLines?: number;
   className?: string;
   variant?: 'service' | 'blog' | 'testimonial';
+  showIcon?: boolean;
+  showButton?: boolean;
 }
 
 const SkeletonCard: React.FC<SkeletonCardProps> = ({
@@ -20,7 +22,9 @@ const SkeletonCard: React.FC<SkeletonCardProps> = ({
   titleWidth = '80%',
   descriptionLines = 3,
   className = '',
-  variant = 'service'
+  variant = 'service',
+  showIcon = true,
+  showButton = true
 }) => {
   const getDescriptionWidths = () => {
     switch (variant) {
@@ -35,6 +39,18 @@ const SkeletonCard: React.FC<SkeletonCardProps> = ({
 
   return (
     <div className={`${styles.skeletonCard} ${styles[`skeletonCard--${variant}`]} ${className}`}>
+      {/* Ícone para cards de serviço */}
+      {variant === 'service' && showIcon && (
+        <div className={styles.skeletonCardIcon}>
+          <SkeletonText
+            lines={1}
+            width="40px"
+            height="40px"
+            className={styles.skeletonIcon}
+          />
+        </div>
+      )}
+
       {showImage && (
         <SkeletonImage
           width={imageWidth}
@@ -77,12 +93,14 @@ const SkeletonCard: React.FC<SkeletonCardProps> = ({
         )}
         
         {/* Button/Link */}
-        <SkeletonText
-          lines={1}
-          width="140px"
-          height="20px"
-          className={styles.skeletonCardButton}
-        />
+        {showButton && (
+          <SkeletonText
+            lines={1}
+            width="140px"
+            height="20px"
+            className={styles.skeletonCardButton}
+          />
+        )}
       </div>
     </div>
   );

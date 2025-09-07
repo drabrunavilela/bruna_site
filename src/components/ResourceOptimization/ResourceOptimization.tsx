@@ -94,7 +94,7 @@ const ResourceOptimization = ({
           if (entry.isIntersecting) {
             const img = entry.target as HTMLImageElement;
             
-            // Preload próximas imagens
+            // Preload próximas imagens apenas se não existir preload
             const allImages = Array.from(document.querySelectorAll('img'));
             const currentIndex = allImages.indexOf(img);
             
@@ -102,11 +102,14 @@ const ResourceOptimization = ({
             for (let i = currentIndex + 1; i <= currentIndex + 2; i++) {
               if (allImages[i] && allImages[i].src) {
                 const nextImg = allImages[i] as HTMLImageElement;
-                const preloadLink = document.createElement('link');
-                preloadLink.rel = 'preload';
-                preloadLink.as = 'image';
-                preloadLink.href = nextImg.src;
-                document.head.appendChild(preloadLink);
+                // Verificar se já existe preload para esta imagem
+                if (!document.querySelector(`link[rel="preload"][href="${nextImg.src}"]`)) {
+                  const preloadLink = document.createElement('link');
+                  preloadLink.rel = 'preload';
+                  preloadLink.as = 'image';
+                  preloadLink.href = nextImg.src;
+                  document.head.appendChild(preloadLink);
+                }
               }
             }
             

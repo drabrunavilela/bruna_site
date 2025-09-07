@@ -20,6 +20,9 @@ import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 // import PWAInstall from './components/PWAInstall/PWAInstall';
 import CriticalCSS from './components/CriticalCSS/CriticalCSS';
 import ResourceOptimization from './components/ResourceOptimization/ResourceOptimization';
+import { AccessibilityProvider } from './components/AccessibilityProvider';
+import { AnalyticsProvider } from './components/AnalyticsProvider';
+// import InstallPrompt from './components/InstallPrompt';
 
 import GTM from './components/GTM/GTM';
 import { useScrollToTop } from './hooks/useScrollToTop';
@@ -116,12 +119,15 @@ const AppContent = () => {
 
 function App() {
   return (
-    <>
+    <Router>
       <Performance />
-      <Router>
-        <AppContent />
-      </Router>
-    </>
+      <AccessibilityProvider>
+        <AnalyticsProvider enabled={true}>
+          {/* <InstallPrompt /> */}
+          <AppContent />
+        </AnalyticsProvider>
+      </AccessibilityProvider>
+    </Router>
   );
 }
 

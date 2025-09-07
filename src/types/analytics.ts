@@ -12,11 +12,26 @@ export interface WindowWithAnalytics extends Window {
   trackPageView: (pageTitle: string, pagePath: string) => void;
 }
 
-// Event types for GTM
+// Event types for GTM - Compatible with useAnalytics hook
 export interface AnalyticsEvent {
-  event_category: string;
-  event_label: string;
-  [key: string]: unknown;
+  action: string;
+  category: string;
+  label?: string;
+  value?: number;
+  custom_parameters?: Record<string, string | number | boolean>;
+}
+
+export interface ConversionEvent {
+  event_name: string;
+  currency?: string;
+  value?: number;
+  items?: Array<{
+    item_id: string;
+    item_name: string;
+    category: string;
+    quantity?: number;
+    price?: number;
+  }>;
 }
 
 export interface PageViewEvent {
@@ -25,7 +40,28 @@ export interface PageViewEvent {
   page_path: string;
 }
 
-export interface ConversionEvent {
-  send_to: string;
-  [key: string]: unknown;
+export interface FormEvent {
+  form_name: string;
+  form_action: 'start' | 'submit' | 'abandon';
+  field_name?: string;
+  success?: boolean;
+}
+
+export interface ServiceEvent {
+  service_name: string;
+  action: 'view' | 'click' | 'cta';
+  source_page?: string;
+}
+
+export interface BlogEvent {
+  action: 'read' | 'share' | 'comment';
+  post_title?: string;
+  engagement_time?: number;
+}
+
+export interface AnalyticsErrorEvent {
+  error_type: string;
+  error_message: string;
+  location?: string;
+  stack_trace?: string;
 } 

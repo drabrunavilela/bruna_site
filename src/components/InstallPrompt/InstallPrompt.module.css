@@ -1,0 +1,264 @@
+/* Prompt de Instalação PWA */
+.installPrompt {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.promptContent {
+  padding: 24px;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.closeButton:hover {
+  background: rgba(107, 114, 128, 0.1);
+  color: #374151;
+}
+
+.closeButton:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+.promptIcon {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.promptTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6b21a8;
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: 'Times New Roman', serif;
+}
+
+.promptDescription {
+  font-size: 0.95rem;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.promptBenefits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.benefitIcon {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.promptActions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.installButton {
+  flex: 1;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.installButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+.installButton:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+.dismissButton {
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dismissButton:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+.dismissButton:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+.installNote {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-align: center;
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .installPrompt {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .promptContent {
+    padding: 20px;
+  }
+
+  .promptTitle {
+    font-size: 1.1rem;
+  }
+
+  .promptDescription {
+    font-size: 0.9rem;
+  }
+
+  .promptActions {
+    flex-direction: column;
+  }
+
+  .installButton,
+  .dismissButton {
+    width: 100%;
+  }
+}
+
+/* Modo escuro */
+[data-theme="dark"] .installPrompt {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="dark"] .promptTitle {
+  color: #c9c1e0;
+}
+
+[data-theme="dark"] .promptDescription {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .benefit {
+  color: #d1d5db;
+}
+
+[data-theme="dark"] .closeButton {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .closeButton:hover {
+  background: rgba(156, 163, 175, 0.1);
+  color: #f3f4f6;
+}
+
+[data-theme="dark"] .dismissButton {
+  border-color: #4b5563;
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .dismissButton:hover {
+  background: #374151;
+  border-color: #6b7280;
+  color: #f3f4f6;
+}
+
+[data-theme="dark"] .installNote {
+  color: #6b7280;
+}
+
+/* Animação de entrada suave */
+@media (prefers-reduced-motion: reduce) {
+  .installPrompt {
+    animation: none;
+  }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  .installPrompt {
+    border: 2px solid #000;
+  }
+
+  .installButton {
+    background: #000;
+    color: #fff;
+  }
+
+  .dismissButton {
+    border: 2px solid #000;
+    color: #000;
+  }
+}

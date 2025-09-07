@@ -62,18 +62,20 @@
 
 .buttonPrimary {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2.5rem;
   background-color: var(--color-primary);
   color: var(--color-white);
   text-decoration: none;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   transition: all 0.3s ease;
   border: 2px solid var(--color-primary);
   cursor: pointer;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(201, 193, 224, 0.3);
+  margin-top: 1rem;
 }
 
 .buttonPrimary:hover,
@@ -308,41 +310,92 @@
 .contactForm {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formLabel {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-headings);
+  margin-bottom: 0.5rem;
 }
 
 .formInput,
 .formTextarea {
-  padding: 1rem;
-  border: 2px solid var(--color-border);
-  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
   font-family: var(--font-body);
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  line-height: 1.5;
+  transition: all 0.3s ease;
   background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .formInput:focus,
 .formTextarea:focus {
   outline: none;
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(201, 193, 224, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #9ca3af;
+  font-style: italic;
 }
 
 .formTextarea {
-  min-height: 120px;
+  min-height: 140px;
   resize: vertical;
+  font-family: var(--font-body);
+}
+
+.helpText {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.errorMessage {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: #dc2626;
+  margin-top: 0.25rem;
+  display: none;
 }
 
 .privacyCheckbox {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(201, 193, 224, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(201, 193, 224, 0.2);
 }
 
 .privacyCheckbox input[type="checkbox"] {
   margin-top: 0.25rem;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
 }
 
 .privacyCheckbox label {
@@ -514,6 +567,22 @@
     margin: 1rem 0.5rem;
     padding: 1.5rem;
     border-radius: 12px;
+  }
+
+  .contactForm {
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+
+  .formInput,
+  .formTextarea {
+    padding: 1rem;
+    font-size: 16px; /* Evita zoom no iOS */
+  }
+
+  .privacyCheckbox {
+    padding: 0.75rem;
+    margin: 1rem 0;
   }
 
   .sectionTitle {

@@ -73,27 +73,27 @@ const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ customMessage, source }) 
   const businessHours = isBusinessHours();
 
   return (
-    <div className={styles.whatsappContainer}>
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${styles.whatsappFloat} ${!businessHours ? styles.afterHours : ''}`}
-        onClick={handleClick}
-        aria-label="Agendar consulta via WhatsApp"
-      >
-        <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp - Agende sua consulta" />
-        
-        {/* Tooltip com informação contextual */}
-        <div className={styles.tooltip}>
-          <span className={styles.tooltipText}>
-            {businessHours 
-              ? '💬 Clique para agendar agora!' 
-              : '💬 Envie sua mensagem! Resposta em até 2h.'
-            }
-          </span>
-        </div>
-      </a>
+    <a 
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.whatsappFloat}
+      onClick={handleClick}
+      title={`Conversar no WhatsApp: ${message}`}
+      aria-label={`Abrir WhatsApp para conversar com Dra. Bruna Vilela - ${message}`}
+      role="button"
+    >
+      <img src="/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png" alt="WhatsApp - Agende sua consulta" />
+      
+      {/* Tooltip com informação contextual */}
+      <div className={styles.tooltip}>
+        <span className={styles.tooltipText}>
+          {businessHours 
+            ? '💬 Clique para agendar agora!' 
+            : '💬 Envie sua mensagem! Resposta em até 2h.'
+          }
+        </span>
+      </div>
       
       {/* Indicador de status opcional */}
       {businessHours && (
@@ -101,7 +101,7 @@ const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ customMessage, source }) 
           <span className={styles.onlineStatus}>🟢 Online</span>
         </div>
       )}
-    </div>
+    </a>
   );
 };
 

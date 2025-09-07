@@ -1,0 +1,246 @@
+/* Dark Theme Variables and Styles */
+
+/* Dark Theme Color Palette */
+[data-theme="dark"] {
+  /* Primary Colors */
+  --color-primary: #E6DEFF;
+  --color-secondary: #B8A9FF;
+  --color-accent: #9C88FF;
+  
+  /* Background Colors */
+  --color-background: #0F0F23;
+  --color-background-soft: #1A1A2E;
+  --color-background-muted: #16213E;
+  --color-white: #0F0F23;
+  
+  /* Text Colors */
+  --color-text: #E5E5E5;
+  --color-text-secondary: #B8B8B8;
+  --color-headings: #FFFFFF;
+  
+  /* Border and Shadow */
+  --color-border: #2A2A3E;
+  --color-shadow: rgba(0, 0, 0, 0.6);
+  
+  /* Status Colors */
+  --color-success: #4CAF50;
+  --color-warning: #FF9800;
+  --color-error: #F44336;
+  --color-info: #2196F3;
+  
+  /* Medical Theme Colors */
+  --color-medical-primary: #E6DEFF;
+  --color-medical-secondary: #B8A9FF;
+  --color-trust: #9C88FF;
+  --color-care: #E6DEFF;
+}
+
+/* Dark Theme Specific Overrides */
+[data-theme="dark"] body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Header Dark Mode */
+[data-theme="dark"] .header {
+  background-color: var(--color-background-soft);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards and Sections */
+[data-theme="dark"] .card,
+[data-theme="dark"] .section-highlight {
+  background-color: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .section-soft-highlight {
+  background-color: var(--color-background-muted);
+}
+
+/* Buttons Dark Mode */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .button-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .button-primary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  box-shadow: 0 4px 15px rgba(156, 136, 255, 0.4);
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: var(--color-background-soft);
+  border-color: var(--color-primary);
+}
+
+/* Forms Dark Mode */
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea {
+  background-color: var(--color-background-soft);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(230, 222, 255, 0.2);
+}
+
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="dark"] .form-textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* Navigation Dark Mode */
+[data-theme="dark"] .nav-link {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: var(--color-primary);
+}
+
+/* WhatsApp Float Dark Mode */
+[data-theme="dark"] .whatsapp-float {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .whatsapp-button:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Dark Mode */
+[data-theme="dark"] .footer {
+  background-color: var(--color-background-soft);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Images and Media Dark Mode */
+[data-theme="dark"] img {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] img:hover {
+  opacity: 1;
+}
+
+/* Skeleton Dark Mode */
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-background-soft) 25%,
+    var(--color-background-muted) 50%,
+    var(--color-background-soft) 75%
+  );
+}
+
+/* Service Cards Dark Mode */
+[data-theme="dark"] .service-card {
+  background-color: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .service-card:hover {
+  background-color: var(--color-background-muted);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 25px rgba(156, 136, 255, 0.2);
+}
+
+/* Testimonials Dark Mode */
+[data-theme="dark"] .testimonial-card {
+  background-color: var(--color-background-soft);
+  border-left: 4px solid var(--color-primary);
+}
+
+/* Blog Cards Dark Mode */
+[data-theme="dark"] .blog-card {
+  background-color: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .blog-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* FAQ Dark Mode */
+[data-theme="dark"] .faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .faq-question {
+  color: var(--color-headings);
+}
+
+[data-theme="dark"] .faq-answer {
+  color: var(--color-text);
+}
+
+/* Loading States Dark Mode */
+[data-theme="dark"] .loading-spinner {
+  border-color: var(--color-border);
+  border-top-color: var(--color-primary);
+}
+
+/* Accessibility Dark Mode */
+[data-theme="dark"] .skip-link:focus {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+[data-theme="dark"] *:focus-visible {
+  outline-color: var(--color-accent) !important;
+}
+
+/* High Contrast + Dark Mode */
+[data-theme="dark"].high-contrast {
+  --color-primary: #FFFFFF;
+  --color-secondary: #000000;
+  --color-accent: #FFFF00;
+  --color-text: #FFFFFF;
+  --color-background: #000000;
+  --color-headings: #FFFFFF;
+  --color-border: #FFFFFF;
+}
+
+/* Smooth Transitions */
+[data-theme="dark"] * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="dark"] * {
+    transition: none !important;
+  }
+}
+
+/* Print Mode - Force Light Theme */
+@media print {
+  [data-theme="dark"] {
+    --color-background: #ffffff !important;
+    --color-text: #000000 !important;
+    --color-headings: #000000 !important;
+    --color-primary: #6B46C1 !important;
+  }
+  
+  [data-theme="dark"] * {
+    background-color: transparent !important;
+    color: #000000 !important;
+  }
+}

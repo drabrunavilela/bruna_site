@@ -53,6 +53,22 @@
   display: block;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.skeletonImage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 70%
+  );
+  animation: shimmerOverlay 2s ease-in-out infinite;
 }
 
 .skeletonImage::after {
@@ -61,11 +77,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  background: rgba(var(--color-primary-rgb), 0.1);
+  width: 48px;
+  height: 48px;
+  background: rgba(var(--color-primary-rgb), 0.08);
   border-radius: 50%;
-  border: 2px solid rgba(var(--color-primary-rgb), 0.2);
+  border: 2px solid rgba(var(--color-primary-rgb), 0.15);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes shimmerOverlay {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* Skeleton Text */
@@ -130,6 +156,24 @@
 .skeletonCardButton {
   margin-top: 0.5rem;
   border-radius: 20px;
+}
+
+.skeletonCardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skeletonIcon {
+  border-radius: 50%;
+  background: linear-gradient(90deg, 
+    rgba(var(--color-primary-rgb), 0.1) 25%, 
+    rgba(var(--color-primary-rgb), 0.2) 37%, 
+    rgba(var(--color-primary-rgb), 0.1) 63%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
 }
 
 /* Variações por tipo */

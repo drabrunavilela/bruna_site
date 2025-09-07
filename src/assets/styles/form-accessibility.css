@@ -1,0 +1,271 @@
+/* Form Accessibility Styles - WCAG 2.1 AAA Compliance */
+
+/* Form Groups and Labels */
+.formGroup {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.formLabel {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-headings);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.formLabel::after {
+  content: "";
+}
+
+/* Required field indicator */
+.formLabel:has(+ input[required])::after,
+.formLabel:has(+ textarea[required])::after {
+  content: " *";
+  color: #d32f2f;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+/* Form Inputs */
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 44px; /* Touch target size */
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(201, 193, 224, 0.3);
+}
+
+.formInput:focus-visible,
+.formTextarea:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Invalid states */
+.formInput:invalid,
+.formTextarea:invalid {
+  border-color: #d32f2f;
+}
+
+.formInput[aria-invalid="true"],
+.formTextarea[aria-invalid="true"] {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+.formInput[aria-invalid="true"]:focus,
+.formTextarea[aria-invalid="true"]:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.3);
+}
+
+/* Help Text */
+.helpText {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+/* Error Messages */
+.errorMessage {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  min-height: 1.2rem;
+  line-height: 1.4;
+}
+
+.errorMessage:empty {
+  display: none;
+}
+
+/* Checkbox and Radio Accessibility */
+.privacyCheckbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 1.5rem 0;
+  padding: 16px;
+  background-color: var(--color-background-soft);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.privacyCheckbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px; /* Align with first line of text */
+}
+
+.privacyCheckbox input[type="checkbox"]:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.privacyCheckbox label {
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.privacyCheckbox label a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.privacyCheckbox label a:hover,
+.privacyCheckbox label a:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Button Accessibility */
+.buttonPrimary {
+  min-height: 48px;
+  min-width: 120px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.buttonPrimary:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 193, 224, 0.4);
+}
+
+.buttonPrimary:focus {
+  outline: none;
+}
+
+.buttonPrimary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px var(--color-white), 0 0 0 4px var(--color-accent);
+}
+
+.buttonPrimary:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.buttonPrimary:disabled:hover {
+  background-color: #ccc;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading state */
+.buttonPrimary[aria-busy="true"] {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.buttonPrimary[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* High Contrast Mode Support */
+.high-contrast .formInput,
+.high-contrast .formTextarea {
+  border: 2px solid #000000 !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast .formInput:focus,
+.high-contrast .formTextarea:focus {
+  border-color: #ffff00 !important;
+  box-shadow: 0 0 0 3px #ffff00 !important;
+}
+
+.high-contrast .errorMessage {
+  color: #ff0000 !important;
+  font-weight: bold !important;
+}
+
+.high-contrast .helpText {
+  color: #000000 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formInput,
+  .formTextarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 14px 16px;
+  }
+  
+  .buttonPrimary {
+    width: 100%;
+    min-height: 52px;
+    font-size: 1.1rem;
+  }
+  
+  .privacyCheckbox {
+    padding: 12px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .formInput,
+  .formTextarea,
+  .buttonPrimary {
+    border: 1px solid #000 !important;
+    background: transparent !important;
+    color: #000 !important;
+  }
+  
+  .errorMessage {
+    display: none !important;
+  }
+}

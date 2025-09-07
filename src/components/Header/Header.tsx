@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
+import ThemeToggle from '../ThemeToggle';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,22 +44,24 @@ const Header: React.FC = () => {
             <span className={styles.menuIcon}></span>
           </button>
 
-          <ul id="main-menu" className={`${styles.navList} ${isMenuOpen ? styles.navListOpen : ''}`}>
-            <li><Link to="/" className={styles.navLink} onClick={handleNavigation}>Início</Link></li>
-            <li><Link to="/sobre" className={styles.navLink} onClick={handleNavigation}>Sobre Mim</Link></li>
-            <li><Link to="/servicos" className={styles.navLink} onClick={handleNavigation}>Áreas de Atuação</Link></li>
-            <li><Link to="/blog" className={styles.navLink} onClick={handleNavigation}>Blog</Link></li>
-            <li><Link to="/contato" className={styles.navLink} onClick={handleNavigation}>Contato</Link></li>
+          <ul id="main-menu" className={`${styles.navList} ${isMenuOpen ? styles.navListOpen : ''}`} role="menubar">
+            <li role="none"><Link to="/" className={styles.navLink} onClick={handleNavigation} role="menuitem" aria-label="Navegar para página inicial">Início</Link></li>
+            <li role="none"><Link to="/sobre" className={styles.navLink} onClick={handleNavigation} role="menuitem" aria-label="Navegar para página sobre a doutora">Sobre Mim</Link></li>
+            <li role="none"><Link to="/servicos" className={styles.navLink} onClick={handleNavigation} role="menuitem" aria-label="Navegar para áreas de atuação médica">Áreas de Atuação</Link></li>
+            <li role="none"><Link to="/blog" className={styles.navLink} onClick={handleNavigation} role="menuitem" aria-label="Navegar para blog médico">Blog</Link></li>
+            <li role="none"><Link to="/contato" className={styles.navLink} onClick={handleNavigation} role="menuitem" aria-label="Navegar para página de contato">Contato</Link></li>
           </ul>
         </nav>
 
         <div className={styles.ctaContainer}>
+          <ThemeToggle />
           <a 
             href="https://wa.me/5531973178377" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.ctaButton}
             onClick={() => (window as WindowWithAnalytics).trackWhatsAppClick?.()}
+            aria-label="Agendar consulta via WhatsApp - Abre em nova aba"
           >
             Agendar Consulta
           </a>
