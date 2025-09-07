@@ -187,17 +187,17 @@ const HomePage: React.FC = () => {
                 <div className={styles.aboutContent}>
                                 {/* About section image */}
                 <div className={styles.aboutImageContainer}>
-                  <ResponsiveImage 
-                    src={fotoAcolhedoraPath}
-                    alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
-                    className={styles.aboutImage}
-                    loading="eager"
-                    priority={true}
-                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 70vw, (max-width: 1200px) 40vw, 35vw"
-                    useResponsive={true}
-                    showSkeleton={true}
-                    skeletonHeight="400px"
-                  />
+                <ResponsiveImage 
+                  src={fotoAcolhedoraPath}
+                  alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
+                  className={styles.aboutImage}
+                  loading="lazy"
+                  priority={false}
+                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 70vw, (max-width: 1200px) 40vw, 35vw"
+                  useResponsive={true}
+                  showSkeleton={true}
+                  skeletonHeight="400px"
+                />
                 </div>
                   
                   <div className={styles.aboutTextSection}>

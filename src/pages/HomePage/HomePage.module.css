@@ -112,7 +112,7 @@
 .ctaPrimary {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: #1a73e8; /* Azul mais escuro para melhor contraste */
+  background-color: #C5D9F0; /* Azul mais suave */
   color: var(--color-white);
   text-decoration: none;
   border-radius: var(--border-radius);
@@ -120,13 +120,13 @@
   font-size: 1.1rem;
   font-weight: normal;
   transition: all 0.3s ease;
-  border: 2px solid #1a73e8;
+  border: 2px solid #C5D9F0;
 }
 
 .ctaPrimary:hover,
 .ctaPrimary:focus {
-  background-color: #1557b0; /* Azul mais escuro no hover */
-  border-color: #1557b0;
+  background-color: #B8D4F0; /* Azul mais suave no hover */
+  border-color: #B8D4F0;
   color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--box-shadow-medium);
@@ -137,21 +137,21 @@
   display: inline-block;
   padding: 1rem 2rem;
   background-color: transparent;
-  color: #1a73e8; /* Azul mais escuro para melhor contraste */
+  color: #C5D9F0; /* Azul mais suave */
   text-decoration: none;
   border-radius: var(--border-radius);
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: normal;
   transition: all 0.3s ease;
-  border: 2px solid #1a73e8;
+  border: 2px solid #C5D9F0;
 }
 
 .ctaSecondary:hover,
 .ctaSecondary:focus {
-  background-color: #1a73e8; /* Azul no hover */
+  background-color: #C5D9F0; /* Azul mais suave no hover */
   color: var(--color-white);
-  border-color: #1a73e8;
+  border-color: #C5D9F0;
   transform: translateY(-2px);
   box-shadow: var(--box-shadow-medium);
   outline: none;
@@ -399,7 +399,7 @@
 }
 
 .blogCardLink {
-  color: #1a73e8; /* Azul mais escuro para melhor contraste */
+  color: #C5D9F0; /* Azul mais suave */
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -409,7 +409,7 @@
 
 .blogCardLink:hover,
 .blogCardLink:focus {
-  color: #1557b0; /* Azul mais escuro no hover */
+  color: #B8D4F0; /* Azul mais suave no hover */
   outline: none;
 }
 

@@ -60,49 +60,116 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://analytics.google.com" />
+    <link rel="preconnect" href="https://wa.me" />
     
     <!-- Import Google Fonts -->
     <!-- Removido: Playfair Display e Inter - Agora usando Times New Roman (fonte do sistema) -->
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/images/hero.webp" as="image">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-atenciosa-05-md.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/images/identidade-visual/logo-dra-bruna-vilela-header.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-atenciosa-05-sm.webp" as="image" type="image/webp" media="(max-width: 480px)">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-atenciosa-05-lg.webp" as="image" type="image/webp" media="(min-width: 1200px)">
     
     <!-- Inline critical CSS -->
     <style>
-      /* Critical CSS inline */
-      .header { 
-        background-color: #f2f2f2; 
-        padding: 20px; 
-        text-align: center; 
-      }
+      /* Critical CSS inline - Above the fold */
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: 'Times New Roman', serif; }
       .hero { 
-        background-image: url('/images/hero.webp'); 
-        background-size: cover; 
-        height: 100vh; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        color: #fff; 
+        background: linear-gradient(135deg, rgba(201, 193, 224, 0.05) 0%, #ffffff 100%);
+        padding: 4rem 0;
+        min-height: 500px;
       }
-      .main-nav { 
-        background-color: #333; 
-        color: #fff; 
-        padding: 10px; 
-        text-align: center; 
+      .heroContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 0.5rem;
+      }
+      .heroTitle {
+        font-family: 'Catalina Script', cursive;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin: 0 0 1.5rem 0;
+        color: #000000;
+      }
+      .ctaPrimary {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: #1a73e8;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-family: 'Times New Roman', serif;
+        font-size: 1.1rem;
+        border: 2px solid #1a73e8;
+      }
+      .heroImageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+        height: 500px;
+      }
+      .heroImage {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        border-radius: 16px;
+        aspect-ratio: 3/4;
+      }
+      @media (max-width: 768px) {
+        .heroContainer { 
+          grid-template-columns: 1fr; 
+          gap: 1rem; 
+          text-align: center; 
+          padding: 0 1rem;
+        }
+        .heroTitle { 
+          font-size: 2rem; 
+          line-height: 1.1;
+          margin: 1rem 0;
+        }
+        .heroImageContainer { display: none; }
+        .ctaPrimary {
+          width: 100%;
+          max-width: 300px;
+          margin: 0.5rem 0;
+        }
+        .hero {
+          padding: 2rem 0;
+          min-height: 400px;
+        }
+      }
+      @media (max-width: 480px) {
+        .heroTitle { font-size: 1.8rem; }
+        .hero { padding: 1.5rem 0; }
       }
     </style>
     
-    <!-- Import critical CSS -->
-    <link rel="stylesheet" href="/src/index.css" />
+    <!-- Import critical CSS - Defer non-critical CSS -->
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
     
     <!-- DNS prefetch for external domains -->
     <link rel="dns-prefetch" href="//wa.me" />
     <link rel="dns-prefetch" href="//www.google.com" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//analytics.google.com" />
+    
+    <!-- Prefetch critical resources -->
+    <link rel="prefetch" href="/images/bruna/dra-bruna-vilela-acolhedora-10-md.webp" as="image" type="image/webp">
+    <link rel="prefetch" href="/images/bruna/dra-bruna-vilela-acolhedora-10-sm.webp" as="image" type="image/webp" media="(max-width: 480px)">
     
     <!-- Service Worker Registration -->
     <script>
@@ -119,8 +186,8 @@
       }
     </script>
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- Google Tag Manager - Defer for better performance -->
+    <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);

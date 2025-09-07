@@ -1,31 +1,32 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import HomePage from './pages/HomePage/HomePage';
 import SobrePage from './pages/SobrePage/SobrePage';
 import ServicosPage from './pages/ServicosPage/ServicosPage';
-import TdahPage from './pages/ServicosPage/TdahPage';
-import TeaPage from './pages/ServicosPage/TeaPage';
-import EpilepsiaPage from './pages/ServicosPage/EpilepsiaPage';
-import AtrasosPage from './pages/ServicosPage/AtrasosPage';
-import CefaleiasPage from './pages/ServicosPage/CefaleiasPage';
-import SegundaOpiniaoPage from './pages/ServicosPage/SegundaOpiniaoPage';
-import BlogPage from './pages/BlogPage/BlogPage';
-import GlossarioPage from './pages/GlossarioPage/GlossarioPage';
 import ContatoPage from './pages/ContatoPage/ContatoPage';
-import PoliticaPrivacidadePage from './pages/PoliticaPrivacidadePage/PoliticaPrivacidadePage';
-import TermosUsoPage from './pages/TermosUsoPage/TermosUsoPage';
-import OfflinePage from './components/OfflinePage/OfflinePage';
-import Performance from './components/Performance/Performance';
-import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
-// import CookieBanner from './components/CookieBanner/CookieBanner';
-// import PWAInstall from './components/PWAInstall/PWAInstall';
-import CriticalCSS from './components/CriticalCSS/CriticalCSS';
-import ResourceOptimization from './components/ResourceOptimization/ResourceOptimization';
+
+// Lazy loading para páginas não críticas
+const TdahPage = lazy(() => import('./pages/ServicosPage/TdahPage'));
+const TeaPage = lazy(() => import('./pages/ServicosPage/TeaPage'));
+const EpilepsiaPage = lazy(() => import('./pages/ServicosPage/EpilepsiaPage'));
+const AtrasosPage = lazy(() => import('./pages/ServicosPage/AtrasosPage'));
+const CefaleiasPage = lazy(() => import('./pages/ServicosPage/CefaleiasPage'));
+const SegundaOpiniaoPage = lazy(() => import('./pages/ServicosPage/SegundaOpiniaoPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage/BlogPage'));
+const GlossarioPage = lazy(() => import('./pages/GlossarioPage/GlossarioPage'));
+const PoliticaPrivacidadePage = lazy(() => import('./pages/PoliticaPrivacidadePage/PoliticaPrivacidadePage'));
+const TermosUsoPage = lazy(() => import('./pages/TermosUsoPage/TermosUsoPage'));
+const OfflinePage = lazy(() => import('./components/OfflinePage/OfflinePage'));
+// Lazy loading para componentes não críticos
+const Performance = lazy(() => import('./components/Performance/Performance'));
+const WhatsAppFloat = lazy(() => import('./components/WhatsAppFloat/WhatsAppFloat'));
+const CriticalCSS = lazy(() => import('./components/CriticalCSS/CriticalCSS'));
+const ResourceOptimization = lazy(() => import('./components/ResourceOptimization/ResourceOptimization'));
+const GTM = lazy(() => import('./components/GTM/GTM'));
+
+// Componentes críticos mantidos síncronos
 import { AccessibilityProvider } from './components/AccessibilityProvider';
 import { AnalyticsProvider } from './components/AnalyticsProvider';
-// import InstallPrompt from './components/InstallPrompt';
-
-import GTM from './components/GTM/GTM';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import './App.css';
 
@@ -82,39 +83,93 @@ const AppContent = () => {
   
   return (
     <div className="App">
-      <CriticalCSS />
-      <ResourceOptimization 
-        heroImages={[
-          '/images/bruna/dra-bruna-vilela-acolhedora-09.webp',
-          '/images/bruna/dra-bruna-vilela-atenciosa-05.webp',
-          '/images/bruna/dra-bruna-vilela-acolhedora-10.webp'
-        ]}
-        criticalPages={['/sobre', '/servicos', '/contato', '/blog']}
-      />
+      <Suspense fallback={<div style={{display: 'none'}}></div>}>
+        <CriticalCSS />
+      </Suspense>
+      <Suspense fallback={<div style={{display: 'none'}}></div>}>
+        <ResourceOptimization 
+          heroImages={[
+            '/images/bruna/dra-bruna-vilela-acolhedora-09.webp',
+            '/images/bruna/dra-bruna-vilela-atenciosa-05.webp',
+            '/images/bruna/dra-bruna-vilela-acolhedora-10.webp'
+          ]}
+          criticalPages={['/sobre', '/servicos', '/contato', '/blog']}
+        />
+      </Suspense>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sobre" element={<SobrePage />} />
         <Route path="/servicos" element={<ServicosPage />} />
-        <Route path="/servicos/tdah" element={<TdahPage />} />
-        <Route path="/servicos/tea" element={<TeaPage />} />
-        <Route path="/servicos/epilepsia" element={<EpilepsiaPage />} />
-        <Route path="/servicos/atrasos" element={<AtrasosPage />} />
-        <Route path="/servicos/cefaleias" element={<CefaleiasPage />} />
-        <Route path="/servicos/segunda-opiniao" element={<SegundaOpiniaoPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/glossario" element={<GlossarioPage />} />
         <Route path="/contato" element={<ContatoPage />} />
-        <Route path="/politica-privacidade" element={<PoliticaPrivacidadePage />} />
-        <Route path="/termos-uso" element={<TermosUsoPage />} />
-        <Route path="/offline" element={<OfflinePage />} />
+        
+        {/* Rotas com lazy loading */}
+        <Route path="/servicos/tdah" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <TdahPage />
+          </Suspense>
+        } />
+        <Route path="/servicos/tea" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <TeaPage />
+          </Suspense>
+        } />
+        <Route path="/servicos/epilepsia" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <EpilepsiaPage />
+          </Suspense>
+        } />
+        <Route path="/servicos/atrasos" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <AtrasosPage />
+          </Suspense>
+        } />
+        <Route path="/servicos/cefaleias" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <CefaleiasPage />
+          </Suspense>
+        } />
+        <Route path="/servicos/segunda-opiniao" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <SegundaOpiniaoPage />
+          </Suspense>
+        } />
+        <Route path="/blog" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <BlogPage />
+          </Suspense>
+        } />
+        <Route path="/glossario" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <GlossarioPage />
+          </Suspense>
+        } />
+        <Route path="/politica-privacidade" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <PoliticaPrivacidadePage />
+          </Suspense>
+        } />
+        <Route path="/termos-uso" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <TermosUsoPage />
+          </Suspense>
+        } />
+        <Route path="/offline" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <OfflinePage />
+          </Suspense>
+        } />
         {/* Rota para capturar todas as outras URLs */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <WhatsAppFloat />
+      <Suspense fallback={<div style={{display: 'none'}}></div>}>
+        <WhatsAppFloat />
+      </Suspense>
       {/* <PWAInstall /> */}
       {/* <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} /> */}
 
-      <GTM enabled={analyticsEnabled} />
+      <Suspense fallback={<div style={{display: 'none'}}></div>}>
+        <GTM enabled={analyticsEnabled} />
+      </Suspense>
     </div>
   );
 };

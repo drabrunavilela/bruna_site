@@ -10,7 +10,10 @@ const STATIC_ASSETS = [
   '/manifest.json',
   '/images/identidade-visual/logo-dra-bruna-vilela-header.webp',
   '/images/identidade-visual/logo-dra-bruna-vilela-profissional.webp',
-  '/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png'
+  '/images/Icon/dra-bruna-vilela-neuropediatra-logo-Whatsapp.png',
+  '/images/bruna/dra-bruna-vilela-atenciosa-05-md.webp',
+  '/images/bruna/dra-bruna-vilela-atenciosa-05-sm.webp',
+  '/images/bruna/dra-bruna-vilela-acolhedora-10-md.webp'
 ];
 
 // Instalar Service Worker
