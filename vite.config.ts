@@ -26,7 +26,12 @@ export default defineConfig({
     }
   },
   server: {
-    host: true
+    host: true,
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost',
+      port: 5173,
+    },
   },
   // Configuração para SPA routing
   preview: {
