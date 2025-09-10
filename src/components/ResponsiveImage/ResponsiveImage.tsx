@@ -110,34 +110,41 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
             className={className}
           />
         )}
-        <picture 
-          className={className} 
-          style={{ 
-            display: isLoading ? 'none' : 'block',
-            opacity: hasError ? 0.5 : 1,
-            transition: 'opacity 0.3s ease'
-          }}
-        >
-          <source
-            srcSet={simpleUrls.webp}
-            type="image/webp"
-            sizes={sizes}
-          />
-          <img
-            src={simpleUrls.jpg}
-            alt={alt}
-            width={width}
-            height={height}
-            loading={loading}
-            fetchPriority={priority ? 'high' : 'auto'}
-            onLoad={handleImageLoad}
-            onError={handleImageError}
-            style={{
-              maxWidth: '100%',
-              height: 'auto'
+        {hasError ? (
+          <div style={{background:'#eee',padding:'2rem',textAlign:'center',borderRadius:'12px',color:'#888'}}>
+            Não foi possível carregar a imagem.<br />
+            <span style={{fontSize:'0.9em'}}>{alt}</span>
+          </div>
+        ) : (
+          <picture 
+            className={className} 
+            style={{ 
+              display: isLoading ? 'none' : 'block',
+              opacity: 1,
+              transition: 'opacity 0.3s ease'
             }}
-          />
-        </picture>
+          >
+            <source
+              srcSet={simpleUrls.webp}
+              type="image/webp"
+              sizes={sizes}
+            />
+            <img
+              src={simpleUrls.jpg}
+              alt={alt}
+              width={width}
+              height={height}
+              loading={loading}
+              fetchPriority={priority ? 'high' : 'auto'}
+              onLoad={handleImageLoad}
+              onError={handleImageError}
+              style={{
+                maxWidth: '100%',
+                height: 'auto'
+              }}
+            />
+          </picture>
+        )}
       </div>
     );
   }
@@ -170,44 +177,49 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
           className={className}
         />
       )}
-      <picture 
-        className={className}
-        style={{ 
-          display: isLoading ? 'none' : 'block',
-          opacity: hasError ? 0.5 : 1,
-          transition: 'opacity 0.3s ease'
-        }}
-      >
-        {/* Fonte WebP responsiva para navegadores modernos */}
-        <source
-          srcSet={webpSrcSet}
-          type="image/webp"
-          sizes={sizes}
-        />
-        
-        {/* Fallback JPG responsivo para máxima compatibilidade */}
-        <source
-          srcSet={jpgSrcSet}
-          type="image/jpeg"
-          sizes={sizes}
-        />
-        
-        {/* Imagem padrão para navegadores muito antigos */}
-        <img
-          src={responsiveUrls.jpg.md} // Tamanho médio como fallback
-          alt={alt}
-          width={width}
-          height={height}
-          loading={loading}
-          fetchPriority={priority ? 'high' : 'auto'}
-          onLoad={handleImageLoad}
-          onError={handleImageError}
-          style={{
-            maxWidth: '100%',
-            height: 'auto'
+      {hasError ? (
+        <div style={{background:'#eee',padding:'2rem',textAlign:'center',borderRadius:'12px',color:'#888'}}>
+          Não foi possível carregar a imagem.<br />
+          <span style={{fontSize:'0.9em'}}>{alt}</span>
+        </div>
+      ) : (
+        <picture 
+          className={className}
+          style={{ 
+            display: isLoading ? 'none' : 'block',
+            opacity: 1,
+            transition: 'opacity 0.3s ease'
           }}
-        />
-      </picture>
+        >
+          {/* Fonte WebP responsiva para navegadores modernos */}
+          <source
+            srcSet={webpSrcSet}
+            type="image/webp"
+            sizes={sizes}
+          />
+          {/* Fallback JPG responsivo para máxima compatibilidade */}
+          <source
+            srcSet={jpgSrcSet}
+            type="image/jpeg"
+            sizes={sizes}
+          />
+          {/* Imagem padrão para navegadores muito antigos */}
+          <img
+            src={responsiveUrls.jpg.md} // Tamanho médio como fallback
+            alt={alt}
+            width={width}
+            height={height}
+            loading={loading}
+            fetchPriority={priority ? 'high' : 'auto'}
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+            style={{
+              maxWidth: '100%',
+              height: 'auto'
+            }}
+          />
+        </picture>
+      )}
     </div>
   );
 };
