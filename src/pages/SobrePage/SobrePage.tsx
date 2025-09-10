@@ -20,6 +20,7 @@ const SobrePage: React.FC = () => {
     { src: 'bruna/dra-bruna-vilela-neuropediatra-17', alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
   ];
 
+  // Caminho relativo para funcionar com o componente ResponsiveImage
   const fotoProfissionalPath = 'bruna/dra-bruna-vilela-profissional-07';
 
   // Carousel configuration
@@ -130,7 +131,13 @@ const SobrePage: React.FC = () => {
                 loading="eager"
                 priority={true}
                 sizes="(max-width: 768px) 100vw, 50vw"
+                showSkeleton={true}
+                skeletonHeight="350px"
               />
+              {/* Fallback para caso a imagem não carregue */}
+              <noscript>
+                <div style={{background:'#eee',padding:'2rem',textAlign:'center',borderRadius:'12px'}}>Foto Dra. Bruna Vilela</div>
+              </noscript>
             </div>
           </div>
         </section>
