@@ -6,34 +6,12 @@ import SkipLink from '../../components/SkipLink/SkipLink';
 import ResponsiveImage from '../../components/ResponsiveImage/ResponsiveImage';
 // import FadeInSection from '../../components/FadeInSection/FadeInSection';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import styles from './SobrePage.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
 
 const SobrePage: React.FC = () => {
-  // Definir caminhos das imagens
-  const carouselImages = [
-    { src: 'bruna/dra-bruna-vilela-atenciosa-06', alt: 'Dra. Bruna Vilela atenciosa no consultório' },
-    { src: 'bruna/dra-bruna-vilela-consultorio-03', alt: 'Dra. Bruna Vilela em ambiente profissional' },
-    { src: 'bruna/dra-bruna-vilela-neuropediatra-17', alt: 'Dra. Bruna Vilela neuropediatra em atendimento' },
-  ];
-
   // Caminho relativo para funcionar com o componente ResponsiveImage
   const fotoProfissionalPath = 'bruna/dra-bruna-vilela-profissional-07';
-
-  // Carousel configuration
-  const settings = {
-    dots: true, // Show page indicators
-    infinite: true, // Infinite loop
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Show 1 slide at a time
-    slidesToScroll: 1, // Scroll 1 slide at a time
-    autoplay: true, // Auto-play
-    autoplaySpeed: 3000, // Time between slides (3 seconds)
-    fade: true, // Smooth transition effect (fade)
-  };
 
   // Page metadata configuration
   const structuredData = {
@@ -142,28 +120,7 @@ const SobrePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Photo carousel */}
-        <section className={styles.photoCarouselSection}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Momentos da Minha Prática</h2>
-            <div className={styles.carouselWrapper}>
-              <Slider {...settings}>
-                {carouselImages.map((image, index) => (
-                  <div key={index} className={styles.carouselImageContainer}>
-                    <ResponsiveImage 
-                      src={image.src}
-                      alt={image.alt}
-                      className={styles.carouselImage}
-                      loading="eager"
-                      priority={index === 0}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </section>
+  {/* Photo carousel removido temporariamente para diagnóstico de erro em produção */}
 
         {/* 2. Professional journey */}
         <section id="minha-trajetoria" className={styles.sectionPadded}>
