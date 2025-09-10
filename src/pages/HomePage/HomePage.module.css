@@ -109,52 +109,58 @@
   flex-wrap: wrap;
 }
 
-.ctaPrimary {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #C5D9F0; /* Azul mais suave */
-  color: var(--color-white);
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: normal;
-  transition: all 0.3s ease;
-  border: 2px solid #C5D9F0;
+.ctaPrimary,
+a.ctaPrimary {
+  display: inline-block !important;
+  padding: 1rem 2rem !important;
+  background-color: var(--color-secondary) !important; /* Azul claro consistente */
+  color: var(--color-white) !important;
+  text-decoration: none !important;
+  border-radius: var(--border-radius) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.1rem !important;
+  font-weight: normal !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid var(--color-secondary) !important;
 }
 
 .ctaPrimary:hover,
-.ctaPrimary:focus {
-  background-color: #B8D4F0; /* Azul mais suave no hover */
-  border-color: #B8D4F0;
-  color: var(--color-white);
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow-medium);
-  outline: none;
+.ctaPrimary:focus,
+a.ctaPrimary:hover,
+a.ctaPrimary:focus {
+  background-color: var(--color-accent) !important; /* Azul claro no hover */
+  border-color: var(--color-accent) !important;
+  color: var(--color-white) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--box-shadow-medium) !important;
+  outline: none !important;
 }
 
-.ctaSecondary {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: transparent;
-  color: #C5D9F0; /* Azul mais suave */
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: normal;
-  transition: all 0.3s ease;
-  border: 2px solid #C5D9F0;
+.ctaSecondary,
+a.ctaSecondary {
+  display: inline-block !important;
+  padding: 1rem 2rem !important;
+  background-color: var(--color-secondary) !important; /* Azul claro consistente */
+  color: var(--color-white) !important;
+  text-decoration: none !important;
+  border-radius: var(--border-radius) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.1rem !important;
+  font-weight: normal !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid var(--color-secondary) !important;
 }
 
 .ctaSecondary:hover,
-.ctaSecondary:focus {
-  background-color: #C5D9F0; /* Azul mais suave no hover */
-  color: var(--color-white);
-  border-color: #C5D9F0;
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow-medium);
-  outline: none;
+.ctaSecondary:focus,
+a.ctaSecondary:hover,
+a.ctaSecondary:focus {
+  background-color: var(--color-accent) !important; /* Azul claro no hover */
+  color: var(--color-white) !important;
+  border-color: var(--color-accent) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--box-shadow-medium) !important;
+  outline: none !important;
 }
 
 /* Estrutura para foto da Dra. Bruna no Hero */
@@ -399,7 +405,7 @@
 }
 
 .blogCardLink {
-  color: #C5D9F0; /* Azul mais suave */
+  color: #1a73e8; /* Azul escuro para melhor contraste */
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -409,7 +415,7 @@
 
 .blogCardLink:hover,
 .blogCardLink:focus {
-  color: #B8D4F0; /* Azul mais suave no hover */
+  color: #1557b0; /* Azul mais escuro no hover */
   outline: none;
 }
 
@@ -473,8 +479,9 @@
   font-size: 1.25rem;
   line-height: 1.6;
   margin: 0 0 2rem 0;
-  opacity: 0.95;
+  opacity: 1;
   font-weight: normal;
+  color: var(--color-white);
 }
 
 .finalCTAButton {

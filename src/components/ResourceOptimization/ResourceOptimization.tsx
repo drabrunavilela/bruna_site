@@ -61,7 +61,7 @@ const ResourceOptimization = ({
       });
     }, 2000);
 
-    // Otimização dinâmica de imagens
+    // Processamento dinâmico de imagens
     const optimizeImages = () => {
       const images = document.querySelectorAll('img');
       
@@ -87,7 +87,7 @@ const ResourceOptimization = ({
       });
     };
 
-    // Observer para otimização contínua
+    // Observer para processamento contínuo
     const imageObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {

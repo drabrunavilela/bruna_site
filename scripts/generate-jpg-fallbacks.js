@@ -107,7 +107,7 @@ async function generateJPGFallbacks() {
   }
   
   // Resumo final
-  log('\n📊 Resumo da conversão:', 'blue');
+  log('\n📊 Resumo do processamento:', 'blue');
   log(`✅ Convertidas: ${converted}`, 'green');
   log(`⏭️  Ignoradas (já existiam): ${skipped}`, 'yellow');
   log(`❌ Falharam: ${failed}`, failed > 0 ? 'red' : 'reset');

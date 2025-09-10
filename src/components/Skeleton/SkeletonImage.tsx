@@ -22,6 +22,7 @@ const SkeletonImage: React.FC<SkeletonImageProps> = ({
         height, 
         borderRadius 
       }}
+      role="img"
       aria-label="Carregando imagem..."
     />
   );

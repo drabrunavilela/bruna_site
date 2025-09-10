@@ -60,7 +60,7 @@ export const isGTMEnabled = (): boolean => {
   return cookieConsent === 'accepted';
 };
 
-// Função para rastrear evento de conversão via GTM
+// Função para rastrear evento via GTM
 export const trackConversion = (conversionId: string, conversionLabel: string) => {
   if (window.dataLayer && isGTMEnabled()) {
     window.dataLayer.push({

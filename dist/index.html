@@ -33,7 +33,7 @@
     <meta name="geo.position" content="-19.9167;-43.9345" />
     <meta name="ICBM" content="-19.9167, -43.9345" />
     
-    <!-- Advanced SEO Meta Tags -->
+    <!-- Meta Tags Avançadas -->
     <meta name="author" content="Dra. Bruna Vilela" />
     <meta name="copyright" content="Dra. Bruna Vilela" />
     <meta name="coverage" content="Worldwide" />
@@ -60,17 +60,118 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://analytics.google.com" />
+    <link rel="preconnect" href="https://wa.me" />
     
     <!-- Import Google Fonts -->
     <!-- Removido: Playfair Display e Inter - Agora usando Times New Roman (fonte do sistema) -->
     
-    <!-- Import critical CSS -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-atenciosa-05-md.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/images/identidade-visual/logo-dra-bruna-vilela-header.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-atenciosa-05-sm.webp" as="image" type="image/webp" media="(max-width: 480px)">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-atenciosa-05-lg.webp" as="image" type="image/webp" media="(min-width: 1200px)">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-acolhedora-10-md.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-acolhedora-10-sm.webp" as="image" type="image/webp" media="(max-width: 480px)">
+    <link rel="preload" href="/images/bruna/dra-bruna-vilela-acolhedora-10-lg.webp" as="image" type="image/webp" media="(min-width: 1200px)">
+    
+    <!-- Inline critical CSS -->
+    <style>
+      /* Critical CSS inline - Above the fold */
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: 'Times New Roman', serif; }
+      .hero { 
+        background: linear-gradient(135deg, rgba(201, 193, 224, 0.05) 0%, #ffffff 100%);
+        padding: 4rem 0;
+        min-height: 500px;
+      }
+      .heroContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 0.5rem;
+      }
+      .heroTitle {
+        font-family: 'Catalina Script', cursive;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin: 0 0 1.5rem 0;
+        color: #000000;
+      }
+      .ctaPrimary {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: #1a73e8;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-family: 'Times New Roman', serif;
+        font-size: 1.1rem;
+        border: 2px solid #1a73e8;
+      }
+      .heroImageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+        height: 500px;
+      }
+      .heroImage {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        border-radius: 16px;
+        aspect-ratio: 3/4;
+      }
+      @media (max-width: 768px) {
+        .heroContainer { 
+          grid-template-columns: 1fr; 
+          gap: 1rem; 
+          text-align: center; 
+          padding: 0 1rem;
+        }
+        .heroTitle { 
+          font-size: 2rem; 
+          line-height: 1.1;
+          margin: 1rem 0;
+        }
+        .heroImageContainer { display: none; }
+        .ctaPrimary {
+          width: 100%;
+          max-width: 300px;
+          margin: 0.5rem 0;
+        }
+        .hero {
+          padding: 2rem 0;
+          min-height: 400px;
+        }
+      }
+      @media (max-width: 480px) {
+        .heroTitle { font-size: 1.8rem; }
+        .hero { padding: 1.5rem 0; }
+      }
+    </style>
+    
+    <!-- Import critical CSS - Defer non-critical CSS -->
+    <noscript></noscript>
     
     <!-- DNS prefetch for external domains -->
     <link rel="dns-prefetch" href="//wa.me" />
     <link rel="dns-prefetch" href="//www.google.com" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//analytics.google.com" />
+    
+    <!-- Prefetch critical resources -->
+    <link rel="prefetch" href="/images/bruna/dra-bruna-vilela-acolhedora-10-md.webp" as="image" type="image/webp">
+    <link rel="prefetch" href="/images/bruna/dra-bruna-vilela-acolhedora-10-sm.webp" as="image" type="image/webp" media="(max-width: 480px)">
     
     <!-- Service Worker Registration -->
     <script>
@@ -87,19 +188,38 @@
       }
     </script>
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- Google Tag Manager - Defer for better performance -->
+    <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TWW4RQFJ');</script>
     <!-- End Google Tag Manager -->
-    <script type="module" crossorigin src="/assets/index-DPkOII-l.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-Gmj5k1uE.js">
-    <link rel="modulepreload" crossorigin href="/assets/router-cK8Cn2Bh.js">
-    <link rel="modulepreload" crossorigin href="/assets/animations-C-mLGCKS.js">
-    <link rel="modulepreload" crossorigin href="/assets/analytics-BexNj3j9.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-B4F4ONCs.css">
+    <script type="module" crossorigin src="/assets/index-6D-z4H1d.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-other-aWE6MFy2.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-BfCd0N0z.js">
+    <link rel="modulepreload" crossorigin href="/assets/component-theme-DFSzHn55.js">
+    <link rel="modulepreload" crossorigin href="/assets/component-header-xTebPPIP.js">
+    <link rel="modulepreload" crossorigin href="/assets/component-footer-BLyxA7em.js">
+    <link rel="modulepreload" crossorigin href="/assets/component-skeleton-BUDIJGFF.js">
+    <link rel="modulepreload" crossorigin href="/assets/component-image-BtjFk1qt.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-blog-Bk5gTITb.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-home-DrifynSX.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-sobre-Df_gcH5x.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-servicos-D-oZ8_W8.js">
+    <link rel="modulepreload" crossorigin href="/assets/page-contato-BaU_Wzq_.js">
+    <link rel="modulepreload" crossorigin href="/assets/component-accessibility-DMCOB_kG.js">
+    <link rel="stylesheet" crossorigin href="/assets/vendor-other-2d6kTBOk.css">
+    <link rel="stylesheet" crossorigin href="/assets/component-theme-BZWtFICx.css">
+    <link rel="stylesheet" crossorigin href="/assets/component-header-ujGEhE1g.css">
+    <link rel="stylesheet" crossorigin href="/assets/component-footer-G57hbmL4.css">
+    <link rel="stylesheet" crossorigin href="/assets/component-skeleton-D3WiMHAL.css">
+    <link rel="stylesheet" crossorigin href="/assets/page-blog-CNAX6iDz.css">
+    <link rel="stylesheet" crossorigin href="/assets/page-home-w0FCNH9q.css">
+    <link rel="stylesheet" crossorigin href="/assets/page-sobre-fp5pqDCG.css">
+    <link rel="stylesheet" crossorigin href="/assets/page-servicos-DP7TNYDZ.css">
+    <link rel="stylesheet" crossorigin href="/assets/page-contato-o0FQq-xW.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-wpEifdxx.css">
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

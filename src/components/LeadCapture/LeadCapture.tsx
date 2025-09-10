@@ -138,7 +138,7 @@
 // 📅 *Data:* ${new Date().toLocaleDateString('pt-BR')}
 // ⏰ *Hora:* ${new Date().toLocaleTimeString('pt-BR')}
 
-// 💡 *Lead de alta conversão - responder prioritariamente!*`;
+// 💡 *Lead prioritário - responder rapidamente!*`;
 
 //       const mensagemCodificada = encodeURIComponent(mensagem);
 //       const numeroWhatsApp = '5531973178377';

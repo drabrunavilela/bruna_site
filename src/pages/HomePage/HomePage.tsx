@@ -191,12 +191,12 @@ const HomePage: React.FC = () => {
                   src={fotoAcolhedoraPath}
                   alt="Dra. Bruna Vilela, neuropediatra e pediatra, acolhendo e cuidando com dedicação"
                   className={styles.aboutImage}
-                  loading="lazy"
-                  priority={false}
+                  loading="eager"
+                  priority={true}
                   sizes="(max-width: 480px) 100vw, (max-width: 768px) 70vw, (max-width: 1200px) 40vw, 35vw"
                   useResponsive={true}
                   showSkeleton={true}
-                  skeletonHeight="400px"
+                  skeletonHeight="450px"
                 />
                 </div>
                   

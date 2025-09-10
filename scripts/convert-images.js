@@ -17,7 +17,7 @@ function convertToWebP(inputPath, outputPath) {
 }
 
 // Função para renomear arquivos
-function renameForSEO(filename, category) {
+function renameFiles(filename, category) {
   const baseName = path.parse(filename).name;
   
   if (category === 'bruna') {
@@ -47,7 +47,7 @@ function processBrunaImages() {
   files.forEach(file => {
     if (file.match(/\.(jpg|jpeg|png)$/i)) {
       const inputPath = path.join(brunaDir, file);
-      const newName = renameForSEO(file, 'bruna');
+      const newName = renameFiles(file, 'bruna');
       const outputPath = path.join(outputDir, newName);
       
       if (!fs.existsSync(outputPath)) {
@@ -73,7 +73,7 @@ function processIdentidadeImages() {
   files.forEach(file => {
     if (file.match(/\.(jpg|jpeg|png)$/i)) {
       const inputPath = path.join(identidadeDir, file);
-      const newName = renameForSEO(file, 'identidade');
+      const newName = renameFiles(file, 'identidade');
       const outputPath = path.join(outputDir, newName);
       
       if (!fs.existsSync(outputPath)) {
@@ -89,4 +89,4 @@ function processIdentidadeImages() {
 console.log('Iniciando conversão de imagens...');
 processBrunaImages();
 processIdentidadeImages();
-console.log('Conversão concluída!'); 
+console.log('Processamento concluído!'); 

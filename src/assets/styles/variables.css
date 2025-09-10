@@ -15,7 +15,7 @@
   --color-detail-yellow: #F5F19B;  /* Amarelo claro */
   --color-soft-highlight: #F5F5DC; /* Bege suave - Fundos de destaque leve */
 
-  /* Tipografia - Estratégia Definida */
+  /* Tipografia */
   --font-decorative: 'Cataline Script', cursive;    /* Títulos principais (H1) - Fonte decorativa original */
   --font-heading: 'Times New Roman', serif;         /* Títulos e subtítulos - Times New Roman */
   --font-body: 'Times New Roman', serif;            /* Corpo de texto, menus, botões - Times New Roman */

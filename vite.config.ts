@@ -12,7 +12,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Vendor chunks
+          // Vendor chunks - mais granular para melhor tree shaking
           if (id.includes('node_modules')) {
             if (id.includes('react') || id.includes('react-dom')) {
               return 'vendor-react';
@@ -29,16 +29,27 @@ export default defineConfig({
             if (id.includes('web-vitals') || id.includes('react-ga4')) {
               return 'vendor-analytics';
             }
+            if (id.includes('sharp') || id.includes('image')) {
+              return 'vendor-images';
+            }
             return 'vendor-other';
           }
-          // App chunks
+          // App chunks - lazy loaded pages
           if (id.includes('pages/HomePage')) return 'page-home';
           if (id.includes('pages/SobrePage')) return 'page-sobre';
           if (id.includes('pages/ServicosPage')) return 'page-servicos';
           if (id.includes('pages/ContatoPage')) return 'page-contato';
           if (id.includes('pages/BlogPage')) return 'page-blog';
+          if (id.includes('pages/GlossarioPage')) return 'page-glossario';
+          if (id.includes('pages/PoliticaPrivacidadePage')) return 'page-politica';
+          if (id.includes('pages/TermosUsoPage')) return 'page-termos';
+          // Component chunks
           if (id.includes('components/Header')) return 'component-header';
           if (id.includes('components/Footer')) return 'component-footer';
+          if (id.includes('components/ResponsiveImage')) return 'component-image';
+          if (id.includes('components/Skeleton')) return 'component-skeleton';
+          if (id.includes('components/ThemeToggle')) return 'component-theme';
+          if (id.includes('components/AccessibilityProvider')) return 'component-accessibility';
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
