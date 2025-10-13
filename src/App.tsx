@@ -27,6 +27,7 @@ const GTM = lazy(() => import('./components/GTM/GTM'));
 // Componentes críticos mantidos síncronos
 import { AccessibilityProvider } from './components/AccessibilityProvider';
 import { AnalyticsProvider } from './components/AnalyticsProvider';
+import CookieBanner from './components/CookieBanner/CookieBanner';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import './App.css';
 
@@ -67,19 +68,21 @@ const NotFoundPage = () => {
 const AppContent = () => {
   useScrollToTop();
   
-  const [analyticsEnabled] = useState(false);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
 
-  // const handleCookieAccept = () => {
-  //   // Ativar analytics quando cookies forem aceitos
-  //   setAnalyticsEnabled(true);
-  //   // Analytics ativado
-  // };
+  const handleCookieAccept = () => {
+    // Ativar analytics quando cookies forem aceitos
+    setAnalyticsEnabled(true);
+    localStorage.setItem('cookieConsent', 'accepted');
+    // Analytics ativado
+  };
   
-  // const handleCookieDecline = () => {
-  //   // Desativar analytics quando cookies forem recusados
-  //   setAnalyticsEnabled(false);
-  //   // Analytics desativado
-  // };
+  const handleCookieDecline = () => {
+    // Desativar analytics quando cookies forem recusados
+    setAnalyticsEnabled(false);
+    localStorage.setItem('cookieConsent', 'declined');
+    // Analytics desativado
+  };
   
   return (
     <div className="App">
@@ -165,7 +168,7 @@ const AppContent = () => {
         <WhatsAppFloat />
       </Suspense>
       {/* <PWAInstall /> */}
-      {/* <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} /> */}
+      <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
 
       <Suspense fallback={<div style={{display: 'none'}}></div>}>
         <GTM enabled={analyticsEnabled} />
