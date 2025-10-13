@@ -23,7 +23,7 @@ const Performance = lazy(() => import('./components/Performance/Performance'));
 const WhatsAppFloat = lazy(() => import('./components/WhatsAppFloat/WhatsAppFloat'));
 const CriticalCSS = lazy(() => import('./components/CriticalCSS/CriticalCSS'));
 const ResourceOptimization = lazy(() => import('./components/ResourceOptimization/ResourceOptimization'));
-const GTM = lazy(() => import('./components/GTM/GTM'));
+import GTM from './components/GTM/GTM';
 
 // Componentes críticos mantidos síncronos
 import { AccessibilityProvider } from './components/AccessibilityProvider';
@@ -176,9 +176,7 @@ const AppContent = () => {
       {/* <PWAInstall /> */}
       <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
 
-      <Suspense fallback={<div style={{display: 'none'}}></div>}>
-        <GTM enabled={analyticsEnabled} />
-      </Suspense>
+      <GTM enabled={analyticsEnabled} />
     </div>
   );
 };

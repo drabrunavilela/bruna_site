@@ -78,9 +78,18 @@ const GTM: React.FC<GTMProps> = ({ enabled = false }) => {
     // Verificar se o usuário aceitou cookies
     const cookieConsent = localStorage.getItem('cookieConsent');
     
-    if (enabled && cookieConsent === 'accepted') {
-      // Carregar Google Tag Manager apenas se cookies foram aceitos
-      loadGTM();
+    if (enabled) {
+      if (cookieConsent === 'accepted') {
+        // Carregar Google Tag Manager se cookies foram aceitos
+        loadGTM();
+      } else if (cookieConsent === 'declined') {
+        // Não carregar GTM se cookies foram recusados
+        return;
+      } else {
+        // Se não há consentimento ainda, carregar GTM básico (sem tracking)
+        // Isso garante que o GTM esteja disponível para detectar tags
+        loadGTM();
+      }
     }
   }, [enabled, loadGTM]);
 
