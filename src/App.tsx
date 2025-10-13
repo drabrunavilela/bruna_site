@@ -23,13 +23,14 @@ const Performance = lazy(() => import('./components/Performance/Performance'));
 const WhatsAppFloat = lazy(() => import('./components/WhatsAppFloat/WhatsAppFloat'));
 const CriticalCSS = lazy(() => import('./components/CriticalCSS/CriticalCSS'));
 const ResourceOptimization = lazy(() => import('./components/ResourceOptimization/ResourceOptimization'));
-import GTM from './components/GTM/GTM';
+// GTM carregado via HTML
 
 // Componentes críticos mantidos síncronos
 import { AccessibilityProvider } from './components/AccessibilityProvider';
 import { AnalyticsProvider } from './components/AnalyticsProvider';
 import CookieBanner from './components/CookieBanner/CookieBanner';
 import { useScrollToTop } from './hooks/useScrollToTop';
+import { useGTM } from './hooks/useGTM';
 import './App.css';
 
 // Componente para página 404
@@ -70,6 +71,9 @@ const AppContent = () => {
   useScrollToTop();
   
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  
+  // Gerenciar GTM via HTML
+  useGTM(analyticsEnabled);
 
   const handleCookieAccept = () => {
     // Ativar analytics quando cookies forem aceitos
@@ -176,7 +180,7 @@ const AppContent = () => {
       {/* <PWAInstall /> */}
       <CookieBanner onAccept={handleCookieAccept} onDecline={handleCookieDecline} />
 
-      <GTM enabled={analyticsEnabled} />
+      {/* GTM carregado via HTML - não precisa do componente React */}
     </div>
   );
 };
