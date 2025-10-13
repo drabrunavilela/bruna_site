@@ -13,6 +13,7 @@ const AtrasosPage = lazy(() => import('./pages/ServicosPage/AtrasosPage'));
 const CefaleiasPage = lazy(() => import('./pages/ServicosPage/CefaleiasPage'));
 const SegundaOpiniaoPage = lazy(() => import('./pages/ServicosPage/SegundaOpiniaoPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage/BlogPage'));
+const SinaisAutismoPage = lazy(() => import('./pages/BlogPage/SinaisAutismoPage'));
 const GlossarioPage = lazy(() => import('./pages/GlossarioPage/GlossarioPage'));
 const PoliticaPrivacidadePage = lazy(() => import('./pages/PoliticaPrivacidadePage/PoliticaPrivacidadePage'));
 const TermosUsoPage = lazy(() => import('./pages/TermosUsoPage/TermosUsoPage'));
@@ -139,6 +140,11 @@ const AppContent = () => {
         <Route path="/blog" element={
           <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
             <BlogPage />
+          </Suspense>
+        } />
+        <Route path="/blog/sinais-autismo-primeiro-ano" element={
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Carregando...</div>}>
+            <SinaisAutismoPage />
           </Suspense>
         } />
         <Route path="/glossario" element={
