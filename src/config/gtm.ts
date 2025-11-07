@@ -1,7 +1,7 @@
 // Configuração do Google Tag Manager
 export const GTM_CONFIG = {
   // ID do Google Tag Manager (protegido por variável de ambiente)
-  GTM_ID: import.meta.env.VITE_GTM_ID || 'GTM-TWW4RQFJ',
+  GTM_ID: import.meta.env.VITE_GTM_ID,
   
   // Configurações de privacidade para LGPD
   PRIVACY_SETTINGS: {
@@ -44,11 +44,11 @@ export const GTM_CONFIG = {
   // Conversões (para Google Ads)
   CONVERSIONS: {
     APPOINTMENT: {
-      id: import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-9651994072',
+      id: import.meta.env.VITE_GOOGLE_ADS_ID,
       label: 'appointment_conversion',
     },
     CONTACT: {
-      id: import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-9651994072',
+      id: import.meta.env.VITE_GOOGLE_ADS_ID,
       label: 'contact_conversion',
     },
   },

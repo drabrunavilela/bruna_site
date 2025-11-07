@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './WhatsAppFloat.module.css';
 import type { WindowWithAnalytics } from '../../types/analytics';
+import { trackGTMEvent } from '../../hooks/useGTM';
 
 interface WhatsAppFloatProps {
   customMessage?: string;
@@ -48,16 +49,12 @@ const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({ customMessage, source }) 
       (window as WindowWithAnalytics).trackWhatsAppClick();
     }
     
-    // Analytics tracking only
-    
-    // Track no Google Analytics se disponível
-    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).gtag) {
-      (window as WindowWithAnalytics).gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: analyticSource,
-        page_path: location.pathname
-      });
-    }
+    // Enviar via GTM
+    trackGTMEvent('whatsapp_click', {
+      event_category: 'engagement',
+      event_label: analyticSource,
+      page_path: location.pathname
+    });
   };
 
   // Verificar se está em horário comercial (8h às 18h, seg-sex)

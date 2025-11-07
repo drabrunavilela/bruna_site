@@ -1,9 +1,5 @@
 import { useEffect } from 'react';
-
-// Declarar gtag global
-declare global {
-  function gtag(...args: unknown[]): void;
-}
+import { trackGTMEvent } from '../../hooks/useGTM';
 
 interface WebVitalMetric {
   name: string;
@@ -17,20 +13,16 @@ const CoreWebVitals: React.FC = () => {
   useEffect(() => {
     // Importar web-vitals dinamicamente para evitar SSR issues
     import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
-      // Função para enviar métricas
+      // Função para enviar métricas via GTM
       const sendToAnalytics = (metric: WebVitalMetric) => {
-        // Enviar para Google Analytics 4
-        if (typeof window !== 'undefined' && typeof gtag !== 'undefined') {
-          gtag('event', metric.name, {
-            event_category: 'Web Vitals',
-            event_label: metric.id,
-            value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-            custom_map: {
-              metric_rating: metric.rating,
-              metric_delta: metric.delta
-            }
-          });
-        }
+        trackGTMEvent('web_vital', {
+          event_category: 'Web Vitals',
+          metric_name: metric.name,
+          event_label: metric.id,
+          value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+          metric_rating: metric.rating,
+          metric_delta: metric.delta
+        });
 
         // Log para desenvolvimento
         console.log('Core Web Vital:', {
@@ -40,9 +32,6 @@ const CoreWebVitals: React.FC = () => {
           delta: metric.delta,
           id: metric.id
         });
-
-        // Web Vitals já enviados para GA4 via gtag acima
-        // Removido endpoint personalizado que causava 404
       };
 
       // Coletar métricas Core Web Vitals
@@ -61,13 +50,10 @@ const CoreWebVitals: React.FC = () => {
       const appointmentButton = document.querySelector('[href*="contato"]');
       if (appointmentButton) {
         const appointmentTime = performance.now();
-        
-        if (typeof window !== 'undefined' && typeof gtag !== 'undefined') {
-          gtag('event', 'custom_appointment_visible', {
-            event_category: 'Medical Site Metrics',
-            value: Math.round(appointmentTime)
-          });
-        }
+        trackGTMEvent('custom_appointment_visible', {
+          event_category: 'Medical Site Metrics',
+          value: Math.round(appointmentTime)
+        });
       }
 
       // Tempo de carregamento de imagens médicas
@@ -76,14 +62,11 @@ const CoreWebVitals: React.FC = () => {
         const imgElement = img as HTMLImageElement;
         if (imgElement.complete) {
           const loadTime = performance.now();
-          
-          if (typeof window !== 'undefined' && typeof gtag !== 'undefined') {
-            gtag('event', 'medical_image_loaded', {
-              event_category: 'Medical Site Metrics',
-              event_label: `image_${index}`,
-              value: Math.round(loadTime)
-            });
-          }
+          trackGTMEvent('medical_image_loaded', {
+            event_category: 'Medical Site Metrics',
+            event_label: `image_${index}`,
+            value: Math.round(loadTime)
+          });
         }
       });
     };
@@ -104,14 +87,11 @@ const CoreWebVitals: React.FC = () => {
         
         form.addEventListener('submit', () => {
           const submitTime = performance.now() - startTime;
-          
-          if (typeof window !== 'undefined' && typeof gtag !== 'undefined') {
-            gtag('event', 'form_interaction_time', {
-              event_category: 'Medical Forms',
-              event_label: `form_${index}`,
-              value: Math.round(submitTime)
-            });
-          }
+          trackGTMEvent('form_interaction_time', {
+            event_category: 'Medical Forms',
+            event_label: `form_${index}`,
+            value: Math.round(submitTime)
+          });
         });
       });
     };
@@ -123,9 +103,12 @@ const CoreWebVitals: React.FC = () => {
       monitorFormPerformance();
     }
 
+    return () => {
+      window.removeEventListener('load', measureCustomMetrics);
+      document.removeEventListener('DOMContentLoaded', monitorFormPerformance);
+    };
   }, []);
 
-  // Este componente não renderiza nada
   return null;
 };
 

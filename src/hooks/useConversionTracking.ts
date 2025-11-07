@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import type { WindowWithAnalytics } from '../types/analytics';
+import { trackGTMEvent } from './useGTM';
 
 interface ConversionData {
   event: string;
@@ -35,15 +35,13 @@ export const useConversionTracking = () => {
       page_path: location.pathname
     };
 
-    // Google Analytics tracking
-    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).gtag) {
-      (window as WindowWithAnalytics).gtag('event', data.event, {
-        event_category: data.category,
-        event_label: data.label,
-        value: data.value,
-        page_path: data.page_path
-      });
-    }
+    // Enviar via GTM
+    trackGTMEvent(data.event, {
+      event_category: data.category,
+      event_label: data.label,
+      value: data.value,
+      page_path: data.page_path
+    });
 
     // Conversion tracked successfully
   };
@@ -57,15 +55,13 @@ export const useConversionTracking = () => {
       page_path: location.pathname
     };
 
-    // Google Analytics tracking
-    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).gtag) {
-      (window as WindowWithAnalytics).gtag('event', data.event, {
-        event_category: data.category,
-        event_label: data.label,
-        value: data.value,
-        page_path: data.page_path
-      });
-    }
+    // Enviar via GTM
+    trackGTMEvent(data.event, {
+      event_category: data.category,
+      event_label: data.label,
+      value: data.value,
+      page_path: data.page_path
+    });
 
     console.log('WhatsApp click tracked:', data);
   };
@@ -79,20 +75,16 @@ export const useConversionTracking = () => {
       page_path: location.pathname
     };
 
-    // Google Analytics tracking
-    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).gtag) {
-      (window as WindowWithAnalytics).gtag('event', data.event, {
-        event_category: data.category,
-        event_label: data.label,
-        value: data.value,
-        page_path: data.page_path,
-        custom_parameters: {
-          patient_age: agendamentoData.patient?.age,
-          is_first_time: agendamentoData.patient?.isFirstTime,
-          appointment_date: agendamentoData.date
-        }
-      });
-    }
+    // Enviar via GTM
+    trackGTMEvent(data.event, {
+      event_category: data.category,
+      event_label: data.label,
+      value: data.value,
+      page_path: data.page_path,
+      patient_age: agendamentoData.patient?.age,
+      is_first_time: agendamentoData.patient?.isFirstTime,
+      appointment_date: agendamentoData.date
+    });
 
     console.log('Agendamento tracked:', data, agendamentoData);
   };
@@ -106,16 +98,14 @@ export const useConversionTracking = () => {
       page_path: location.pathname
     };
 
-    // Google Analytics tracking
-    if (typeof window !== 'undefined' && (window as WindowWithAnalytics).gtag) {
-      (window as WindowWithAnalytics).gtag('event', data.event, {
-        event_category: data.category,
-        event_label: data.label,
-        value: data.value,
-        page_path: data.page_path,
-        custom_parameters: additionalData
-      });
-    }
+    // Enviar via GTM
+    trackGTMEvent(data.event, {
+      event_category: data.category,
+      event_label: data.label,
+      value: data.value,
+      page_path: data.page_path,
+      ...additionalData
+    });
 
     console.log('Lead capture tracked:', data, additionalData);
   };

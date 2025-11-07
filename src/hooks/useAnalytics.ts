@@ -4,35 +4,29 @@ import type {
   AnalyticsEvent, 
   ConversionEvent
 } from '../types/analytics';
-
-// Global types are already declared in GTM.tsx
+import { trackGTMEvent } from './useGTM';
 
 export const useAnalytics = () => {
   const location = useLocation();
 
   // Track page views
   useEffect(() => {
-    if (typeof window.gtag === 'function') {
-      window.gtag('config', 'GA_MEASUREMENT_ID', {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_path: location.pathname
-      });
-    }
+    trackGTMEvent('page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: location.pathname
+    });
   }, [location]);
 
   // Track custom events
   const trackEvent = (event: AnalyticsEvent) => {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', event.action, {
-        event_category: event.category,
-        event_label: event.label,
-        value: event.value,
-        ...event.custom_parameters
-      });
-    }
+    trackGTMEvent(event.action, {
+      event_category: event.category,
+      event_label: event.label,
+      value: event.value,
+      ...event.custom_parameters
+    });
 
-    // Console log for development
     if (process.env.NODE_ENV === 'development') {
       console.log('Analytics Event:', event);
     }
@@ -40,15 +34,12 @@ export const useAnalytics = () => {
 
   // Track conversions
   const trackConversion = (conversion: ConversionEvent) => {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', conversion.event_name, {
-        currency: conversion.currency || 'BRL',
-        value: conversion.value,
-        items: conversion.items
-      });
-    }
+    trackGTMEvent(conversion.event_name, {
+      currency: conversion.currency || 'BRL',
+      value: conversion.value,
+      items: conversion.items
+    });
 
-    // Console log for development
     if (process.env.NODE_ENV === 'development') {
       console.log('Conversion Event:', conversion);
     }
@@ -89,7 +80,7 @@ export const useAnalytics = () => {
   // Time on page tracking
   const trackTimeOnPage = () => {
     const startTime = Date.now();
-    const intervals = [30, 60, 120, 300]; // 30s, 1m, 2m, 5m
+    const intervals = [30, 60, 120, 300];
     const tracked = new Set<number>();
 
     const checkTime = () => {
@@ -108,18 +99,18 @@ export const useAnalytics = () => {
       });
     };
 
-    const timer = setInterval(checkTime, 10000); // Check every 10s
+    const timer = setInterval(checkTime, 10000);
     return () => clearInterval(timer);
   };
 
   // Click tracking
-  const trackClick = (element: string, location?: string) => {
+  const trackClick = (element: string, locationPath?: string) => {
     trackEvent({
       action: 'click',
       category: 'interaction',
       label: element,
       custom_parameters: {
-        click_location: location || window.location.pathname,
+        click_location: locationPath || window.location.pathname,
         timestamp: new Date().toISOString()
       }
     });
@@ -127,29 +118,17 @@ export const useAnalytics = () => {
 
   // Form tracking
   const trackFormStart = (formName: string) => {
-    trackEvent({
-      action: 'form_start',
-      category: 'form',
-      label: formName
-    });
+    trackEvent({ action: 'form_start', category: 'form', label: formName });
   };
 
   const trackFormSubmit = (formName: string, success: boolean = true) => {
-    trackEvent({
-      action: success ? 'form_submit' : 'form_error',
-      category: 'form',
-      label: formName
-    });
+    trackEvent({ action: success ? 'form_submit' : 'form_error', category: 'form', label: formName });
 
     if (success) {
       trackConversion({
         event_name: 'generate_lead',
         value: 1,
-        items: [{
-          item_id: 'contact_form',
-          item_name: 'Contact Form Submission',
-          category: 'lead_generation'
-        }]
+        items: [{ item_id: 'contact_form', item_name: 'Contact Form Submission', category: 'lead_generation' }]
       });
     }
   };
@@ -159,9 +138,7 @@ export const useAnalytics = () => {
       action: 'form_abandon',
       category: 'form',
       label: formName,
-      custom_parameters: {
-        abandoned_field: fieldName
-      }
+      custom_parameters: { abandoned_field: fieldName }
     });
   };
 
@@ -179,12 +156,8 @@ export const useAnalytics = () => {
 
     trackConversion({
       event_name: 'contact_attempt',
-      value: 5, // Estimated value of a contact attempt
-      items: [{
-        item_id: 'whatsapp_contact',
-        item_name: 'WhatsApp Contact',
-        category: 'communication'
-      }]
+      value: 5,
+      items: [{ item_id: 'whatsapp_contact', item_name: 'WhatsApp Contact', category: 'communication' }]
     });
   };
 
@@ -194,9 +167,7 @@ export const useAnalytics = () => {
       action: `service_${action}`,
       category: 'services',
       label: serviceName,
-      custom_parameters: {
-        service_category: serviceName.toLowerCase().replace(/\s+/g, '_')
-      }
+      custom_parameters: { service_category: serviceName.toLowerCase().replace(/\s+/g, '_') }
     });
   };
 
@@ -206,21 +177,19 @@ export const useAnalytics = () => {
       action: `blog_${action}`,
       category: 'content',
       label: postTitle || 'unknown',
-      custom_parameters: {
-        content_type: 'blog_post'
-      }
+      custom_parameters: { content_type: 'blog_post' }
     });
   };
 
   // Error tracking
-  const trackError = (errorType: string, errorMessage: string, location?: string) => {
+  const trackError = (errorType: string, errorMessage: string, locationPath?: string) => {
     trackEvent({
       action: 'error',
       category: 'technical',
       label: errorType,
       custom_parameters: {
         error_message: errorMessage,
-        error_location: location || window.location.pathname
+        error_location: locationPath || window.location.pathname
       }
     });
   };
@@ -229,20 +198,15 @@ export const useAnalytics = () => {
   const trackPerformance = () => {
     if ('performance' in window && 'getEntriesByType' in performance) {
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      
       if (navigation) {
         const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
         const domContentLoaded = navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart;
-        
         trackEvent({
           action: 'page_load_time',
           category: 'performance',
           label: location.pathname,
           value: Math.round(loadTime),
-          custom_parameters: {
-            dom_content_loaded: Math.round(domContentLoaded),
-            page_path: location.pathname
-          }
+          custom_parameters: { dom_content_loaded: Math.round(domContentLoaded), page_path: location.pathname }
         });
       }
     }

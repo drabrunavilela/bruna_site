@@ -77,8 +77,8 @@ export const CONTENT_CONFIG = {
   
       // Analytics configuration
     ANALYTICS: {
-      GA_MEASUREMENT_ID: import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-HWTY2W7491',
-      GTM_ID: import.meta.env.VITE_GTM_ID || 'GTM-TWW4RQFJ'
+      GA_MEASUREMENT_ID: import.meta.env.VITE_GA_MEASUREMENT_ID,
+      GTM_ID: import.meta.env.VITE_GTM_ID
     }
 };
 

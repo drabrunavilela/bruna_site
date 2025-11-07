@@ -60,19 +60,17 @@ export const usePerformanceBoost = () => {
         memoryUsage: Math.round(memoryUsage * 100)
       }));
 
-      // Log para analytics
-      if (typeof window !== 'undefined' && (window as { gtag?: (...args: unknown[]) => void }).gtag) {
-        (window as { gtag: (...args: unknown[]) => void }).gtag('event', 'page_performance', {
+      // Enviar via GTM (dataLayer)
+      import('../hooks/useGTM').then(({ trackGTMEvent }) => {
+        trackGTMEvent('page_performance', {
           event_category: 'performance',
           event_label: location.pathname,
           value: Math.round(loadTime),
-          custom_parameters: {
-            load_time: Math.round(loadTime),
-            render_time: Math.round(renderTime),
-            memory_usage: Math.round(memoryUsage * 100)
-          }
+          load_time: Math.round(loadTime),
+          render_time: Math.round(renderTime),
+          memory_usage: Math.round(memoryUsage * 100)
         });
-      }
+      });
     }
   }, [location.pathname]);
 

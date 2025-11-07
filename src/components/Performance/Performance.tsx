@@ -1,22 +1,20 @@
 import React, { useEffect } from 'react';
-import type { WindowWithAnalytics } from '../../types/analytics';
+import { trackGTMEvent } from '../../hooks/useGTM';
+import type { Metric } from 'web-vitals';
 
 const Performance: React.FC = () => {
   useEffect(() => {
     // Importar web-vitals dinamicamente para evitar SSR issues
     import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
-      // Monitor Core Web Vitals and send to analytics
-      const sendToAnalytics = (metric: any) => {
-        // Send to Google Analytics if available
-        const windowWithGtag = window as WindowWithAnalytics;
-        if (typeof windowWithGtag.gtag === 'function') {
-          windowWithGtag.gtag('event', metric.name, {
-            value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-            event_label: metric.id,
-            non_interaction: true,
-          });
-        }
-        
+      // Monitor Core Web Vitals and send to GTM
+      const sendToAnalytics = (metric: Metric) => {
+        trackGTMEvent('web_vital', {
+          metric_name: metric.name,
+          value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+          event_label: metric.id,
+          non_interaction: true,
+        });
+
         // Log to console in development
         if (process.env.NODE_ENV === 'development') {
           console.log(`${metric.name}:`, metric.value);

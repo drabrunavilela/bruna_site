@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './NewsletterForm.module.css';
+import { trackGTMEvent } from '../../hooks/useGTM';
 
 interface NewsletterFormProps {
   variant?: 'inline' | 'modal' | 'sidebar';
@@ -52,17 +53,13 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({
         setEmail('');
         setInteresse('');
         
-        // Google Analytics event
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'newsletter_signup', {
-            event_category: 'engagement',
-            event_label: interesse || 'geral',
-            custom_parameters: {
-              interesse: interesse || 'geral',
-              source: 'newsletter_form'
-            }
-          });
-        }
+        // Enviar via GTM
+        trackGTMEvent('newsletter_signup', {
+          event_category: 'engagement',
+          event_label: interesse || 'geral',
+          interesse: interesse || 'geral',
+          source: 'newsletter_form'
+        });
 
         if (onSuccess) {
           setTimeout(onSuccess, 1500);
